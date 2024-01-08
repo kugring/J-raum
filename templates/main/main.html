@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main/main.css' %}">
+</head>
+<body>
+<div class="app-container">
+    <nav class="navbar">
+        <div class="logo-section">
+            <span class="nav_item">상품</span>
+            <span class="nav_item">주문 내역</span>
+            <span class="nav_item">마이페이지</span>
+        </div>
+
+        <div class="nav-left">
+            <div class="date-time-section">2023.01.08</div>
+        </div>
+    </nav>
+    <div>
+        <div class="kategoria">
+            <div class="kategoria-left">기본 카테고리</div>
+            <div class="kategoria-row">
+                <div class="kategoria-item">
+                    커피
+                </div>
+                <div class="kategoria-item">
+                    논커피
+                </div>
+                <div class="kategoria-item">
+                    차
+                </div>
+                <div class="kategoria-item">
+                    음료수
+                </div>
+            </div>
+        </div>
+        <div class="menu-main">
+            <div class="menu-box">
+                {Object.keys(categoryRefs).map((category) => (
+                <div key={category} class="menu-body">
+                    <div class="menu-kategoria-box" ref={categoryRefs[category]}>
+                        <div class="menu-kategoria">
+                            {category}
+                        </div>
+                    </div>
+                    <div class="menu-section">
+                        {menuItems
+                        .filter((menuItem) => menuItem.category === category)
+                        .map((menuItem) => (
+                        <div>
+                            <img class="menu-image" src={menuItem.image} alt={menuItem.name}/>
+                            <div class="menu-card-body">
+                                <div class="menu_name">
+                                    {menuItem.name}
+                                </div>
+                                <div class="menu-price">{menuItem.price}원
+                                </div>
+                            </div>
+                        </div>
+                        ))}
+                    </div>
+                </div>
+                ))}
+            </div>
+        </div>
+    </div>
+
+    {/*주문 내역*/}
+    <div class="order-section">
+        <div class="order-header">
+            <div class="order-header-left">
+                주문 내역
+            </div>
+            <div class="order-total">
+                <div>합계:</div>
+                <div
+                        class="order-total-num">{selectedItems.reduce((acc, item) => acc + item.quantity, 0)}
+                </div>
+                <div>잔</div>
+            </div>
+        </div>
+        <div class="order-container">
+            {selectedItems.slice().reverse().map((item, index) => (
+            <div class=`order-box'>
+                <div class="order-item">
+                    <div class="order-item-left">
+                        <div class="order-item-left-top">
+                            <div class="order_name">{item.name}</div>
+                        </div>
+                        <div class="order-item-body">
+                            <div class="order-item-body-middle">
+                                <div class="order_price">{item.price * item.quantity}원</div>
+
+                                <div class="order-item-option">옵션변경
+                                </div>
+                            </div>
+                            <div class="order-item-body-right">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-item-middle">
+                        <div class="order-item-counter">
+                            <div class="order_quantity_btn">
+                            </div>
+                            <div class="order_quantity">{item.quantity}</div>
+                            <div class="order_quantity_btn">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-item-right">
+                        <img class="order-item-img" src={item.image} alt={item.name}/>
+                        <div class="order-item-close">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            ))}
+        </div>
+        <div class="order-pay-container">
+            <div class="order-pay-box">페이지 박스</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
