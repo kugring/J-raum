@@ -1,5 +1,4 @@
 
-
 :root {
     --font-googleTitan_One: 'Titan_One', cursive;
     --font-googleNanum_Pen_Script: 'Nanum_Pen_Script', cursive;
@@ -12,6 +11,9 @@
 
 ::-webkit-scrollbar {
     display: none;
+}
+
+body {
 }
 
 .navbar {
@@ -68,17 +70,18 @@
 
 .kategoria {
     position: fixed;
-    top: 70px;
+    left: 0;
+    top: 5vw;
     width: 70vw;
     background-color: white;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
+    padding: 0.8vw 0;
+    font-size: 2vw;
     font-weight: 600;
-    font-size: 1vw;
-    font-family: var(--font-googleSingle_Day);
+    font-family: 'Single Day', cursive;
 }
 
 .kategoria-left {
@@ -105,9 +108,11 @@
 .menu-main {
     /*background-color: #f3f4f8;*/
     position: fixed;
+    z-index: 2;
+    left: 0;
     background-color: #ffefde;
-    font-family: var(--font-googleGamja_Flower);
-    margin-top: 140px; /* 상단 네비게이션 바 높이만큼 여백 추가 */
+    font-family: 'Gamja Flower', sans-serif;
+    margin-top: 9.2vw; /* 상단 네비게이션 바 높이만큼 여백 추가 */
     display: flex;
     flex-direction: column;
     overflow-y: hidden;
@@ -152,7 +157,6 @@
     align-items: start;
     border-radius: 13px;
     margin-left: 1.2vw;
-    transition: transform 0.3s ease;
 }
 
 .menu-image {
@@ -162,6 +166,11 @@
     border-radius: 2vw;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
     border: 0.5px solid #adadad;
+    transition: transform 0.3s ease-in;
+}
+
+.menu-image:active {
+    transform: scale(1.5); /* 또는 원하는 만큼의 이동 거리 설정 */
 }
 
 .menu-card-body {
@@ -173,7 +182,7 @@
 }
 
 .menu_name {
-    font-size: 2.6vw;
+    font-size: 2.5vw;
     font-weight: 600;
     color: #462304;
 }
@@ -183,6 +192,166 @@
     color: #575757;
 }
 
+.modal_overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 4;
+    left: 0;
+    top: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(1.5px);
+}
+
+.modal_window {
+    position: relative;
+    background: #ffffff;
+    backdrop-filter: blur(13.5px);
+    -webkit-backdrop-filter: blur(13.5px);
+    border-radius: 2vw;
+    border: 1vw solid rgb(255, 177, 61);
+    width: 70vw;
+    height: 50vw;
+    padding: 2.5vw;
+    font-family: 'Gamja Flower', sans-serif;
+    font-size: 3vw;
+}
+
+.modal-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.modal-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.modal-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    height: 40vw;
+}
+
+.modal-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 47vw;
+    height: 40vw;
+}
+
+.modal-option-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-option-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.modal-option-line{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1vw 0;
+}
+
+.modal-option {
+    font-size: 3vw;
+    width: 17vw;
+    text-align: center;
+}
+
+.modal-option-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.modal-option-item {
+    flex:1;
+    margin: 0 1vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: #ff8f36 0.4vw solid;
+    border-radius: 3vw;
+}
+
+.modal-img {
+    width: 20vw;
+    height: 20vw;
+    object-fit: cover;
+    border-radius: 1vw;
+}
+
+.modal_quantity_btn {
+    border-radius: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0.3vw;
+}
+
+.modal-quantity {
+    text-align: center;
+    width: 5vw;
+    font-size: 3vw;
+    font-weight: 600;
+    /*margin: 0 1vw;*/
+}
+
+.modal-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.modal-cancle {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 18.5vw;
+    padding: 1vw 0;
+    border: #ff8f36 solid 1vw;
+    border-radius: 1vw;
+}
+
+.modal-order-complete {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 45vw;
+    padding: 2vw 0;
+    border: #ff8f36 solid 1vw;
+    border-radius: 1vw;
+}
+
 .order-section {
     position: fixed;
     width: 30vw;
@@ -190,7 +359,7 @@
     top: 0;
     right: 0;
     flex: 1;
-    margin-top: 70px; /* 상단 네비게이션 바 높이만큼 여백 추가 */
+    margin-top: 4.7vw; /* 상단 네비게이션 바 높이만큼 여백 추가 */
     background-color: #ffdba5;;
 }
 
@@ -209,7 +378,7 @@
     color: #cc6351;
     font-size: 3vw;
     scale: 1.3;
-    font-family: var(--font-googleDongle-Bold);
+    font-family: 'Dongle', sans-serif;
 }
 
 .order-total {
@@ -238,7 +407,7 @@
     border: 0.4vw solid #9f681f;
     border-radius: 1vw;
     background-color: #fff5ee;
-    font-family: var(--font-googleNanum_Pen_Script);
+    font-family: 'Nanum Pen Script', cursive;
 }
 
 .order-box {
@@ -254,14 +423,6 @@
     color: #79471a;
     background-color: #ffedd2;
     transition: transform 0.3s ease;
-}
-
-.menu-item:active {
-    transform: translateY(-5px); /* 또는 원하는 만큼의 이동 거리 설정 */
-}
-
-.animate {
-    transform: translateY(-5px); /* 또는 원하는 만큼의 이동 거리 설정 */
 }
 
 .order-item {
@@ -307,13 +468,13 @@
 }
 
 .order-item-close {
-    font-size: 1.5vw;
+    scale: 0.7;
     z-index: 1;
     position: absolute;
-    top: 0.1vw;
-    right: -0.5vw;
+    top: -0.1vw;
+    right: -0.7vw;
     background-color: rgba(255, 255, 255, 0.56);
-    height: 1.5vw;
+    height: 2vw;
     border-radius: 50%;
 }
 

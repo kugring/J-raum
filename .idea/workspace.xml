@@ -5,32 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="564414b1-3150-4499-964a-162e1b210395" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/J-raum_(django).iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JraumKiosk/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JraumKiosk/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JraumKiosk/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JraumKiosk/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JraumKiosk/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JraumKiosk/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/main/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/main/main.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/migrations/0002_cafeoption_alter_cafemenu_price.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/migrations/0003_cafemenu_options.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/migrations/0004_alter_cafemenu_options.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/migrations/0005_alter_cafemenu_options.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/migrations/0006_alter_cafemenu_options.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/main/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/37bc80ec-7416-4e4a-bf2a-d83ed9aabe81.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/37bc80ec-7416-4e4a-bf2a-d83ed9aabe81.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/main/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/main.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +30,7 @@
         <option value="HTML File" />
         <option value="Python Script" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -67,6 +55,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;Excel(xlsx)&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -93,12 +82,38 @@
       <option name="presentableId" value="Default" />
       <updated>1704637188897</updated>
       <workItem from="1704637194378" duration="5705000" />
-      <workItem from="1704680147021" duration="2538000" />
+      <workItem from="1704680147021" duration="18579000" />
+      <workItem from="1704783668009" duration="35786000" />
+      <workItem from="1704944550481" duration="8105000" />
+      <workItem from="1704956979262" duration="27470000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
