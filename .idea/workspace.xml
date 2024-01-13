@@ -4,19 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="564414b1-3150-4499-964a-162e1b210395" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/main/migrations/0002_cafeoption_alter_cafemenu_price.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/migrations/0003_cafemenu_options.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/migrations/0004_alter_cafemenu_options.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/migrations/0005_alter_cafemenu_options.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/migrations/0006_alter_cafemenu_options.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/main/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/37bc80ec-7416-4e4a-bf2a-d83ed9aabe81.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/37bc80ec-7416-4e4a-bf2a-d83ed9aabe81.xml" afterDir="false" />
+    <list default="true" id="564414b1-3150-4499-964a-162e1b210395" name="변경" comment="민서바보">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/변경/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/변경/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/migrations/0007_alter_cafemenu_options.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/migrations/0008_alter_cafeoption_option_price.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/migrations/0009_alter_cafeoption_option_price.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/migrations/0010_alter_cafeoption_option_price.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/migrations/0011_alter_cafeoption_option_price.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/migrations/0012_alter_cafemenu_options.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/main.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +35,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "kugring"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="e8aab7ff-08ba-4663-abc7-17a4d04aa3e7" />
+        <option name="url" value="https://github.com/kugring/J-raum.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -87,6 +100,15 @@
       <workItem from="1704944550481" duration="8105000" />
       <workItem from="1704956979262" duration="27470000" />
     </task>
+    <task id="LOCAL-00001" summary="민서바보">
+      <option name="closed" value="true" />
+      <created>1705130717629</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1705130717630</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,5 +139,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="민서바보" />
+    <option name="LAST_COMMIT_MESSAGE" value="민서바보" />
   </component>
 </project>

@@ -1,0 +1,9 @@
+<changelist name="변경" date="1705130682828" recycled="false">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/변경/shelved.patch" />
+  <option name="DESCRIPTION" value="변경" />
+  <binary>
+    <option name="BEFORE_PATH" value="db.sqlite3" />
+    <option name="AFTER_PATH" value="db.sqlite3" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/변경/db.sqlite3" />
+  </binary>
+</changelist>

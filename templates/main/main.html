@@ -93,7 +93,7 @@
                                             <span class="material-symbols-outlined modal_quantity_btn"
                                                   onclick="decreaseQuantity('modal-quantity')">remove</span>
                                             <div class="modal-quantity">
-                                                <!--메뉴 수량이 들어감-->1
+                                                1
                                             </div>
                                             <span class="material-symbols-outlined modal_quantity_btn"
                                                   onclick="increaseQuantity('modal-quantity')">add</span>
@@ -110,16 +110,14 @@
                                                         {% if options.option == option_name %}
                                                         {% if option_name == "아이스크림" %}
                                                         <div class="modal-option-item">
-                                                            <div class="order-item-counter">
                                                                 <span class="material-symbols-outlined modal_quantity_btn"
-                                                                        onclick="decreaseQuantity('{{option_name}}')">remove</span>
-                                                                <div class="{{option_name}}">
-                                                                    <!--메뉴 수량이 들어감-->
-                                                                    {{options.option_item}}
-                                                                </div>
-                                                                <span class="material-symbols-outlined modal_quantity_btn"
-                                                                      onclick="increaseQuantity('{{option_name}}')">add</span>
+                                                                      onclick="decreaseQuantity('{{option_name}}')">remove</span>
+                                                            <div class="{{option_name}}">
+                                                                <!--메뉴 수량이 들어감-->
+                                                                {{options.option_item}}
                                                             </div>
+                                                            <span class="material-symbols-outlined modal_quantity_btn"
+                                                                  onclick="increaseQuantity('{{option_name}}')">add</span>
                                                         </div>
                                                         {% else %}
                                                         <div class="modal-option-item">
