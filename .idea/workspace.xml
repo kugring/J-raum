@@ -5,17 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="564414b1-3150-4499-964a-162e1b210395" name="변경" comment="민서바보">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/변경/db.sqlite3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/변경/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/migrations/0007_alter_cafemenu_options.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/migrations/0008_alter_cafeoption_option_price.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/migrations/0009_alter_cafeoption_option_price.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/migrations/0010_alter_cafeoption_option_price.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/migrations/0011_alter_cafeoption_option_price.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/migrations/0012_alter_cafemenu_options.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/migrations/0015_orderlist.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/37bc80ec-7416-4e4a-bf2a-d83ed9aabe81.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/37bc80ec-7416-4e4a-bf2a-d83ed9aabe81.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JraumKiosk/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/JraumKiosk/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JraumKiosk/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/JraumKiosk/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/main/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/main/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/main.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,12 +35,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "kugring"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;kugring&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -99,6 +98,8 @@
       <workItem from="1704783668009" duration="35786000" />
       <workItem from="1704944550481" duration="8105000" />
       <workItem from="1704956979262" duration="27470000" />
+      <workItem from="1705386972022" duration="11744000" />
+      <workItem from="1705548661442" duration="66984000" />
     </task>
     <task id="LOCAL-00001" summary="민서바보">
       <option name="closed" value="true" />

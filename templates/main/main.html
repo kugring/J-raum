@@ -19,6 +19,7 @@
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"/>
 
     <!-- 정적 파일 링크 -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script type="text/javascript" src="{% static 'main/main.js' %}"></script>
 </head>
 
@@ -41,7 +42,7 @@
         <div class="kategoria-left">기본 카테고리</div>
         <div class="kategoria-row">
             {%for category in categorys%}
-            <div class="kategoria-item" onclick="scrollToCategory('{{ category }}')">
+            <div class="kategoria-item not-selected" onclick="scrollToCategory('{{ category }}'); toggleClass(this)">
                 {{category}}
             </div>
             {% endfor %}
@@ -52,16 +53,16 @@
             {% for category in categorys %}
             <div class="menu-body">
                 <div class="menu-kategoria-box">
-                    <div id="{{category}}-scrollMove" class="menu-kategoria">
-                        {{category}}
+                    <div>
                     </div>
+                    <div  id="{{category}}-scrollMove" class="menu-kategoria">{{category}}</div>
                 </div>
                 <div class="menu-section">
                     <!--메뉴 아이템 박스-->
                     {% for cafemenu in cafemenus %}
                     {% if cafemenu.category == category %}
                     <div class="menu-item"
-                         onclick="openModal('{{ cafemenu.id }}', '{{ cafemenu.category }}', '{{ cafemenu.name }}', '{{ cafemenu.en }}', '{{ cafemenu.price }}', '{{ cafemenu.img }}', '{{ cafemenu.deg }}', '{{ cafemenu.options }}')">
+                         onclick="openModal('{{ cafemenu.id }}', '{{ cafemenu.category }}', '{{ cafemenu.name }}', '{{ cafemenu.en }}', '{{ cafemenu.price }}', '{{ cafemenu.img }}', '{{ cafemenu.deg }}', '{{ cafemenu.options }}');">
                         <img class="menu-image" src="{{ cafemenu.img }}">
                         <div class="menu-card-body">
                             <div class="menu_name">
@@ -77,30 +78,38 @@
                             <div class="modal-content">
                                 <div class="modal-top">
                                     <div class="modal-left">
-                                        <div class="modal-menu-img">
-                                            <!--메뉴 이미지가 들어감-->
-                                            <img class="menu-image" src="{{ cafemenu.img }}">
-                                        </div>
-                                        <div class="modal-menu-name">
-                                            <!--메뉴 이름이 들어감-->
-                                            {{ cafemenu.name }}
-                                        </div>
-                                        <div class="modal-menu-price">
-                                            <!--메뉴 가격이 들어감-->
-                                            {{ cafemenu.price }}원
-                                        </div>
-                                        <div class="order-item-counter">
-                                            <span class="material-symbols-outlined modal_quantity_btn"
-                                                  onclick="decreaseQuantity('modal-quantity')">remove</span>
-                                            <div class="modal-quantity">
-                                                1
+                                        <!--메뉴 이미지가 들어감-->
+                                        <img class="modal-menu-img" src="{{ cafemenu.img }}">
+                                        <div class="modal-left-bottom">
+                                            <div class="modal-menu-name">
+                                                <!--메뉴 이름이 들어감-->
+                                                {{ cafemenu.name }}
                                             </div>
-                                            <span class="material-symbols-outlined modal_quantity_btn"
-                                                  onclick="increaseQuantity('modal-quantity')">add</span>
+                                            <div class="madal-menu-total">
+                                                <div class="modal-menu-price price-{{ cafemenu.en }}-{{cafemenu.category}}">
+                                                    <!--메뉴 가격이 들어감-->
+                                                    {{ cafemenu.price }}원
+                                                </div>
+                                                <div class="modal-menu-item-counter">
+                                            <span class="material-symbols-outlined modal-menu-quantity-btn"
+                                                  onclick="decreaseQuantity('{{ cafemenu.en }}','{{ cafemenu.category }}','{{ cafemenu.price }}')">remove</span>
+                                                    <div class="modal-menu-quantity {{ cafemenu.en }}-{{cafemenu.category}}">
+                                                        1
+                                                    </div>
+                                                    <span class="material-symbols-outlined modal-menu-quantity-btn"
+                                                          onclick="increaseQuantity('{{ cafemenu.en }}','{{ cafemenu.category }}','{{ cafemenu.price }}')">add</span>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="modal-right">
                                         <div class="modal-option-container">
+                                            <div class="modal-option-top">
+                                                <div class="modal-option-top-left">옵션명</div>
+                                                <div class="modal-option-top-right">
+                                                    <!--아직 뭘 넣을 생각이 없음-->
+                                                </div>
+                                            </div>
                                             <div class="modal-option-box">
                                                 {% for option_name in cafemenu.options.split %}
                                                 <div class="modal-option-line">
@@ -108,19 +117,20 @@
                                                     <div class="modal-option-items">
                                                         {% for options in cafeoption %}
                                                         {% if options.option == option_name %}
-                                                        {% if option_name == "아이스크림" %}
-                                                        <div class="modal-option-item">
-                                                                <span class="material-symbols-outlined modal_quantity_btn"
-                                                                      onclick="decreaseQuantity('{{option_name}}')">remove</span>
-                                                            <div class="{{option_name}}">
+                                                        {% if option_name == "아이스크림" or option_name == "설탕시럽" or option_name == "바닐라시럽" or option_name == "카라멜시럽" %}
+                                                        <div class="modal-option-item-counter">
+                                                            <span class="material-symbols-outlined modal-option-quantity-btn"
+                                                                  onclick="decreaseQuantity('{{ cafemenu.en }}','{{option_name}}')">remove</span>
+                                                            <div class="modal-option-quantity {{ cafemenu.en }}-{{option_name}}">
                                                                 <!--메뉴 수량이 들어감-->
                                                                 {{options.option_item}}
                                                             </div>
-                                                            <span class="material-symbols-outlined modal_quantity_btn"
-                                                                  onclick="increaseQuantity('{{option_name}}')">add</span>
+                                                            <span class="material-symbols-outlined modal-option-quantity-btn"
+                                                                  onclick="increaseQuantity('{{ cafemenu.en }}','{{option_name}}')">add</span>
                                                         </div>
                                                         {% else %}
-                                                        <div class="modal-option-item">
+                                                        <div class="modal-option-item-text item-{{ cafemenu.en }}-{{ options.option }} {{options.option_def}}"
+                                                             onclick="toggleOption(this,'{{ cafemenu.en }}-{{ options.option }}')">
                                                             {{options.option_item}}
                                                         </div>
                                                         {% endif %}
@@ -135,10 +145,14 @@
                                 </div>
                                 <div class="modal-bottom">
                                     <div class="modal-cancle"
-                                         onclick="closeModal('{{ cafemenu.id }}', '{{ cafemenu.category }}', '{{ cafemenu.name }}', '{{ cafemenu.en }}', '{{ cafemenu.price }}', '{{ cafemenu.img }}', '{{ cafemenu.deg }}', '{{ cafemenu.options }}'); resetQuantity();">
+                                         onclick="closeModal('{{ cafemenu.id }}', '{{ cafemenu.category }}', '{{ cafemenu.name }}', '{{ cafemenu.en }}', '{{ cafemenu.price }}', '{{ cafemenu.img }}', '{{ cafemenu.deg }}', '{{ cafemenu.options }}');">
                                         이전
                                     </div>
-                                    <div class="modal-order-complete">주문담기</div>
+                                    <div class="modal-order-complete"
+                                         onclick="orderAdd('{{ cafemenu.id }}', '{{ cafemenu.category }}', '{{ cafemenu.name }}', '{{ cafemenu.en }}', '{{ cafemenu.price }}', '{{ cafemenu.img }}', '{{ cafemenu.deg }}', '{{ cafemenu.options }}');
+                                                  closeModal('{{ cafemenu.id }}', '{{ cafemenu.category }}', '{{ cafemenu.name }}', '{{ cafemenu.en }}', '{{ cafemenu.price }}', '{{ cafemenu.img }}', '{{ cafemenu.deg }}', '{{ cafemenu.options }}');
+                                                   ">주문담기
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -166,38 +180,8 @@
             <div>잔</div>
         </div>
     </div>
-    <div class="order-container">
-        <div class='order-box'>
-            <div class="order-item">
-                <div class="order-item-left">
-                    <div class="order-item-left-top">
-                        <div class="order_name">아메리카노</div>
-                    </div>
-                    <div class="order-item-body">
-                        <div class="order-item-body-middle">
-                            <div class="order_price">2000원</div>
-
-                            <div class="order-item-option">옵션변경
-                            </div>
-                        </div>
-                        <div class="order-item-body-right">
-                        </div>
-                    </div>
-                </div>
-                <div class="order-item-middle">
-                    <div class="order-item-counter">
-                        <span class="material-symbols-outlined">remove</span>
-                        <div class="order_quantity">2</div>
-                        <span class="material-symbols-outlined">add</span>
-                    </div>
-                </div>
-                <div class="order-item-right">
-                    <img class="order-item-img"
-                         src=https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[94]_20210430103337006.jpg/>
-                    <span class="material-symbols-outlined order-item-close">close</span>
-                </div>
-            </div>
-        </div>
+    <div id="order-container" class="order-container">
+        <!--통채로 div태그가 들어갈곳!-->
     </div>
     <div class="order-pay-container">
         <div class="order-pay-box">페이지 박스</div>

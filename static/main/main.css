@@ -105,6 +105,17 @@ body {
     scale: 0.9;
 }
 
+/* 선택된 요소에 대한 스타일 */
+.selected {
+    border: 0.3vw solid #ffb13d !important; /* 찐한 테두리 색상 */
+    opacity: 1 !important;
+}
+
+/* 나머지 요소에 대한 스타일 */
+.not-selected {
+    opacity: 0.5; /* 불투명도 설정 (0.5는 50%의 불투명도를 의미) */
+}
+
 .menu-main {
     /*background-color: #f3f4f8;*/
     position: fixed;
@@ -206,24 +217,38 @@ body {
     background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(1.5px);
     -webkit-backdrop-filter: blur(1.5px);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease; /* 트랜지션 효과 추가 */
 }
 
 .modal_window {
-    position: relative;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease; /* 트랜지션 효과 추가 */
+    transform: translateY(100%); /* 처음에는 아래로 숨겨져 있음 */
     background: #ffffff;
     backdrop-filter: blur(13.5px);
     -webkit-backdrop-filter: blur(13.5px);
     border-radius: 2vw;
     border: 1vw solid rgb(255, 177, 61);
     width: 70vw;
-    height: 50vw;
     padding: 2.5vw;
     font-family: 'Gamja Flower', sans-serif;
+    font-weight: 600;
+    color: #4d2107;
     font-size: 3vw;
 }
 
+.overlay-show {
+    opacity: 1; /* 클래스가 추가되면 투명도를 1로 변경 */
+}
+
+.window-show {
+    opacity: 1; /* 클래스가 추가되면 투명도를 1로 변경 */
+    transform: translateY(0); /* 클래스가 추가되면 위로 나타남 */
+}
+
 .modal-content {
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -233,6 +258,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 1vh;
 }
 
 .modal-left {
@@ -240,7 +266,68 @@ body {
     flex-direction: column;
     justify-content: start;
     align-items: center;
-    height: 40vw;
+    width: 20vw;
+}
+
+.modal-menu-img {
+    width: 20vw;
+    height: 20vw;
+    object-fit: cover;
+    border-radius: 1vw;
+    border: .4vw solid #774721;
+    background-color: black;
+}
+
+.modal-left-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 30%;
+}
+
+.modal-menu-name {
+}
+
+
+.madal-menu-total {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.modal-menu-price {
+    width: 10vw;
+}
+
+.modal-menu-item-counter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #fffff6;
+    border: 0.3vw solid #ff9842;
+    border-radius: 5px;
+}
+
+.modal-menu-quantity {
+    text-align: center;
+    width: 2.5vw;
+    font-size: 2.5vw;
+    font-weight: 600;
+    transition: transform 0.1s ease-in-out; /* 부드러운 이동을 위한 transition 추가 */
+    /*margin: 0 1vw;*/
+}
+
+.modal-menu-quantity-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.5vw;
 }
 
 .modal-right {
@@ -249,78 +336,151 @@ body {
     justify-content: start;
     align-items: center;
     width: 47vw;
-    height: 40vw;
+    margin-bottom: 2vw;
 }
 
 .modal-option-container {
     display: flex;
     flex-direction: column;
     justify-content: start;
-    align-items: start;
-    width: 100%;
-    height: 100%;
+    align-items: center;
+    width: 97%;
+    padding-bottom: 7vw;
+    border: 5px solid #cb7618;
+    border-radius: 1vw;
 }
 
 .modal-option-box {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 100%;
+    width: 93%;
+    padding: 0.2vw;
 }
 
-.modal-option-line{
+.modal-option-top {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 1vw 0;
+    align-items: center;
+    width: 100%;
+    border-bottom: 3px solid rgba(155, 155, 155, 0.27);
+}
+
+.modal-option-top-left {
+    margin: 2vh 3.3vw;
+    font-size: 4vw;
+    width: 20vw;
+}
+
+.modal-option-top-right {
+    width: 100%;
+}
+
+.modal-option-line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw 0;
+    height: 7vh;
+    border-bottom: 3px solid rgba(155, 155, 155, 0.27);
 }
 
 .modal-option {
     font-size: 3vw;
-    width: 17vw;
+    width: 20vw;
     text-align: center;
+    border-right: 3px solid rgba(155, 155, 155, 0.27);
+    margin-right: 0.6vw;
 }
 
 .modal-option-items {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: end;
     align-items: center;
     width: 100%;
 }
 
-.modal-option-item {
-    flex:1;
-    margin: 0 1vw;
+.modal-option-item-text {
+    flex: 1;
+    margin: 0 0.5vw;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border: #ff8f36 0.4vw solid;
+    border: #ffc597 0.4vw solid;
+    background-color: #ffeddc;
+    border-radius: 1vw;
+    color: #cba99b;
+    transition: transform 0.1s ease-in-out; /* 부드러운 이동을 위한 transition 추가 */
+    font-weight: 100;
+    cursor: pointer;
+}
+
+.option-def {
+    border: #ff8000 0.4vw solid;
+    background-color: #ffb14b;
+    color: white;
+    font-weight: 600;
+}
+
+.option-not-selected {
+    border: #ffc597 0.4vw solid;
+    background-color: #ffeddc;
+    color: #cba99b;
+    font-weight: 100;
+}
+
+.option-selected {
+    border: #ff8000 0.4vw solid;
+    background-color: #ffb14b;
+    color: white;
+    font-weight: 600 !important;
+    scale: 1;
+}
+
+.modal-option-item-text:active {
+    transform: translateY(-0.8vh); /* 클릭 시 아래로 2px 이동 */
+}
+
+.modal-option-item-counter {
+    margin: 0 1vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
     border-radius: 3vw;
 }
 
-.modal-img {
-    width: 20vw;
-    height: 20vw;
-    object-fit: cover;
-    border-radius: 1vw;
+.modal-option-item-number {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
-.modal_quantity_btn {
+.modal-option-quantity-btn {
+    border: #ff8f36 0.4vw solid;
     border-radius: 20%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin: 0 0.3vw;
+    padding: 0.5vw;
 }
 
-.modal-quantity {
+.material-symbols-outlined {
+    font-weight: 600 !important;
+}
+
+.modal-option-quantity {
     text-align: center;
     width: 5vw;
     font-size: 3vw;
     font-weight: 600;
+    transition: transform 0.1s ease-in-out; /* 부드러운 이동을 위한 transition 추가 */
     /*margin: 0 1vw;*/
 }
 
@@ -339,6 +499,7 @@ body {
     padding: 1vw 0;
     border: #ff8f36 solid 1vw;
     border-radius: 1vw;
+    font-size: 4vw;
 }
 
 .modal-order-complete {
@@ -347,9 +508,10 @@ body {
     justify-content: center;
     align-items: center;
     width: 45vw;
-    padding: 2vw 0;
+    padding: 1vw 0;
     border: #ff8f36 solid 1vw;
     border-radius: 1vw;
+    font-size: 4vw;
 }
 
 .order-section {
@@ -400,59 +562,124 @@ body {
 .order-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    height: 45vw;
-    overflow: scroll;
+    justify-content: start;
+    align-items: stretch;
+    width: 94%;
+    height: 68vh;
     margin: .45vw;
     border: 0.4vw solid #9f681f;
     border-radius: 1vw;
     background-color: #fff5ee;
     font-family: 'Nanum Pen Script', cursive;
+    overflow: scroll;
+}
+
+.order-swiper-container {
+    width: 100%;
+    height: 11vh;
+    overflow-x: scroll;
+    scroll-snap-type: x
+}
+
+.order-swiper-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 48vw;
+}
+
+.order-swiper-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 10vw;
+}
+
+.order-option-change-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 0.3vw solid #ff8d2f;
+    background-color: #ffc251;
+    color: white;
+    font-weight: 600;
+    border-radius: 1vw;
+    width: 6vw;
+    height: 6vh;
+    margin-left: 2vw;
+    font-size: 2.1vw;
+}
+
+.order-delete-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 0.3vw solid #ff2f2f;
+    background-color: #ff8351;
+    color: white;
+    font-weight: 600;
+    border-radius: 1vw;
+    width: 5vw;
+    height: 6vh;
+    margin-right: 2vw;
+    font-size: 2.5vw;
 }
 
 .order-box {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: space-between;
     width: 24vw;
-    margin-top: 0.7vw;
-    padding: 0.5vw 1vw;
+    margin-top: 1.4vh;
+    padding: 0.5vw 0.5vw 0.5vw 1vw;
     border-radius: 10px;
     border: 0.5vw solid #daa36d;
     color: #79471a;
     background-color: #ffedd2;
     transition: transform 0.3s ease;
+    scroll-snap-align: center
+
 }
 
 .order-item {
     display: flex;
     flex-direction: row;
-    justify-content: start;
+    justify-content: space-between;
     width: 100%;
+    height: 7vh;
 }
 
 .order-item-left {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 100%;
+    justify-content: space-evenly;
 
-}
-
-.order-item-middle {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-right: 5.4vw;
 }
 
 .order-item-right {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.order-item-rigit-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
-    position: relative;
+    height: 100%;
+    margin-right: 1vw;
+}
+
+.order-item-right-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .order-item-left-top {
@@ -465,14 +692,30 @@ body {
     color: #4f2d0b;
     font-size: 2vw;
     font-weight: 600;
+    margin-bottom: 0.1vw;
+}
+
+.order-option-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.order-option {
+    border-radius: 0.5vw;
+    color: white;
+    background-color: chocolate;
+    margin: 0 0.3vw 0.1vh 0;
+    padding: 0.05vh 0.5vw;
+
 }
 
 .order-item-close {
-    scale: 0.7;
+    scale: 0.8;
     z-index: 1;
-    position: absolute;
-    top: -0.1vw;
-    right: -0.7vw;
+    position: relative;
+    top: -6vh;
+    right: -0.1vw;
     background-color: rgba(255, 255, 255, 0.56);
     height: 2vw;
     border-radius: 50%;
@@ -492,13 +735,10 @@ body {
 }
 
 .order-item-img {
-    width: 4vw;
-    height: 4vw;
+    width: 4.5vw;
+    height: 4.5vw;
     object-fit: cover;
-    scale: 1.3;
     border-radius: 0.5vw;
-    position: absolute;
-    right: 0;
 }
 
 .order-item-body-middle {
@@ -517,10 +757,17 @@ body {
 }
 
 
-.order_price {
-    font-size: 2.5vw;
-    font-weight: 500;
-    height: 2.7vw;
+.order-price {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.4vw;
+    font-size: 2.3vw;
+    font-weight: 600;
+    padding: 0.2vh 0.3vw;
+    margin-top: 0.4vh;
+    height: 2vh;
 }
 
 .order-item-option {
@@ -547,18 +794,18 @@ body {
 }
 
 
-.order_quantity_btn {
-    border-radius: 20%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin: 0 0.3vw;
+.order-quantity-btn {
+    font-size: 1.5vw !important;
+    margin: 0 0.2vw;
 }
 
 .order_quantity {
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     width: 2vw;
+    height: 0vh;
     font-size: 2vw;
     font-weight: 600;
     /*margin: 0 1vw;*/

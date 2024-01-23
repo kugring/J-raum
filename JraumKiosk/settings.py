@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'main',
+    'JraumKiosk',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
