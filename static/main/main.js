@@ -202,11 +202,23 @@ function orderAdd(id, category, name, en, price, img, deg, options) {
 			selectedOption += element.textContent.trim() + ' '; // 각 요소의 텍스트를 누적
 		});
 	}
-
 	let order_options = selectedOption.trim().split(' ')
 
-	document.getElementById('order-container').insertAdjacentHTML('beforeend',
-		'<div class="order-swiper-container ' + 'order-swiper-container' + en + order_options.join('+') + '" >\
+	// 메뉴 중복을 확인하기 위해 기존 클래스명이 존재하는지 확인하는것!
+	var orderDuplicationTest = document.querySelector('.' + 'order-swiper-container' + en + order_options.join('+'));
+	// 메뉴 수량을 갱신하기 위한 코드
+	if (orderDuplicationTest) {
+		var currentMenuQuantityElement = document.querySelector('.' + 'order-quantity' + en + order_options.join('+'))
+		var currentMenuQuantity = parseInt(currentMenuQuantityElement.textContent, 10); // 문자열을 10진수로 파싱하여 숫자로 변환
+		var renewMenuQuantityElement = document.querySelector('.' + 'order-quantity' + en + order_options.join('+'))
+		var renewMenuQuantity = currentMenuQuantity + parseInt(order_quantity, 10);
+		renewMenuQuantityElement.innerText = renewMenuQuantity;
+		var renewPrice = document.querySelector('.' + 'order-price' + en + order_options.join('+'))
+		renewPrice.innerText = renewMenuQuantity * price + '원'
+	} else {
+		// 중복이 없고 새로운 주문인 경우
+		document.getElementById('order-container').insertAdjacentHTML('beforeend',
+			'<div class="order-swiper-container ' + 'order-swiper-container' + en + order_options.join('+') + '" >\
 				<div class="order-swiper-box ' + 'swiper-' + en + '">\
 					<div class="order-box ' + en + '_' + order_options.join('+') + '"> \
 						<div class="order-item"> \
@@ -214,21 +226,15 @@ function orderAdd(id, category, name, en, price, img, deg, options) {
 								<div class="order-item-left-top"> \
 									<div class="order_name">' + name + '</div> \
 								</div> \
-								<div class="order-option-box">\
-									<div class="order-option"> \
-										샷추가\
-									</div> \
-									<div class="order-option"> \
-										덜~뜨겁게\
-									</div> \
+								<div class="order-option-box ' + 'order-option-box' + en + order_options.join('+') + '">\
 								</div>\
 							</div> \
 							<div class="order-item-right"> \
 								<div class="order-item-rigit-left"> \
-									<div class="order-price">' + priceXquantity + '</div> \
+									<div class="order-price ' + 'order-price' + en + order_options.join('+') + '">' + priceXquantity + '</div> \
 									<div class="order-item-counter"> \
 										<span class="material-symbols-outlined order-quantity-btn">remove</span> \
-										<div class="order_quantity">' + order_quantity + '</div> \
+										<div class="order-quantity ' + 'order-quantity' + en + order_options.join('+') + '">' + order_quantity + '</div> \
 										<span class="material-symbols-outlined order-quantity-btn">add</span> \
 									</div> \
 								</div> \
@@ -243,10 +249,17 @@ function orderAdd(id, category, name, en, price, img, deg, options) {
 				</div>\
 			</div>\
 			');
-	//
-	// var swiperBox = document.querySelector('.order-swiper-container'+ en + order_options.join('+'));
-	//
-	// 	swiperBox.scrollLeft += 127;
+		if (order_options !== '') {
+			console.log(order_options)
+			for (var i = 0; i < order_options.length; i++) {
+				var className = 'order-option-box' + en + order_options.join('+');
+				var optionBoxAddElement = document.getElementsByClassName(className)[0];
+				var optionBoxElement = document.createElement('div')
+				optionBoxElement.className = 'order-option';
+				optionBoxElement.innerText = order_options[i]
+				optionBoxAddElement.appendChild(optionBoxElement);
+			}
+		}
 
-
+	}
 }

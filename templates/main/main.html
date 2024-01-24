@@ -55,7 +55,8 @@
                 <div class="menu-kategoria-box">
                     <div>
                     </div>
-                    <div  id="{{category}}-scrollMove" class="menu-kategoria">{{category}}</div>
+                    <div id="{{category}}-scrollMove"></div>
+                    <div class="menu-kategoria">{{category}}</div>
                 </div>
                 <div class="menu-section">
                     <!--메뉴 아이템 박스-->
@@ -94,6 +95,7 @@
                                             <span class="material-symbols-outlined modal-menu-quantity-btn"
                                                   onclick="decreaseQuantity('{{ cafemenu.en }}','{{ cafemenu.category }}','{{ cafemenu.price }}')">remove</span>
                                                     <div class="modal-menu-quantity {{ cafemenu.en }}-{{cafemenu.category}}">
+                                                        <!--메뉴 수량이 들어감-->
                                                         1
                                                     </div>
                                                     <span class="material-symbols-outlined modal-menu-quantity-btn"
