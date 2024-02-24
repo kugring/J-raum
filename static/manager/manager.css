@@ -1,0 +1,285 @@
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    background-color: #ffdba5;
+}
+
+:root {
+    --font-googleTitan_One: 'Titan_One', cursive;
+    --font-googleNanum_Pen_Script: 'Nanum_Pen_Script', cursive;
+    --font-googleSingle_Day: 'Single_Day', cursive;
+    --font-googleGamja_Flower: 'Gamja_Flower', cursive;
+    --font-googleDongle-Bold: 'Dongle-Bold', cursive;
+    --font-googleDongle-Light: 'Dongle-Bold', cursive;
+    --font-googleDongle-Regular: 'Dongle-Bold', cursive;
+}
+
+/* 기본 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 5rem;
+    background-color: #ff8f36;
+    font-family: 'Dongle', sans-serif;
+}
+
+.order-waiting-num {
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+    scale: 2;
+}
+
+.main {
+    position: absolute;
+    top: 5rem;
+    width: 100%;
+}
+
+
+.order-waiting-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    height: 10vh;
+    width: 100vw;
+    padding-top: 2vh;
+    overflow-x: scroll;
+}
+
+.order-waiting-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5%;
+    border-radius: 2vw;
+    /* 그라데이션 그림자 */
+    box-shadow: 0 0 15px rgb(255, 236, 126);
+}
+
+.order-waiting-box:last-child {
+    margin-right: 4vw;
+}
+
+.order-waiting-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 8rem;
+    height: 3rem;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.client-name {
+    position: absolute;
+    top: -20px;
+    left: -4px;
+    background-color: #ff9e78;
+    border-radius: 1vw;
+    padding: 0.5vh 2vw;
+    color: white;
+}
+
+.order-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 3rem;
+    font-size: 1.3rem;
+    border: 5px solid orange;
+    border-radius: 10px;
+}
+
+.order-id{
+    display: none;
+}
+
+.order-menu-list {
+    height: 6rem;
+    overflow: scroll;
+}
+
+.order-menu-title {
+    color: #cc6351;
+    font-size: 3rem;
+    scale: 1.3;
+    height: 4rem;
+    font-family: 'Dongle', sans-serif;
+}
+
+.order-menu-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    height: 64vh;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: 'Nanum Pen Script', cursive;
+}
+
+.order-menu-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+    border: 5px solid #9f681f;
+    border-radius: 10px;
+    background-color: #fff5ee;
+    padding-top: 3%;
+    overflow: scroll;
+}
+
+.order-menu-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    height: 4rem;
+    position: relative;
+    border-radius: 10px;
+    border: 0.4rem solid #daa36d;
+    color: #79471a;
+    background-color: #ffedd2;
+    transition: transform 0.3s ease;
+    scroll-snap-align: center;
+    padding: 0 2vw 0 4vw;
+    margin-bottom: 1rem;
+}
+
+.order-menu-box.clicked {
+  filter: brightness(70%);
+  /* 다른 스타일 변경을 원한다면 여기에 추가 */
+}
+
+.menu-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    height: 4rem; /*  이거 없으면 오버플로우 시 높이가 낮아져버림   */
+}
+
+.menu-name {
+
+}
+
+.menu-option {
+    background-color: #cc653d;
+    border-radius: 8px;
+    padding: 0.15rem 0.4rem;
+    color: white;
+    font-size: 1rem;
+    font-weight: 100;
+}
+
+.menu-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-img {
+    border-radius: 8px;
+    width: 3rem;
+    height: 3rem;
+    margin-right: 2vw;
+}
+
+.menu-quantity {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 2.5rem;
+    border: #cc9854 solid 5px;
+    border-radius: 10px;
+    background-color: white;
+    font-size: 1.8rem;
+    font-family: 'Dongle', sans-serif;
+}
+
+.order-menu-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 91%;
+    margin-top: 0.5rem;
+}
+
+.order-total-quantity {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 4rem;
+    border: 5px solid #9f681f;
+    border-radius: 10px;
+    background-color: white;
+    font-size: 3rem;
+    color: #79471a;
+    font-family: 'Dongle', sans-serif;
+}
+
+.order-complete {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 4rem;
+    border: 5px solid #ee5700;
+    border-radius: 10px;
+    background-color: #ff8034;
+    color: white;
+    font-size: 4rem;
+    font-family: 'Dongle', sans-serif;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: start;
+    background-color: #ff933c;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 5rem;
+}
+
+.footer-icon {
+    margin-top: 1rem;
+    font-size: 2rem !important;
+    text-decoration: none;
+    color: white;
+}

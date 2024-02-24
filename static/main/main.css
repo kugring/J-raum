@@ -1,3 +1,14 @@
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
 
 :root {
     --font-googleTitan_One: 'Titan_One', cursive;
@@ -13,6 +24,7 @@
     display: none;
 }
 
+
 body {
 }
 
@@ -20,7 +32,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    height: 7vh;
     background-color: #ff962d;
     position: fixed;
     top: 0;
@@ -34,6 +46,12 @@ body {
     font-size: 2vw;
     font-weight: bold;
     color: #ffffff;
+    text-decoration: none;
+}
+
+.pick {
+    padding-bottom: 0.2vh;
+    border-bottom: 0.2vw solid #e34a1c;
 }
 
 .nav-left {
@@ -47,17 +65,9 @@ body {
     font-size: 2.3vw;
     font-weight: bold;
     color: white;
-}
-
-.logo {
-    width: 50px;
-    height: 50px;
-    margin-left: 10px;
-}
-
-.logo-section {
-    display: flex;
-    align-items: center;
+    margin-right: 6vw;
+    font-family: 'Dongle', sans-serif;
+    scale: 2
 }
 
 
@@ -71,14 +81,15 @@ body {
 .kategoria {
     position: fixed;
     left: 0;
-    top: 5vw;
+    top: 7vh;
+    height: 7vh;
     width: 70vw;
     background-color: white;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0.8vw 0;
+    /* padding: 0.8vw 0; */
     font-size: 2vw;
     font-weight: 600;
     font-family: 'Single Day', cursive;
@@ -98,8 +109,8 @@ body {
 .kategoria-item {
     border: dotted 3.5px grey;
     border-radius: 20px;
-    width: 80px;
-    margin: 0 20px;
+    width: 7vw;
+    margin: 0 2vw;
     padding: 2px 0;
     text-align: center;
     scale: 0.9;
@@ -117,21 +128,21 @@ body {
 }
 
 .menu-main {
-    /*background-color: #f3f4f8;*/
+    /* background-color: #f3f4f8; */
     position: fixed;
     z-index: 2;
     left: 0;
     background-color: #ffefde;
     font-family: 'Gamja Flower', sans-serif;
-    margin-top: 9.2vw; /* 상단 네비게이션 바 높이만큼 여백 추가 */
+    top: 14vh;
     display: flex;
     flex-direction: column;
     overflow-y: hidden;
+    height: 86vh;
 }
 
 .menu-box {
     overflow: scroll;
-    height: 60vw;
 }
 
 .menu-body {
@@ -140,11 +151,10 @@ body {
 }
 
 .menu-kategoria-box {
-    width: 70px;
 }
 
 .menu-kategoria {
-    width: 80px;
+    width: 8vw;
     text-align: center;
     margin: 10px 10px 10px 15px;
     border: 5px solid #3d1404;
@@ -216,7 +226,6 @@ body {
     justify-content: center;
     background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(1.5px);
-    -webkit-backdrop-filter: blur(1.5px);
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease; /* 트랜지션 효과 추가 */
 }
@@ -228,7 +237,6 @@ body {
     transform: translateY(100%); /* 처음에는 아래로 숨겨져 있음 */
     background: #ffffff;
     backdrop-filter: blur(13.5px);
-    -webkit-backdrop-filter: blur(13.5px);
     border-radius: 2vw;
     border: 1vw solid rgb(255, 177, 61);
     width: 70vw;
@@ -239,14 +247,6 @@ body {
     font-size: 3vw;
 }
 
-.overlay-show {
-    opacity: 1; /* 클래스가 추가되면 투명도를 1로 변경 */
-}
-
-.window-show {
-    opacity: 1; /* 클래스가 추가되면 투명도를 1로 변경 */
-    transform: translateY(0); /* 클래스가 추가되면 위로 나타남 */
-}
 
 .modal-content {
     display: flex;
@@ -301,6 +301,7 @@ body {
 
 .modal-menu-price {
     width: 10vw;
+    transition: transform 0.1s ease-in-out; /* 부드러운 이동을 위한 transition 추가 */
 }
 
 .modal-menu-item-counter {
@@ -309,8 +310,8 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #fffff6;
-    border: 0.3vw solid #ff9842;
-    border-radius: 5px;
+    border: 0.5vw solid #ff9842;
+    border-radius: 1vw;
 }
 
 .modal-menu-quantity {
@@ -328,6 +329,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 0 0.5vw;
+    font-weight: 600 !important;
 }
 
 .modal-right {
@@ -347,7 +349,7 @@ body {
     width: 97%;
     padding-bottom: 7vw;
     border: 5px solid #cb7618;
-    border-radius: 1vw;
+    border-radius: 1.5vw;
 }
 
 .modal-option-box {
@@ -469,11 +471,9 @@ body {
     align-items: center;
     justify-content: center;
     padding: 0.5vw;
-}
-
-.material-symbols-outlined {
     font-weight: 600 !important;
 }
+
 
 .modal-option-quantity {
     text-align: center;
@@ -498,7 +498,7 @@ body {
     width: 18.5vw;
     padding: 1vw 0;
     border: #ff8f36 solid 1vw;
-    border-radius: 1vw;
+    border-radius: 1.5vw;
     font-size: 4vw;
 }
 
@@ -515,58 +515,71 @@ body {
 }
 
 .order-section {
-    position: fixed;
-    width: 30vw;
-    height: 100vw;
-    top: 0;
-    right: 0;
-    flex: 1;
-    margin-top: 4.7vw; /* 상단 네비게이션 바 높이만큼 여백 추가 */
-    background-color: #ffdba5;;
-}
-
-
-.order-header {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin: 10px 10px 10px 30px;
+    position: fixed;
+    width: 30vw;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: #ffdba5;
+}
+
+.order-header-cushion {
+    height: 6vh;
+}
+
+.order-header {;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin: 10px 10px 0 30px;
     font-weight: bold;
     color: #ffffff;
 }
 
 .order-header-left {
     color: #cc6351;
+    width: 10vw;
     font-size: 3vw;
     scale: 1.3;
     font-family: 'Dongle', sans-serif;
 }
 
-.order-total {
+.order-reset-btn {
     display: flex;
     flex-direction: row;
-    font-size: 2vw;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vw;
     border: 0.5vw solid #de951f;
     border-radius: .7vw;
     background-color: #efb866;
-    padding: 0.3vw;
-    width: 10vw;
+    padding: 0.3vh 0 0 0.5vw;
     text-align: center;
+    font-family: 'Nanum Pen Script', cursive;
 }
 
-.order-total-num {
-    width: 3vw;
+.order-reset {
+    font-size: 2vw;
 }
 
-.order-container {
+.order-reset-icon {
+}
+
+.order-body {
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: stretch;
-    width: 94%;
-    height: 68vh;
+    width: 91%;
+    height: 60vh;
     margin: .45vw;
+    padding: 1vh 0.2vw;
     border: 0.4vw solid #9f681f;
     border-radius: 1vw;
     background-color: #fff5ee;
@@ -574,18 +587,23 @@ body {
     overflow: scroll;
 }
 
+.order-container {
+
+}
+
 .order-swiper-container {
     width: 100%;
-    height: 11vh;
     overflow-x: scroll;
+    overflow-y: visible;
     scroll-snap-type: x
 }
 
 .order-swiper-box {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
+    margin: 2vh 0 0.5vh 1.4vw;
     width: 48vw;
 }
 
@@ -609,7 +627,6 @@ body {
     border-radius: 1vw;
     width: 7vw;
     height: 6vh;
-    margin-left:1vw;
     font-size: 2.1vw;
 }
 
@@ -625,40 +642,91 @@ body {
     border-radius: 1vw;
     width: 7vw;
     height: 6vh;
-    margin: 0 1vw;
     font-size: 2.5vw;
-    scroll-snap-align: center;
 }
 
 .order-box {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 24vw;
-    margin: 1.4vh 0 0 1.4vw;
-    padding: 0.5vw 0.5vw 0.5vw 1vw;
+    width: 24.5vw;
+    padding: 0.1vh 0.3vw 0.1vh 0.5vw;
     border-radius: 10px;
     border: 0.5vw solid #daa36d;
     color: #79471a;
     background-color: #ffedd2;
     transition: transform 0.3s ease;
-    scroll-snap-align: center
+    scroll-snap-align: center;
+}
 
+.order-optionBox {
+    display: flex;
+    position: absolute;
+    transform: translateY(-2.3vh);
+    width: max-content;
+    font-size: 1.5vw;
+}
+
+.sugarPump {
+    border-radius: 0.5vw;
+    color: #ffffff;
+    background-color: #ffa100;
+    margin: 0 0.5vw 0.1vh 0;
+    padding: 0.05vh 0.5vw;
+    text-align: center;
+    font-family: 'Gamja Flower', sans-serif;
+    height: 3vh;
+}
+
+.vanillaPump {
+    border-radius: 0.5vw;
+    color: #ffffff;
+    background-color: #ffa100;
+    margin: 0 0.5vw 0.1vh 0;
+    padding: 0.05vh 0.5vw;
+    text-align: center;
+    font-family: 'Gamja Flower', sans-serif;
+    height: 3vh;
+}
+
+.caramelPump {
+    border-radius: 0.5vw;
+    color: #ffffff;
+    background-color: #ffa100;
+    margin: 0 0.5vw 0.1vh 0;
+    padding: 0.05vh 0.5vw;
+    text-align: center;
+    font-family: 'Gamja Flower', sans-serif;
+    height: 3vh;
+}
+
+.iceCream {
+    border-radius: 0.5vw;
+    color: #ffffff;
+    background-color: #ffa100;
+    margin: 0 0.5vw 0.1vh 0;
+    padding: 0.05vh 0.5vw;
+    text-align: center;
+    font-family: 'Gamja Flower', sans-serif;
+    height: 3vh;
 }
 
 .order-item {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
-    height: 7vh;
+    height: 6vh;
 }
 
 .order-item-left {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-
+    align-items: center;
+    width: 47%;
 }
 
 .order-item-right {
@@ -689,26 +757,52 @@ body {
     justify-content: start;
 }
 
-.order_name {
+.order-name {
     color: #4f2d0b;
     font-size: 2vw;
     font-weight: 600;
     margin-bottom: 0.1vw;
 }
 
+.order-back-data {
+    display: none;
+}
+
 .order-option-box {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    height: 2vh;
 }
 
 .order-option {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     border-radius: 0.5vw;
     color: white;
     background-color: chocolate;
-    margin: 0 0.3vw 0.1vh 0;
+    margin: 0 0.5vw 0.1vh 0;
     padding: 0.05vh 0.5vw;
+    text-align: center;
+    height: 3vh;
+    font-family: 'Gamja Flower', sans-serif;
+}
 
+.order-cold-option {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5vw;
+    color: white;
+    background-color: #56A8F5;
+    margin: 0 0.5vw 0.1vh 0;
+    padding: 0.05vh 0.5vw;
+    text-align: center;
+    height: 3vh;
+    font-family: 'Gamja Flower', sans-serif;
 }
 
 .order-item-close {
@@ -792,11 +886,13 @@ body {
     background-color: #fffff6;
     border: 3px solid #b7a27e;
     border-radius: 5px;
+    margin-right: 0.5vw;
 }
 
 
 .order-quantity-btn {
     font-size: 1.5vw !important;
+    font-weight: 600 !important;
     margin: 0 0.2vw;
 }
 
@@ -816,22 +912,1045 @@ body {
     display: none;
 }
 
+.order-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 93%;
+    height: 7vh;
+    font-size: 3vw;
+    font-weight: 600;
+    font-family: 'Dongle', sans-serif;
+}
+
+.order-total-quantity {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 85%;
+    width: 30%;
+    border: 0.4vw solid #9f681f;
+    border-radius: 1vw;
+    background-color: #fff5ee;
+    color: #462304;
+}
+
+.order-total-quantity-num {
+    text-align: center;
+}
+
+.order-total-pay-price {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 85%;
+    width: 60%;
+    border: 0.4vw solid #9f681f;
+    border-radius: 1vw;
+    background-color: #fff5ee;
+    color: #462304;
+}
 
 .order-pay-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 91%;
+    height: 12vh;
+    margin: 1.5vh 0; /* 빼면 이상해짐 */
+    font-family: 'Single Day', cursive;
+    color: white;
+}
+
+.order-delete-all {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 100%;
+    border: 0.7vw solid #ff8f36;
+    border-radius: 1vw;
+    background-color: #ffa724;
+    font-size: 2.2vw;
+    font-weight: 600;
+}
+
+.order-pay-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 1vw;
+    font-size: 4.5vw;
+    border: 5px solid #ca9067;
+    background-color: #adadad4d;
+    color: #b38d72;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: bold;
+    position: relative;
+    transition: all 0.4s;
+    overflow: hidden;
+}
+
+.order-pay-box.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 1vw;
+    font-size: 4.5vw;
+    border: 5px solid #d25500;
+    background-color: #ff9041;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: bold;
+    position: relative;
+    transition: all 0.4s;
+    overflow: hidden;
+
+}
+
+
+.pay-modal-overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 4;
+    left: 0;
+    top: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(1.5px);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.5s ease; /* 트랜지션 효과 추가 */
+}
+
+.pay-modal-window {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease; /* 트랜지션 효과 추가 */
+    transform: translateY(100%); /* 처음에는 아래로 숨겨져 있음 */
+    background: #ffffff;
+    border: 1vw solid #FFB13DFF;
+    border-radius: 2vw;
+    color: #4d2107;
+    font-weight: 600;
+    font-size: 3vw;
+    padding: 1vw 0;
+}
+
+.pay-modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 70vw;
+    height: 50vh;
+}
+
+.pay-modal-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 84%;
+    height: 15vh;
+    font-size: 5vw;
+    margin-left: 6vw;
+    border-bottom: 3px solid #c2c2c2;
+}
+
+.pay-modal-close {
+    font-size: 5vw !important;
+    font-weight: 600 !important;
+}
+
+.pay-modal-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 100%;
+}
+
+.pay-modal-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.cash-pay-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1vw;
+    background-color: #ff9800;
+    font-size: 4vw;
+    padding: 2vh 2vw;
+    width: 20vw;
+    height: 17vh;
+    color: white;
+}
+
+.point-pay-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* border: 0.7vw solid #ff8f36; */
+    border-radius: 1vw;
+    background-color: #ff7928;
+    font-size: 4vw;
+    padding: 2vh 2vw;
+    width: 20vw;
+    height: 17vh;
+    color: white;
+}
+
+.cash-modal-overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 4;
+    left: 0;
+    top: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(1.5px);
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease; /* 트랜지션 효과 추가 */
+}
+
+.cash-modal-window {
+    backdrop-filter: blur(13.5px);
+    border-radius: 2vw;
+    border: 1vw solid rgb(255, 177, 61);
+    padding: 2.5vw;
+    font-family: 'Gamja Flower', sans-serif;
+    font-weight: 600;
+    color: #4d2107;
+    font-size: 3vw;
+    width: 55vw;
+    position: relative;
+    background-color: white;
+    transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.cash-modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.cash-modal-order {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    font-size: 5vw;
+    padding-top: 2vh;
+    scale: 1.2;
+    transform: translateX(-4px);
+}
+
+.cash-modal-order-num {
+    font-size: 5vw;
+    scale: 1.5;
+    transform: translateY(-3%);
+    animation-name: heartbeat;
+    animation-duration: 1s;
+    animation-iteration-count: 3; /* 3번만 반복 */
+}
+
+.cash-modal-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+    font-size: 4vw;
+}
+
+.cash-waiting {
+    display: flex;
+    flex-direction: row;
+    margin: 3vh 0;
+    font-size: 5vw;
+}
+
+.cash-modal-complete {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+    height: 12vh;
+    border: 1vw solid #ee5700;
+    border-radius: 2vw;
+    background-color: #ff8034;
+    color: white;
+    font-size: 6vw;
+}
+
+.point-modal-overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 4;
+    left: 0;
+    top: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(1.5px);
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease; /* 트랜지션 효과 추가 */
+}
+
+.point-modal-window {
+    backdrop-filter: blur(13.5px);
+    border-radius: 2vw;
+    border: 1vw solid rgb(255, 177, 61);
+    padding: 2.5vw;
+    font-family: 'Gamja Flower', sans-serif;
+    font-weight: 600;
+    color: #4d2107;
+    font-size: 3vw;
+    position: relative;
+    background-color: white;
+    transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.point-modal-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+
+.point-modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.point-modal-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.4vh solid #b9b9b9;
+    width: 100%;
+    font-size: 5vw;
+    padding-bottom: 2vh;
+}
+
+.point-modal-header-message {
+    margin-left: 1vw;
+    opacity: 1;
+    font-family: none, fangsong;
+}
+
+
+.point-close-btn {
+    font-size: 6vw !important;
+}
+
+.potion-select-name {
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 4vw;
+    position: relative;
+}
+
+.point-select-box {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.point-select-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-bottom: 0.4vh solid #b9b9b9;
+    padding-bottom: 2vh;
+    margin-bottom: 4vh;
+}
+
+.point-select-message {
+    font-size: 4vw;
+}
+
+.point-select-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.point-select-close {
+    font-size: 5vw !important;
+    scale: 1.4;
+}
+
+#result {
+    font-size: 3.5vw;
+}
+
+.result-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 6vw;
+    border: 1vw solid rgb(255, 177, 61);
+    border-radius: 2vw;
+    padding: 2vh 1vw;
+    margin: 2vh 0;
+    width: 18vw;
+}
+
+.number-board {
+    flex-direction: column;
+    position: relative;
+    background-color: white;
+    transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.chsnOrder {
+    visibility: hidden;
+}
+
+.phone-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 38vw;
+    padding: 2vh 0 0 0;
+}
+
+.digit-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 7vw;
+    height: 7vw;
+    border: 0.6vw solid orange;
+    background-color: #fff3e3;
+    border-radius: 1vw;
+    font-size: 8vw;
+    color: chocolate;
+}
+
+.number-board-message {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
+    text-align: center;
+    color: #afafaf;
+    font-size: 2.2vw;
+    padding: 1vh 0;
+}
+
+
+.number-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 12vw);
+    grid-gap: 7px;
+}
+
+.number {
+    font-size: 3vw;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+    padding: 2vh 0;
+}
+
+.number:hover {
+    background-color: #f2f2f2;
+}
+
+.backspace {
+    font-size: 4vw !important;
+    scale: 2;
+    color: #5d5d5d;
+}
+
+#submitBtn {
+    display: none;
+}
+
+.point-pay {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.point-pay-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-bottom: 0.4vh solid #b9b9b9;
+    padding-bottom: 2vh;
+    margin-bottom: 2vh;
+}
+
+.point-pay-message {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 7vw;
-    margin: 1.5vw 0; /* 빼면 이상해짐 */
+    font-size: 4vw;
+    padding: 2vh;
 }
 
-.order-pay-box {
+.message-blank {
+    font-size: 5vw;
+}
+
+.point-pay-user {
+    font-size: 5vw;
+}
+
+.point-pay-close {
+    font-size: 5vw !important;
+}
+
+.point-pay-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     height: 100%;
-    margin: 0.7vw;
-    border: 0.7vw solid #ff8f36;
+}
+
+.point-pay-number {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 2vh;
+    padding-bottom: 2vh;
+    border-bottom: 0.2vw solid #a4a4a4;
+}
+
+.point-pay-current-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.point-pay-current-text {
+}
+
+.point-pay-width {
+    width: 12vw;
+    text-align: end;
+}
+
+.point-pay-charge-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.point-pay-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.point-pay-question {
+}
+
+.point-pay-select {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 55vw;
+}
+
+.point-pay-cancel {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     border-radius: 1vw;
-    background-color: #ffa724;
+    background-color: #ffab00;
+    border: 1vw solid #ff9a22;
+    font-size: 4vw;
+    padding: 2vh 2vw;
+    width: 12vw;
+    height: 5vh;
+    color: white;
+}
+
+.point-pay-settle {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1vw;
+    background-color: #ff7928;
+    border: 1vw solid #ee5700;
+    font-size: 4vw;
+    padding: 2vh 2vw;
+    width: 20vw;
+    height: 5vh;
+    color: white;
+}
+
+.point-add-content {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 50vw;
+}
+
+.point-add-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-bottom: 0.4vh solid #b9b9b9;
+    padding-bottom: 2vh;
+    margin-bottom: 4vh;
+    font-size: 6vw;
+}
+
+.point-add-title {
+}
+
+.point-add-close {
+    font-size: 6vw !important;
+}
+
+.point-add-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.point-add-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.point-add-counter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.point-add-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #a8a8a8;
+    width: 35vw;
+    height: 10vh;
+    border: solid 0.6vw #989898;
+    border-radius: 2vw;
+    font-size: 5vw;
+    margin-left: 3vw;
+    font-family: 'Dongle', sans-serif;
+}
+
+.point-add-input-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #a8a8a8;
+    border-bottom: 0.4vh solid #b9b9b9;
+    width: 100%;
+    height: 6vh;
+    font-size: 2.7vw;
+    font-weight: 300 !important;
+    padding-bottom: 1vh;
+    margin-bottom: 2vh;
+}
+
+.point-add-recommend {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 2vh;
+    width: 100%;
+}
+
+.point-add-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 2.5vw;
+    padding: 0 1vw;
+    height: 4vh;
+}
+
+.point-backspace {
+    font-size: 2.2vw !important;
+    scale: 3;
+}
+
+.천원 {
+    background-color: #fff2e0;
+    border: 0.7vw solid orange;
+    border-radius: 2vw;
+    color: #d96613;
+}
+
+.만원 {
+    background-color: #FFE9E0FF;
+    border: 0.7vw solid #dc5104;
+    border-radius: 2vw;
+    color: #9d361f;
+}
+
+.number-pad {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 5px;
+}
+
+.number-pad .btn {
+    flex: 1 0 calc(33.333% - 5px);
+    padding: 1vh 0;
+    font-size: 3.5vw;
+    cursor: pointer;
+    font-family: 'Gamja Flower', sans-serif;
+}
+
+.number-pad .point-del {
+    flex: 1 0 calc(33.333% - 5px);
+    padding: 1vh 0;
+    font-size: 3.5vw;
+    cursor: pointer;
+}
+
+.point-add-check {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 9vw;
+    height: 10vh;
+    /* border: 1vw solid #ee5700; */
+    border-radius: 2vw;
+    background-color: #ff8034;
+    color: white;
+    font-size: 3.5vw;
+}
+
+.point-manager-content {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 50vw;
+}
+
+.point-manager-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-bottom: 0.4vh solid #b9b9b9;
+    padding-bottom: 2vh;
+    margin-bottom: 2vh;
+    font-size: 6vw;
+}
+
+.point-manager-header-message {
+}
+
+.point-manager-close {
+    font-size: 6vw !important;
+}
+
+.point-manager-body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 5px;
+}
+
+.manager-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 1vw solid rgb(255, 177, 61);
+    border-radius: 2vw;
+    margin: 1vh 1vw;
+    width: 9vw;
+    flex: 1 0 calc(21% - 5px);
+    padding: 1vh 0;
+    font-size: 3.5vw;
+    cursor: pointer;
+}
+
+
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+
+.point-last {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.point-last-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 92%;
+    border-bottom: 0.4vh solid #b9b9b9;
+    padding: 3vh;
+    margin-bottom: 4vh;
+    font-size: 5vw;
+}
+
+.point-last-header-message {
+
+}
+
+.point-last-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    font-size: 3.5vw;
+    border-bottom: 0.4vh solid #b9b9b9;
+    padding-bottom: 4vh;
+    margin-bottom: 2vh;
+}
+
+.point-last-balance {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.point-last-balance-num {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 16vw;
+}
+
+.point-waiting {
+    display: flex;
+    flex-direction: row;
+    /*margin: 3vh 0;*/
+    font-size: 3.8vw;
+}
+
+.point-waiting-number {
+    scale: 1.1;
+}
+
+.point-recharge-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1vw;
+    background-color: #ffb328;
+    border: 0.5vw solid #ee8600;
+    font-size: 3vw;
+    padding: 2vh 2vw;
+    width: 5vw;
+    height: 2vh;
+    color: white;
+}
+
+.point-last-check {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1vw;
+    background-color: #ff7928;
+    border: 1vw solid #ee5700;
+    font-size: 5vw;
+    padding: 2vh 2vw;
+    width: 15vw;
+    height: 6vh;
+    color: white;
+}
+
+.point-complete-content {
+    display: none;
+}
+
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+
+
+/*이놈들을 가장 마지막에 있어야 모달들이 적용이 된다! (* 우선순위땜시)*/
+.overlay-show {
+    opacity: 1; /* 클래스가 추가되면 투명도를 1로 변경 */
+}
+
+.window-show {
+    opacity: 1; /* 클래스가 추가되면 투명도를 1로 변경 */
+    transform: translateY(0); /* 클래스가 추가되면 위로 나타남 */
 }

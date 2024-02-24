@@ -2,6 +2,8 @@
 <html translate="no" lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
     <title>Title</title>
 
     {% load static %}
@@ -28,9 +30,9 @@
 <div class="app-container">
     <nav class="navbar">
         <div class="logo-section">
-            <span class="nav_item">상품</span>
-            <span class="nav_item">주문 내역</span>
-            <span class="nav_item">마이페이지</span>
+            <a class="nav_item pick" href="/">상품</a>
+            <a  class="nav_item" href="/OrderData">주문 내역</a>
+            <a class="nav_item"  href="/manager">마이페이지</a>
         </div>
         <div class="nav-left">
             <div class="date-time-section">{{ today|date:"Y.m.d" }}</div>
@@ -42,14 +44,14 @@
         <div class="kategoria-left">기본 카테고리</div>
         <div class="kategoria-row">
             {%for category in categorys%}
-            <div class="kategoria-item not-selected" onclick="scrollToCategory('{{ category }}'); toggleClass(this)">
+            <div class="kategoria-item not-selected" onclick="scrollToCategory('{{ category }}')">
                 {{category}}
             </div>
             {% endfor %}
         </div>
     </div>
     <div class="menu-main">
-        <div class="menu-box">
+        <div class="menu-box" id="ktgr">
             {% for category in categorys %}
             <div class="menu-body">
                 <div class="menu-kategoria-box">
@@ -63,7 +65,7 @@
                     {% for cafemenu in cafemenus %}
                     {% if cafemenu.category == category %}
                     <div class="menu-item"
-                         onclick="openModal('{{ cafemenu.id }}', '{{ cafemenu.category }}', '{{ cafemenu.name }}', '{{ cafemenu.en }}', '{{ cafemenu.price }}', '{{ cafemenu.img }}', '{{ cafemenu.deg }}', '{{ cafemenu.options }}');">
+                         onclick="openModal('{{ cafemenu.id }}', '{{ cafemenu.category }}', '{{ cafemenu.name }}', '{{ cafemenu.en }}', '{{ cafemenu.price }}', '{{ cafemenu.img }}', '{{ cafemenu.deg }}', '{{ cafemenu.deg_num }}' , '{{ cafemenu.shot }}');">
                         <img class="menu-image" src="{{ cafemenu.img }}">
                         <div class="menu-card-body">
                             <div class="menu_name">
@@ -87,14 +89,14 @@
                                                 {{ cafemenu.name }}
                                             </div>
                                             <div class="madal-menu-total">
-                                                <div class="modal-menu-price price-{{ cafemenu.en }}-{{cafemenu.category}}">
+                                                <div class="modal-menu-price {{ cafemenu.en }} {{cafemenu.category}}">
                                                     <!--메뉴 가격이 들어감-->
                                                     {{ cafemenu.price }}원
                                                 </div>
                                                 <div class="modal-menu-item-counter">
-                                            <span class="material-symbols-outlined modal-menu-quantity-btn"
-                                                  onclick="decreaseQuantity('{{ cafemenu.en }}','{{ cafemenu.category }}','{{ cafemenu.price }}')">remove</span>
-                                                    <div class="modal-menu-quantity {{ cafemenu.en }}-{{cafemenu.category}}">
+                                                    <span class="material-symbols-outlined modal-menu-quantity-btn"
+                                                          onclick="decreaseQuantity('{{ cafemenu.en }}','{{ cafemenu.category }}','{{ cafemenu.price }}')">remove</span>
+                                                    <div class="modal-menu-quantity {{ cafemenu.en }} {{cafemenu.category}}">
                                                         <!--메뉴 수량이 들어감-->
                                                         1
                                                     </div>
@@ -103,6 +105,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="chsnOrder"></div>
                                     </div>
                                     <div class="modal-right">
                                         <div class="modal-option-container">
@@ -116,15 +119,15 @@
                                                 {% for option_name in cafemenu.options.split %}
                                                 <div class="modal-option-line">
                                                     <div class="modal-option">{{ option_name }}</div>
-                                                    <div class="modal-option-items">
+                                                    <div class="modal-option-items {{ option_name }}">
                                                         {% for options in cafeoption %}
                                                         {% if options.option == option_name %}
-                                                        {% if option_name == "아이스크림" or option_name == "설탕시럽" or option_name == "바닐라시럽" or option_name == "카라멜시럽" %}
+                                                        {% if option_name in "아이스크림 설탕시럽 바닐라시럽 카라멜시럽" %}
                                                         <div class="modal-option-item-counter">
                                                             <span class="material-symbols-outlined modal-option-quantity-btn"
                                                                   onclick="decreaseQuantity('{{ cafemenu.en }}','{{option_name}}')">remove</span>
-                                                            <div class="modal-option-quantity {{ cafemenu.en }}-{{option_name}}">
-                                                                <!--메뉴 수량이 들어감-->
+                                                            <div class="modal-option-quantity {{ cafemenu.en }} {{option_name}}">
+                                                                <!--옥션 펌프 수량이 들어감-->
                                                                 {{options.option_item}}
                                                             </div>
                                                             <span class="material-symbols-outlined modal-option-quantity-btn"
@@ -147,12 +150,12 @@
                                 </div>
                                 <div class="modal-bottom">
                                     <div class="modal-cancle"
-                                         onclick="closeModal('{{ cafemenu.id }}', '{{ cafemenu.category }}', '{{ cafemenu.name }}', '{{ cafemenu.en }}', '{{ cafemenu.price }}', '{{ cafemenu.img }}', '{{ cafemenu.deg }}', '{{ cafemenu.options }}');">
+                                         onclick="closeModal('{{ cafemenu.id }}', '{{ cafemenu.category }}', '{{ cafemenu.name }}', '{{ cafemenu.en }}', '{{ cafemenu.price }}', '{{ cafemenu.img }}', '{{ cafemenu.deg }}', '{{ cafemenu.deg_num }}' , '{{ cafemenu.shot }}');">
                                         이전
                                     </div>
                                     <div class="modal-order-complete"
-                                         onclick="orderAdd('{{ cafemenu.id }}', '{{ cafemenu.category }}', '{{ cafemenu.name }}', '{{ cafemenu.en }}', '{{ cafemenu.price }}', '{{ cafemenu.img }}', '{{ cafemenu.deg }}', '{{ cafemenu.options }}');
-                                                  closeModal('{{ cafemenu.id }}', '{{ cafemenu.category }}', '{{ cafemenu.name }}', '{{ cafemenu.en }}', '{{ cafemenu.price }}', '{{ cafemenu.img }}', '{{ cafemenu.deg }}', '{{ cafemenu.options }}');
+                                         onclick="orderAdd('{{ cafemenu.id }}', '{{ cafemenu.category }}', '{{ cafemenu.name }}', '{{ cafemenu.en }}', '{{ cafemenu.price }}', '{{ cafemenu.img }}', '{{ cafemenu.deg }}', '{{ cafemenu.deg_num }}' , '{{ cafemenu.shot }}', this);
+                                                  closeModal('{{ cafemenu.id }}', '{{ cafemenu.category }}', '{{ cafemenu.name }}', '{{ cafemenu.en }}', '{{ cafemenu.price }}', '{{ cafemenu.img }}', '{{ cafemenu.deg }}', '{{ cafemenu.deg_num }}' , '{{ cafemenu.shot }}');
                                                    ">주문담기
                                     </div>
                                 </div>
@@ -172,23 +175,283 @@
 
 
 <div class="order-section">
+    <div class="order-header-cushion"></div>
     <div class="order-header">
         <div class="order-header-left">
             주문 내역
         </div>
-        <div class="order-total">
-            <div>합계:</div>
-            <div class="order-total-num">0</div>
-            <div>잔</div>
+        <div class="order-reset-btn">
+            <div class="order-reset" onclick="orderAllDelete()">메뉴 초기화</div>
+            <span class="order-reset-icon material-symbols-outlined">delete</span>
         </div>
     </div>
-    <div id="order-container" class="order-container">
-        <!--통채로 div태그가 들어갈곳!-->
+    <div class="order-body">
+        <div id="order-container" class="order-container">
+            <!--통채로 div태그가 들어갈곳!-->
+        </div>
+    </div>
+    <div class="order-footer">
+        <div class="order-total-quantity">
+            <div>총: &nbsp;</div>
+            <div class="order-total-quantity-num">0</div>
+            <div>잔</div>
+        </div>
+        <div class="order-total-pay-price">
+            <div class="order-total-pay-price-num">주문 부탁드립니다^^</div>
+        </div>
     </div>
     <div class="order-pay-container">
-        <div class="order-pay-box">페이지 박스</div>
+        <div class="order-pay-box" onclick="openPayModal()"> 결제하기</div>
     </div>
 </div>
+
+<div id="pay-modal" class="pay-modal-overlay">
+    <div class="pay-modal-window">
+        <div class="pay-modal-content">
+            <div class="pay-modal-top">
+                <div class="pay-modal-title">
+                    <div>결제방식</div>
+                    <span class="material-symbols-outlined point-select-close" onclick="closePayModal()">disabled_by_default</span>
+                </div>
+            </div>
+            <div class="pay-modal-bottom">
+                <div class="cash-pay-btn" onclick="openCashModal();">현금결제</div>
+                <div class="point-pay-btn" onclick="openPointModal()">포인트결제</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="cash-modal" class="cash-modal-overlay">
+    <div class="cash-modal-window">
+        <div class="cash-modal-content">
+            <div class="cash-modal-order">
+                * 주문번호 :&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="cash-modal-order-num">
+                </div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+            </div>
+            <div class="cash-modal-message">
+                <div>주문이 완료되었습니다.</div>
+                <div>카운터에서 결제해주세요^^</div>
+                <div class="cash-waiting">
+                    ( 대기인원&nbsp;:&nbsp;&nbsp;
+                    <div class="cash-waiting-number">
+                        {{ waiting_count }}
+                    </div>
+                    &nbsp;&nbsp;팀 )
+                </div>
+            </div>
+            <div class="cash-modal-complete" onclick="closeCashModal()">
+                확인
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="point-modal" class="point-modal-overlay">
+    <div class="point-modal-window">
+        <div class="point-modal-body">
+            <div class="point-modal-content">
+                <div class="point-modal-header">
+                    <div class="point-modal-header-message">
+                        회원번호
+                    </div>
+                    <div class="material-symbols-outlined point-close-btn" onclick="closePointModal()">
+                        disabled_by_default
+                    </div>
+                </div>
+
+                <div class="number-board">
+                    <div class="phone-input">
+                        <div class="digit-input" id="digit1" readonly></div>
+                        <div class="digit-input" id="digit2" readonly></div>
+                        <div class="digit-input" id="digit3" readonly></div>
+                        <div class="digit-input" id="digit4" readonly></div>
+                    </div>
+                    <div id="result-container" class="number-board-message"> * 초기번호: 전화번호 뒷자리 *</div>
+                    <div class="number-buttons">
+                        <button class="number" onclick="appendNumber('1')">1</button>
+                        <button class="number" onclick="appendNumber('2')">2</button>
+                        <button class="number" onclick="appendNumber('3')">3</button>
+                        <button class="number" onclick="appendNumber('4')">4</button>
+                        <button class="number" onclick="appendNumber('5')">5</button>
+                        <button class="number" onclick="appendNumber('6')">6</button>
+                        <button class="number" onclick="appendNumber('7')">7</button>
+                        <button class="number" onclick="appendNumber('8')">8</button>
+                        <button class="number" onclick="appendNumber('9')">9</button>
+                        <button class="clear-btn" onclick="clearPhoneNumber()">전체 지움</button>
+                        <button class="number" onclick="appendNumber('0')">0</button>
+                        <button class="remove-btn" onclick="removeNumber()">
+                            <span class="material-symbols-outlined backspace">backspace</span>
+                        </button>
+                    </div>
+                    <button id="submitBtn" disabled>Submit</button>
+                </div>
+                <div class="point-select-box">
+                    <div class="point-select-header">
+                        <div class="point-select-message">본인 이름을 클릭하여 주세요^^</div>
+                        <span class="material-symbols-outlined point-select-close"
+                              onclick="closeNameSelectModal()">disabled_by_default</span>
+                    </div>
+                    <div class="point-select-name"></div>
+                </div>
+
+
+                <div class="point-pay">
+                    <div class="point-pay-header">
+                        <div class="point-pay-message">
+                            <div class="message-blank">[&nbsp;</div>
+                            <div class="point-pay-user">
+                                <!--db에서 이름을 가져옴-->
+                            </div>
+                            <div class="message-blank">&nbsp;]</div>
+                            <div class="point-pay-user-text">
+                                <!--js에서 쏴줄 예정-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="point-pay-content">
+                        <div class="point-pay-number">
+                            <div class="point-pay-current-box">
+                                <div class="point-pay-current-text">
+                                    잔여 금액
+                                </div>
+                                <div class="point-pay-current-point point-pay-width">
+                                    <!--db에서 잔고 금액을 가져옴-->
+                                </div>
+                            </div>
+                            <div class="point-pay-charge-box">
+                                <div class="point-pay-charge-text">
+                                    결제 금액
+                                </div>
+                                <div class="point-pay-charge-point point-pay-width">
+                                    <!--총 결제 금액을 가져옴-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="point-pay-box">
+                        </div>
+                        <div class="point-pay-select">
+                            <div class="point-pay-cancel" onclick="backPayment()">
+                                이전
+                            </div>
+                            <!-- js애서 onclick부여 하니 괜찮음-->
+                            <div class="point-pay-settle">
+                                <!-- 결제하기 or 충전하기 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="point-add-content">
+                    <div class="point-add-header">
+                        <div class="point-add-title">포인트_충전</div>
+                        <span class="material-symbols-outlined point-add-close" onclick="pointAddClose()">disabled_by_default</span>
+                    </div>
+                    <div class="point-add-box">
+                        <div class="point-add-top">
+                            <div class="point-add-counter">
+                                <div class="point-add-input">
+                                    얼마를 충전 할까요?
+                                </div>
+                                <div class="point-add-check">
+                                    확인
+                                </div>
+                            </div>
+                            <div class="point-add-input-footer">
+                                잔액:&nbsp;
+                                <div class="point-add-currentPoint">
+                                    4000
+                                </div>
+                                원 / 결제금액:&nbsp;
+                                <div class="point-add-totalPayPoint">
+                                    4000
+                                </div>
+                                원
+                            </div>
+                        </div>
+
+                        <div class="point-add-recommend">
+                            <div class="point-add-btn 천원" onclick="pointPushBtn(this)">+&nbsp;1천</div>
+                            <div class="point-add-btn 천원" onclick="pointPushBtn(this)">+&nbsp;5천</div>
+                            <div class="point-add-btn 만원" onclick="pointPushBtn(this)">+&nbsp;1만</div>
+                            <div class="point-add-btn 만원" onclick="pointPushBtn(this)">+&nbsp;5만</div>
+                        </div>
+                        <div class="number-pad">
+                            <button class="btn">1</button>
+                            <button class="btn">2</button>
+                            <button class="btn">3</button>
+                            <button class="btn">4</button>
+                            <button class="btn">5</button>
+                            <button class="btn">6</button>
+                            <button class="btn">7</button>
+                            <button class="btn">8</button>
+                            <button class="btn">9</button>
+                            <button class="btn">00</button>
+                            <button class="btn">0</button>
+                            <button class="point-del" onclick="pointAddBackSpace()">
+                                <span class="material-symbols-outlined point-backspace">backspace</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="point-manager-content">
+                    <div class="point-manager-header">
+                        <div class="point-manager-header-message">
+                            담당 카페지기
+                        </div>
+                        <span class="material-symbols-outlined point-manager-close">disabled_by_default</span>
+                    </div>
+                    <div class="point-manager-body">
+                        {% for manager_data in manager_list %}
+                        <div class="manager-name">{{ manager_data.name }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+
+                <div class="point-last">
+                    <div class="point-last-header">
+                        <div class="point-last-header-message">주문이 완료되었습니다!</div>
+                        <div class="point-waiting">
+                            [ 대기인원&nbsp;:&nbsp;&nbsp;
+                            <div class="point-waiting-number">
+                                <!-- db에서 데이터를 가져올 예정-->
+                            </div>
+                            &nbsp;&nbsp;팀 ]
+                        </div>
+                    </div>
+                    <div class="point-last-content">
+                        <div class="point-last-balance-text">
+                            잔액:
+                        </div>
+                        <div class="point-last-balance">
+                            <div class="point-last-balance-num">
+                                <!--잔액이 계산되서 출력될 예정-->
+                            </div>
+                            <div class="point-recharge-btn">
+                                충전
+                            </div>
+                        </div>
+                    </div>
+                    <div class="point-last-check" onclick="payEnd()">
+                        확인
+                    </div>
+                </div>
+
+                <div class="point-complete-content">
+                    <div> 테스트중 </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
 </body>
 </html>
 

@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+:root {
+    --font-googleTitan_One: 'Titan_One', cursive;
+    --font-googleNanum_Pen_Script: 'Nanum_Pen_Script', cursive;
+    --font-googleSingle_Day: 'Single_Day', cursive;
+    --font-googleGamja_Flower: 'Gamja_Flower', cursive;
+    --font-googleDongle-Bold: 'Dongle-Bold', cursive;
+    --font-googleDongle-Light: 'Dongle-Bold', cursive;
+    --font-googleDongle-Regular: 'Dongle-Bold', cursive;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+body {
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 7vh;
+    background-color: #ff962d;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.nav_item {
+    margin-left: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.pick {
+    padding-bottom: 0.2vh;
+    border-bottom: 0.2vw solid #e34a1c;
+}
+
+.nav-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.date-time-section {
+    font-size: 2.3vw;
+    font-weight: bold;
+    color: white;
+    margin-right: 6vw;
+    font-family: 'Dongle', sans-serif;
+    scale: 2
+}
+
+
+.date-time-section {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+
+.order-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: #ffdba5;
+}
+
+.order-container {
+    position: absolute;
+    top: 7vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 90vw;
+    height: 100%;
+}
+
+.order-header {;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0.5rem 0;
+}
+
+.order-header-left {
+    color: #cc6351;
+    width: 10vw;
+    font-size: 3vw;
+    font-family: 'Dongle', sans-serif;
+    scale: 2;
+    margin-left: 7vw;
+}
+
+.order-header-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-radio {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2vw;
+    font-family: 'Gamja Flower', sans-serif;
+}
+
+.order-status {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.5vw;
+    border: 0.4vw solid #9f681f;
+    margin: 0 0.5vw;
+    border-radius: 1vw;
+    background-color: #fff0d3;
+    color: #462304;
+}
+
+.order-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 42vw;
+}
+
+.order-input-select {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 0.4vw solid #9f681f;
+    border-radius: 1vw;
+    background-color: #fff5ee;
+    color: #462304;
+    padding: 0 1vw;
+    font-size: 3vw;
+    height: 4vw;
+    font-family: 'Gamja Flower', sans-serif;
+    font-weight: 600;
+    width: 18vw;
+}
+
+.name {
+    text-align: center;
+    width: 11vw;
+    font-size: 2.5vw;
+}
+
+.order-search {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vw;
+    border: 0.5vw solid #de951f;
+    border-radius: .7vw;
+    background-color: #efb866;
+    text-align: center;
+    font-family: 'Nanum Pen Script', cursive;
+    padding: 0 1vw;
+}
+
+.order-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: stretch;
+    width: 100%;
+    height: 75vh;
+    border: 0.4vw solid #9f681f;
+    border-radius: 1vw;
+    background-color: #fff5ee;
+    font-family: 'Dongle', sans-serif;
+    overflow-y: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: black;
+}
+
+thead {
+    height: 5vh;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    background-color: #ffd2c0;
+    z-index: 1;
+    font-family: 'Gamja Flower', sans-serif;
+    font-size: 2vw;
+    color: #af300e;
+}
+
+th, td {
+    text-align: center;
+    padding: 8px;
+    border-bottom: 1px solid #ff0000;
+    font-size: 2vw;
+    font-weight: 600;
+    font-family: "Gowun Dodum", sans-serif;
+    font-style: normal;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+td:not(:last-child) {
+    border-right: 1px solid #ff9c9c;
+}
+
+.order-id-column {
+    display: none;
+}
+
+tr {
+    width: 100%;
+}
+
+/* 테이블 헤더 셀의 너비 지정 */
+.order-status-column {
+    width: 15% !important; /* 주문 상태 컬럼의 너비 */
+}
+
+.order-name-column {
+    width: 15% !important; /* 주문자 컬럼의 너비 */
+}
+
+.total-quantity-column {
+    width: 15% !important; /* 총 수량 컬럼의 너비 */
+}
+
+/* 테이블 데이터 셀의 너비 지정 */
+.total-price-column {
+    width: 20% !important; /* 결제 가격 컬럼의 너비 */
+}
+
+.modified-at-column {
+    width: 25% !important; /* 결제 시간 컬럼의 너비 */
+}
+
+.order-etc {
+    width: 10% !important; /* 결제 시간 컬럼의 너비 */
+}
+
+.delete {
+    font-size: 1.5vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid #ec5f00;
+    border-radius: 0.5vw;
+    background-color: #ff9041;
+    color: #ffffff;
+    padding: 0.5vh 0.1vw;
+    font-weight: bold;
+    transition: all 0.4s;
+    height: 1.5vw;
+}
+
+
+.complete {
+    font-size: 1.5vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid #ca9067;
+    border-radius: 0.5vw;
+    background-color: #d1c8bf;
+    color: #b38d72;
+    padding: 0.5vh 0;
+    font-weight: bold;
+    transition: all 0.4s;
+    height: 1.5vw;
+}
+/*.이게 그 반응형 css야 media라고 표기하고 조건값을 작성하면 그 {} 조건에 맞게 css가 따로 적용된다!
+그래서 아마 주문내역을 보면 새로와 가로의 css를 따로 볼 수 있다! 이해했나.
+예알겠슴다!!!
+조아! 나는 밥을 묵어라 가야하므로 ! 이따가 질문이 있으면 카톡을 남겨두도록 아마도 겁나 어려울것이다!
+나도 해본적이 없어서 ㅠㅠ 이따봐요~!!!! 화이팅!!!!!*/
+@media (max-width: 480px) {
+    /* iPhone 12 Pro */
+    .nav_item {
+        margin-left: 20px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .order-input-select {
+        height: 2.5vh;
+        width: 20vw;
+        font-size: 0.75rem;
+    }
+
+    .order-search {
+        height: 2.5vh;
+    }
+
+    .order-radio {
+        font-size: 4vw;
+        flex: 1 0 140px;
+        margin-bottom: 0.5vh;
+    }
+
+    .order-header-right {
+        flex-wrap: wrap;
+        width: 52vw;
+    }
+
+    .order-status {
+        width: 15vw;
+        margin: 0;
+    }
+
+    .order-input {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .name {
+        width: 17vw;
+    }
+
+    .order-header-left {
+        scale: 3.5;
+        margin-left: 16vw;
+    }
+
+    th, td {
+        padding: 8px 0;
+        font-size: 3vw;
+    }
+
+    thead th {
+        font-size: 4vw;
+    }
+
+    .delete {
+        border: 0.4vw solid #ec5f00;
+        border-radius: 1vw;
+        margin: 0 0.5vw;
+    }
+
+    .date-time-section {
+        scale: 3;
+        font-size: 2.3vw;
+        margin-right: 10vw;
+    }
+}
