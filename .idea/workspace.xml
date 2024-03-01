@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="564414b1-3150-4499-964a-162e1b210395" name="변경" comment="민서바보">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/Jraum_(django).ppk" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/templates/main/point_request.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -12,6 +13,9 @@
       <change beforePath="$PROJECT_DIR$/JraumKiosk/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/JraumKiosk/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views.py" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> parent of b2472bb (첫번째 배포진행하는중)
     </list>
     <list id="7fc4207b-5696-4bc3-bdd7-650e0d9aa81a" name="LG 님이 변경한 내용" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -188,7 +192,7 @@
       <workItem from="1708317622266" duration="17192000" />
       <workItem from="1708396897638" duration="19017000" />
       <workItem from="1708430284051" duration="120785000" />
-      <workItem from="1709095456663" duration="58409000" />
+      <workItem from="1709095456663" duration="58828000" />
     </task>
     <task id="LOCAL-00001" summary="민서바보">
       <option name="closed" value="true" />

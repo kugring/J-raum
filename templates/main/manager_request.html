@@ -1,0 +1,29 @@
+{% for list in menu_list %}
+            <tr>
+                <td class="menu-id">{{ list.id }}</td>
+                <td>
+                    <input type="text" class="menu-category" value="{{ list.category }}">
+                </td>
+                <td>
+                    <input type="text" class="menu-name" value="{{ list.name }}">
+                </td>
+                <td>
+                    <input type="text" class="menu-price" value="{{ list.price }}">
+                </td>
+                <td>
+                    <input type="text" class="menu-shot" value="{{ list.shot }}">
+                </td>
+                <td>
+                    <input type="text" class="menu-options" value="{{ list.options }}">
+                </td>
+                <td>
+                    <input type="text" class="menu-img" value="{{ list.img }}">
+                </td>
+                <td>
+                    <input type="text" class="menu-deg" value="{{ list.deg }}">
+                </td>
+                <td>
+                    <button class="menu-update" onclick="updateMenu(this)">저장</button>
+                </td>
+            </tr>
+            {% endfor %}
