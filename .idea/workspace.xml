@@ -5,9 +5,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="564414b1-3150-4499-964a-162e1b210395" name="변경" comment="민서바보">
+      <change afterPath="$PROJECT_DIR$/main/migrations/0028_rename_client_data_pointlist_charge_status_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/migrations/0029_pointlist_password.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/migrations/0030_orderlist_phone_number.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/client_list/client_list.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/client_list/client_list.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/menu_list/menu_list.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/menu_list/menu_list.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/main/client_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/main/manager_request.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/main/menu_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/main/point_request.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/37bc80ec-7416-4e4a-bf2a-d83ed9aabe81.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/37bc80ec-7416-4e4a-bf2a-d83ed9aabe81.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b763209b-097a-40ac-b186-912c01692b4b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b763209b-097a-40ac-b186-912c01692b4b.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JraumKiosk/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/JraumKiosk/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/main/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/main/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/manager/manager.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/manager/manager.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/manager/manager.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/manager/manager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/order_data/order_data.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/order_data/order_data.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/order_data/order_data.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/order_data/order_data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/point/point.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/point/point.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/point/point.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/point/point.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/manager.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/manager.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/order_data.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/order_data.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/point.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/point.html" afterDir="false" />
     </list>
-    <list id="7fc4207b-5696-4bc3-bdd7-650e0d9aa81a" name="LG 님이 변경한 내용" comment="" />
+    <list id="7fc4207b-5696-4bc3-bdd7-650e0d9aa81a" name="LG 님이 변경한 내용" comment="">
+      <change beforePath="$PROJECT_DIR$/static/main/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/manager.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/manager.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,6 +73,245 @@
         <option name="url" value="https://github.com/kugring/J-raum.git" />
       </UrlAndAccount>
     </option>
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/templates/main/manager.html">
+      <ranges>
+        <range start1="48" end1="50" start2="48" end2="50" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="51" end1="52" start2="51" end2="51" changelist="7fc4207b-5696-4bc3-bdd7-650e0d9aa81a" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/templates/main/main.html">
+      <ranges>
+        <range start1="7" end1="7" start2="7" end2="8" changelist="7fc4207b-5696-4bc3-bdd7-650e0d9aa81a" />
+        <range start1="29" end1="40" start2="30" end2="42" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="42" end1="204" start2="44" end2="206" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="205" end1="205" start2="207" end2="208" changelist="7fc4207b-5696-4bc3-bdd7-650e0d9aa81a" />
+        <range start1="237" end1="238" start2="240" end2="241" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="241" end1="242" start2="244" end2="245" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="349" end1="350" start2="352" end2="353" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="402" end1="403" start2="405" end2="406" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="404" end1="405" start2="407" end2="407" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="406" end1="410" start2="408" end2="411" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="411" end1="411" start2="412" end2="413" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="444" end1="445" start2="446" end2="447" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="456" end1="458" start2="458" end2="458" changelist="564414b1-3150-4499-964a-162e1b210395" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/static/main/main.css">
+      <ranges>
+        <range start1="25" end1="26" start2="25" end2="25" changelist="7fc4207b-5696-4bc3-bdd7-650e0d9aa81a" />
+        <range start1="27" end1="29" start2="26" end2="2031" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="30" end1="42" start2="2032" end2="2044" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="43" end1="50" start2="2045" end2="2052" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="51" end1="55" start2="2053" end2="2057" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="56" end1="62" start2="2058" end2="2064" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="63" end1="71" start2="2065" end2="2073" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="73" end1="78" start2="2075" end2="2080" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="80" end1="96" start2="2082" end2="2098" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="97" end1="100" start2="2099" end2="2102" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="101" end1="107" start2="2103" end2="2109" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="108" end1="117" start2="2110" end2="2119" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="118" end1="123" start2="2120" end2="2125" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="124" end1="128" start2="2126" end2="2130" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="129" end1="142" start2="2131" end2="2144" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="143" end1="146" start2="2145" end2="2148" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="147" end1="151" start2="2149" end2="2153" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="152" end1="154" start2="2154" end2="2156" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="155" end1="165" start2="2157" end2="2167" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="166" end1="172" start2="2168" end2="2174" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="173" end1="181" start2="2175" end2="2183" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="182" end1="191" start2="2184" end2="2193" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="192" end1="195" start2="2194" end2="2197" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="196" end1="203" start2="2198" end2="2205" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="204" end1="209" start2="2206" end2="2211" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="210" end1="214" start2="2212" end2="2216" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="215" end1="231" start2="2217" end2="2233" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="232" end1="248" start2="2234" end2="2250" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="250" end1="255" start2="2252" end2="2257" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="256" end1="262" start2="2258" end2="2264" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="263" end1="270" start2="2265" end2="2272" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="271" end1="279" start2="2273" end2="2281" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="280" end1="288" start2="2282" end2="2290" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="289" end1="291" start2="2291" end2="2293" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="293" end1="300" start2="2295" end2="2302" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="301" end1="305" start2="2303" end2="2307" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="306" end1="315" start2="2308" end2="2317" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="316" end1="324" start2="2318" end2="2326" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="325" end1="333" start2="2327" end2="2335" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="334" end1="342" start2="2336" end2="2344" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="343" end1="353" start2="2345" end2="2355" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="354" end1="361" start2="2356" end2="2363" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="362" end1="370" start2="2364" end2="2372" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="371" end1="376" start2="2373" end2="2378" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="377" end1="380" start2="2379" end2="2382" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="381" end1="390" start2="2383" end2="2392" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="391" end1="398" start2="2393" end2="2400" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="399" end1="406" start2="2401" end2="2408" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="407" end1="422" start2="2409" end2="2424" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="423" end1="429" start2="2425" end2="2431" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="430" end1="436" start2="2432" end2="2438" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="437" end1="444" start2="2439" end2="2446" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="445" end1="448" start2="2447" end2="2450" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="449" end1="457" start2="2451" end2="2459" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="458" end1="464" start2="2460" end2="2466" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="465" end1="475" start2="2467" end2="2486" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="477" end1="485" start2="2488" end2="2496" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="486" end1="491" start2="2497" end2="2502" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="492" end1="503" start2="2503" end2="2516" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="504" end1="515" start2="2517" end2="2530" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="516" end1="528" start2="2531" end2="2543" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="529" end1="532" start2="2544" end2="2547" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="533" end1="543" start2="2548" end2="2558" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="544" end1="551" start2="2559" end2="2566" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="552" end1="565" start2="2567" end2="2581" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="566" end1="569" start2="2582" end2="2586" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="570" end1="572" start2="2587" end2="2589" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="573" end1="588" start2="2590" end2="2605" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="589" end1="590" start2="2606" end2="2607" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="591" end1="592" start2="2608" end2="2609" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="593" end1="599" start2="2610" end2="2616" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="600" end1="608" start2="2617" end2="2625" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="609" end1="616" start2="2626" end2="2633" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="617" end1="631" start2="2634" end2="2648" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="632" end1="646" start2="2649" end2="2663" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="647" end1="661" start2="2664" end2="2678" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="662" end1="669" start2="2679" end2="2686" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="670" end1="680" start2="2687" end2="2697" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="681" end1="691" start2="2698" end2="2708" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="692" end1="702" start2="2709" end2="2719" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="703" end1="713" start2="2720" end2="2730" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="714" end1="722" start2="2731" end2="2739" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="723" end1="730" start2="2740" end2="2747" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="731" end1="737" start2="2748" end2="2754" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="738" end1="746" start2="2755" end2="2763" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="747" end1="752" start2="2764" end2="2769" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="753" end1="758" start2="2770" end2="2775" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="759" end1="765" start2="2776" end2="2782" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="766" end1="769" start2="2783" end2="2786" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="770" end1="776" start2="2787" end2="2793" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="777" end1="791" start2="2794" end2="2808" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="792" end1="806" start2="2809" end2="2823" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="807" end1="817" start2="2824" end2="2834" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="818" end1="825" start2="2835" end2="2842" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="826" end1="830" start2="2843" end2="2847" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="831" end1="837" start2="2848" end2="2854" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="838" end1="845" start2="2855" end2="2862" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="846" end1="852" start2="2863" end2="2869" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="854" end1="866" start2="2871" end2="2883" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="867" end1="878" start2="2884" end2="2895" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="880" end1="890" start2="2897" end2="2907" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="892" end1="897" start2="2909" end2="2914" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="898" end1="909" start2="2915" end2="2926" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="910" end1="913" start2="2927" end2="2930" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="914" end1="925" start2="2931" end2="2942" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="926" end1="938" start2="2943" end2="2955" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="939" end1="942" start2="2956" end2="2959" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="943" end1="955" start2="2960" end2="2972" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="956" end1="967" start2="2973" end2="2984" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="968" end1="981" start2="2985" end2="2998" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="982" end1="1001" start2="2999" end2="3018" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1002" end1="1020" start2="3019" end2="3037" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1021" end1="1022" start2="3038" end2="3039" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1023" end1="1040" start2="3040" end2="3056" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1041" end1="1054" start2="3057" end2="3070" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1055" end1="1063" start2="3071" end2="3079" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1064" end1="1075" start2="3080" end2="3091" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1076" end1="1080" start2="3092" end2="3096" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1081" end1="1088" start2="3097" end2="3104" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1089" end1="1097" start2="3105" end2="3113" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1098" end1="1111" start2="3114" end2="3127" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1112" end1="1126" start2="3128" end2="3142" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1127" end1="1144" start2="3143" end2="3160" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1145" end1="1159" start2="3161" end2="3175" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1160" end1="1168" start2="3176" end2="3184" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1169" end1="1181" start2="3185" end2="3197" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1182" end1="1190" start2="3198" end2="3206" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1191" end1="1199" start2="3207" end2="3215" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1200" end1="1206" start2="3216" end2="3222" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1207" end1="1220" start2="3223" end2="3236" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1221" end1="1237" start2="3237" end2="3253" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1238" end1="1251" start2="3254" end2="3267" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1252" end1="1260" start2="3268" end2="3276" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1262" end1="1270" start2="3278" end2="3286" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1271" end1="1281" start2="3287" end2="3297" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1282" end1="1287" start2="3298" end2="3303" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1289" end1="1292" start2="3305" end2="3308" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1293" end1="1302" start2="3309" end2="3318" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1303" end1="1311" start2="3319" end2="3327" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1312" end1="1322" start2="3328" end2="3338" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1323" end1="1326" start2="3339" end2="3342" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1327" end1="1334" start2="3343" end2="3350" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1335" end1="1339" start2="3351" end2="3355" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1340" end1="1343" start2="3356" end2="3359" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1344" end1="1356" start2="3360" end2="3372" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1357" end1="1363" start2="3373" end2="3379" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1364" end1="1368" start2="3380" end2="3384" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1369" end1="1372" start2="3385" end2="3388" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1373" end1="1381" start2="3389" end2="3397" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1382" end1="1395" start2="3398" end2="3411" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1396" end1="1408" start2="3412" end2="3424" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1410" end1="1415" start2="3426" end2="3431" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1416" end1="1423" start2="3432" end2="3439" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1424" end1="1427" start2="3440" end2="3443" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1428" end1="1433" start2="3444" end2="3449" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1434" end1="1437" start2="3450" end2="3453" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1438" end1="1446" start2="3454" end2="3462" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1447" end1="1457" start2="3463" end2="3473" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1458" end1="1467" start2="3474" end2="3483" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1468" end1="1471" start2="3484" end2="3487" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1472" end1="1475" start2="3488" end2="3491" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1476" end1="1479" start2="3492" end2="3495" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1480" end1="1488" start2="3496" end2="3504" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1489" end1="1500" start2="3505" end2="3516" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1501" end1="1508" start2="3517" end2="3524" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1509" end1="1511" start2="3525" end2="3527" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1512" end1="1516" start2="3528" end2="3532" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1517" end1="1524" start2="3533" end2="3540" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1525" end1="1532" start2="3541" end2="3548" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1533" end1="1535" start2="3549" end2="3551" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1536" end1="1543" start2="3552" end2="3559" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1544" end1="1558" start2="3560" end2="3574" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1559" end1="1573" start2="3575" end2="3589" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1574" end1="1581" start2="3590" end2="3597" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1582" end1="1593" start2="3598" end2="3609" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1594" end1="1596" start2="3610" end2="3612" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1597" end1="1600" start2="3613" end2="3616" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1601" end1="1609" start2="3617" end2="3625" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1610" end1="1617" start2="3626" end2="3633" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1618" end1="1625" start2="3634" end2="3641" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1626" end1="1640" start2="3642" end2="3656" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1641" end1="1655" start2="3657" end2="3670" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1656" end1="1664" start2="3671" end2="3679" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1665" end1="1674" start2="3680" end2="3689" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1675" end1="1679" start2="3690" end2="3694" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1680" end1="1686" start2="3695" end2="3701" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1687" end1="1693" start2="3702" end2="3708" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1694" end1="1701" start2="3709" end2="3716" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1702" end1="1709" start2="3717" end2="3724" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1710" end1="1716" start2="3725" end2="3731" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1717" end1="1730" start2="3732" end2="3745" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1731" end1="1738" start2="3746" end2="3753" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1739" end1="1750" start2="3754" end2="3766" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1751" end1="1753" start2="3767" end2="3769" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1754" end1="1757" start2="3770" end2="3805" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1758" end1="1765" start2="3806" end2="3813" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1766" end1="1780" start2="3814" end2="3828" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1782" end1="1823" start2="3830" end2="3870" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1824" end1="1835" start2="3871" end2="3882" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1836" end1="1837" start2="3883" end2="3884" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1838" end1="1839" start2="3885" end2="3886" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1840" end1="1851" start2="3887" end2="3898" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1852" end1="1858" start2="3899" end2="3905" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1859" end1="1866" start2="3906" end2="3913" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1867" end1="1873" start2="3914" end2="3920" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1874" end1="1877" start2="3921" end2="3924" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1878" end1="1892" start2="3925" end2="3939" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1893" end1="1907" start2="3940" end2="3954" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1908" end1="1910" start2="3955" end2="3958" changelist="564414b1-3150-4499-964a-162e1b210395" />
+        <range start1="1945" end1="1947" start2="3993" end2="3993" changelist="7fc4207b-5696-4bc3-bdd7-650e0d9aa81a" />
+      </ranges>
+    </file>
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -180,7 +453,7 @@
       <workItem from="1708317622266" duration="17192000" />
       <workItem from="1708396897638" duration="19017000" />
       <workItem from="1708430284051" duration="120785000" />
-      <workItem from="1709095456663" duration="58828000" />
+      <workItem from="1709095456663" duration="58409000" />
     </task>
     <task id="LOCAL-00001" summary="민서바보">
       <option name="closed" value="true" />
