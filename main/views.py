@@ -360,13 +360,14 @@ class ManagerCheck(APIView):
         password = request.data.get('point_password')
         point_id = request.data.get('point_id')
         manager_name = request.data.get('manager_name')
-
+        print(client_name, push_point, current_point, password, point_id, manager_name)
         # 매니저 값이 있는 경우
         if manager_name:
             manager_check = PointList.objects.filter(id=point_id).first()
+            print(manager_check, '매니저 확인')
             # 클라이언트 데이터 조회
             client_data = ClientNumberData.objects.filter(name=client_name, phone_number=password).first()
-
+            print(client_data, '클라이언트 조회')
             # 현재 데이터에서 원하는 값만큼 더하여 업데이트
             if client_data:
                 # 현재 데이터의 'current_point' 필드에 추가값을 더한 후 저장
