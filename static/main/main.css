@@ -24,1762 +24,3940 @@
     display: none;
 }
 
-
-body {
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 7vh;
-    background-color: #ff962d;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-}
-
-.nav_item {
-    margin-left: 20px;
-    font-size: 2vw;
-    font-weight: bold;
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.pick {
-    padding-bottom: 0.2vh;
-    border-bottom: 0.2vw solid #e34a1c;
-}
-
-.nav-left {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.date-time-section {
-    font-size: 2.3vw;
-    font-weight: bold;
-    color: white;
-    margin-right: 6vw;
-    font-family: 'Dongle', sans-serif;
-    scale: 2
-}
-
-
-.date-time-section {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-}
-
-
-.kategoria {
-    position: fixed;
-    left: 0;
-    top: 7vh;
-    height: 7vh;
-    width: 70vw;
-    background-color: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    /* padding: 0.8vw 0; */
-    font-size: 2vw;
-    font-weight: 600;
-    font-family: 'Single Day', cursive;
-}
-
-.kategoria-left {
-    margin: 0 22px;
-}
-
-.kategoria-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.kategoria-item {
-    border: dotted 3.5px grey;
-    border-radius: 20px;
-    width: 7vw;
-    margin: 0 2vw;
-    padding: 2px 0;
-    text-align: center;
-    scale: 0.9;
-}
-
-/* 선택된 요소에 대한 스타일 */
-.selected {
-    border: 0.3vw solid #ffb13d !important; /* 찐한 테두리 색상 */
-    opacity: 1 !important;
-}
-
-/* 나머지 요소에 대한 스타일 */
-.not-selected {
-    opacity: 0.5; /* 불투명도 설정 (0.5는 50%의 불투명도를 의미) */
-}
-
-.menu-main {
-    /* background-color: #f3f4f8; */
-    position: fixed;
-    z-index: 2;
-    left: 0;
-    background-color: #ffefde;
-    font-family: 'Gamja Flower', sans-serif;
-    top: 14vh;
-    display: flex;
-    flex-direction: column;
-    overflow-y: hidden;
-    height: 86vh;
-}
-
-.menu-box {
-    overflow: scroll;
-}
-
-.menu-body {
-    display: flex;
-    flex-direction: column;
-}
-
-.menu-kategoria-box {
-}
-
-.menu-kategoria {
-    width: 8vw;
-    text-align: center;
-    margin: 10px 10px 10px 15px;
-    border: 5px solid #3d1404;
-    border-radius: 20px;
-    background-color: white;
-    font-size: 2.5vw;
-    font-weight: 600;
-}
-
-.menu-section {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 70vw;
-}
-
-.menu-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    border-radius: 13px;
-    margin-left: 1.2vw;
-}
-
-.menu-image {
-    width: 15.8vw;
-    height: 15.8vw;
-    object-fit: cover;
-    border-radius: 2vw;
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
-    border: 0.5px solid #adadad;
-    transition: transform 0.3s ease-in;
-}
-
-.menu-image:active {
-    transform: scale(1.5); /* 또는 원하는 만큼의 이동 거리 설정 */
-}
-
-.menu-card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 6vw;
-    margin: 0.7vw 0.5vw;
-}
-
-.menu_name {
-    font-size: 2.5vw;
-    font-weight: 600;
-    color: #462304;
-}
-
-.menu-price {
-    font-size: 2.5vw;
-    color: #575757;
-}
-
-.modal_overlay {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    z-index: 4;
-    left: 0;
-    top: 0;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(1.5px);
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease; /* 트랜지션 효과 추가 */
-}
-
-.modal_window {
-    position: absolute;
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease; /* 트랜지션 효과 추가 */
-    transform: translateY(100%); /* 처음에는 아래로 숨겨져 있음 */
-    background: #ffffff;
-    backdrop-filter: blur(13.5px);
-    border-radius: 2vw;
-    border: 1vw solid rgb(255, 177, 61);
-    width: 70vw;
-    padding: 2.5vw;
-    font-family: 'Gamja Flower', sans-serif;
-    font-weight: 600;
-    color: #4d2107;
-    font-size: 3vw;
-}
-
-
-.modal-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.modal-top {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 1vh;
-}
-
-.modal-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    width: 20vw;
-}
-
-.modal-menu-img {
-    width: 20vw;
-    height: 20vw;
-    object-fit: cover;
-    border-radius: 1vw;
-    border: .4vw solid #774721;
-    background-color: black;
-}
-
-.modal-left-bottom {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-    height: 30%;
-}
-
-.modal-menu-name {
-}
-
-
-.madal-menu-total {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-}
-
-.modal-menu-price {
-    width: 10vw;
-    transition: transform 0.1s ease-in-out; /* 부드러운 이동을 위한 transition 추가 */
-}
-
-.modal-menu-item-counter {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: #fffff6;
-    border: 0.5vw solid #ff9842;
-    border-radius: 1vw;
-}
-
-.modal-menu-quantity {
-    text-align: center;
-    width: 2.5vw;
-    font-size: 2.5vw;
-    font-weight: 600;
-    transition: transform 0.1s ease-in-out; /* 부드러운 이동을 위한 transition 추가 */
-    /*margin: 0 1vw;*/
-}
-
-.modal-menu-quantity-btn {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 0 0.5vw;
-    font-weight: 600 !important;
-}
-
-.modal-right {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    width: 47vw;
-    margin-bottom: 2vw;
-}
-
-.modal-option-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    width: 97%;
-    padding-bottom: 7vw;
-    border: 5px solid #cb7618;
-    border-radius: 1.5vw;
-}
-
-.modal-option-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 93%;
-    padding: 0.2vw;
-}
-
-.modal-option-top {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    border-bottom: 3px solid rgba(155, 155, 155, 0.27);
-}
-
-.modal-option-top-left {
-    margin: 2vh 3.3vw;
-    font-size: 4vw;
-    width: 20vw;
-}
-
-.modal-option-top-right {
-    width: 100%;
-}
-
-.modal-option-line {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1vw 0;
-    height: 7vh;
-    border-bottom: 3px solid rgba(155, 155, 155, 0.27);
-}
-
-.modal-option {
-    font-size: 3vw;
-    width: 20vw;
-    text-align: center;
-    border-right: 3px solid rgba(155, 155, 155, 0.27);
-    margin-right: 0.6vw;
-}
-
-.modal-option-items {
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-    align-items: center;
-    width: 100%;
-}
-
-.modal-option-item-text {
-    flex: 1;
-    margin: 0 0.5vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border: #ffc597 0.4vw solid;
-    background-color: #ffeddc;
-    border-radius: 1vw;
-    color: #cba99b;
-    transition: transform 0.1s ease-in-out; /* 부드러운 이동을 위한 transition 추가 */
-    font-weight: 100;
-    cursor: pointer;
-}
-
-.option-def {
-    border: #ff8000 0.4vw solid;
-    background-color: #ffb14b;
-    color: white;
-    font-weight: 600;
-}
-
-.option-not-selected {
-    border: #ffc597 0.4vw solid;
-    background-color: #ffeddc;
-    color: #cba99b;
-    font-weight: 100;
-}
-
-.option-selected {
-    border: #ff8000 0.4vw solid;
-    background-color: #ffb14b;
-    color: white;
-    font-weight: 600 !important;
-    scale: 1;
-}
-
-.modal-option-item-text:active {
-    transform: translateY(-0.8vh); /* 클릭 시 아래로 2px 이동 */
-}
-
-.modal-option-item-counter {
-    margin: 0 1vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-    align-items: center;
-    border-radius: 3vw;
-}
-
-.modal-option-item-number {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-option-quantity-btn {
-    border: #ff8f36 0.4vw solid;
-    border-radius: 20%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5vw;
-    font-weight: 600 !important;
-}
-
-
-.modal-option-quantity {
-    text-align: center;
-    width: 5vw;
-    font-size: 3vw;
-    font-weight: 600;
-    transition: transform 0.1s ease-in-out; /* 부드러운 이동을 위한 transition 추가 */
-    /*margin: 0 1vw;*/
-}
-
-.modal-bottom {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.modal-cancle {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 18.5vw;
-    padding: 1vw 0;
-    border: #ff8f36 solid 1vw;
-    border-radius: 1.5vw;
-    font-size: 4vw;
-}
-
-.modal-order-complete {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 45vw;
-    padding: 1vw 0;
-    border: #ff8f36 solid 1vw;
-    border-radius: 1vw;
-    font-size: 4vw;
-}
-
-.order-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    width: 30vw;
-    height: 100%;
-    top: 0;
-    right: 0;
-    background-color: #ffdba5;
-}
-
-.order-header-cushion {
-    height: 6vh;
-}
-
-.order-header {;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    margin: 10px 10px 0 30px;
-    font-weight: bold;
-    color: #ffffff;
-}
-
-.order-header-left {
-    color: #cc6351;
-    width: 10vw;
-    font-size: 3vw;
-    scale: 1.3;
-    font-family: 'Dongle', sans-serif;
-}
-
-.order-reset-btn {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-size: 3vw;
-    border: 0.5vw solid #de951f;
-    border-radius: .7vw;
-    background-color: #efb866;
-    padding: 0.3vh 0 0 0.5vw;
-    text-align: center;
-    font-family: 'Nanum Pen Script', cursive;
-}
-
-.order-reset {
-    font-size: 2vw;
-}
-
-.order-reset-icon {
-}
-
-.order-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: stretch;
-    width: 91%;
-    height: 60vh;
-    margin: .45vw;
-    padding: 1vh 0.2vw;
-    border: 0.4vw solid #9f681f;
-    border-radius: 1vw;
-    background-color: #fff5ee;
-    font-family: 'Nanum Pen Script', cursive;
-    overflow: scroll;
-}
-
-.order-container {
-
-}
-
-.order-swiper-container {
-    width: 100%;
-    overflow-x: scroll;
-    overflow-y: visible;
-    scroll-snap-type: x
-}
-
-.order-swiper-box {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 2vh 0 0.5vh 1.4vw;
-    width: 48vw;
-}
-
-.order-swiper-item {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 10vw;
-}
-
-.order-option-change-btn {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border: 0.3vw solid #ff8d2f;
-    background-color: #ffc251;
-    color: white;
-    font-weight: 600;
-    border-radius: 1vw;
-    width: 7vw;
-    height: 6vh;
-    font-size: 2.1vw;
-}
-
-.order-delete-btn {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border: 0.3vw solid #ff2f2f;
-    background-color: #ff8351;
-    color: white;
-    font-weight: 600;
-    border-radius: 1vw;
-    width: 7vw;
-    height: 6vh;
-    font-size: 2.5vw;
-}
-
-.order-box {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 24.5vw;
-    padding: 0.1vh 0.3vw 0.1vh 0.5vw;
-    border-radius: 10px;
-    border: 0.5vw solid #daa36d;
-    color: #79471a;
-    background-color: #ffedd2;
-    transition: transform 0.3s ease;
-    scroll-snap-align: center;
-}
-
-.order-optionBox {
-    display: flex;
-    position: absolute;
-    transform: translateY(-2.3vh);
-    width: max-content;
-    font-size: 1.5vw;
-}
-
-.sugarPump {
-    border-radius: 0.5vw;
-    color: #ffffff;
-    background-color: #ffa100;
-    margin: 0 0.5vw 0.1vh 0;
-    padding: 0.05vh 0.5vw;
-    text-align: center;
-    font-family: 'Gamja Flower', sans-serif;
-    height: 3vh;
-}
-
-.vanillaPump {
-    border-radius: 0.5vw;
-    color: #ffffff;
-    background-color: #ffa100;
-    margin: 0 0.5vw 0.1vh 0;
-    padding: 0.05vh 0.5vw;
-    text-align: center;
-    font-family: 'Gamja Flower', sans-serif;
-    height: 3vh;
-}
-
-.caramelPump {
-    border-radius: 0.5vw;
-    color: #ffffff;
-    background-color: #ffa100;
-    margin: 0 0.5vw 0.1vh 0;
-    padding: 0.05vh 0.5vw;
-    text-align: center;
-    font-family: 'Gamja Flower', sans-serif;
-    height: 3vh;
-}
-
-.iceCream {
-    border-radius: 0.5vw;
-    color: #ffffff;
-    background-color: #ffa100;
-    margin: 0 0.5vw 0.1vh 0;
-    padding: 0.05vh 0.5vw;
-    text-align: center;
-    font-family: 'Gamja Flower', sans-serif;
-    height: 3vh;
-}
-
-.order-item {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 6vh;
-}
-
-.order-item-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 47%;
-}
-
-.order-item-right {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 100%;
-}
-
-.order-item-rigit-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    height: 100%;
-    margin-right: 1vw;
-}
-
-.order-item-right-right {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.order-item-left-top {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-}
-
-.order-name {
-    color: #4f2d0b;
-    font-size: 2vw;
-    font-weight: 600;
-    margin-bottom: 0.1vw;
-}
-
-.order-back-data {
-    display: none;
-}
-
-.order-option-box {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    height: 2vh;
-}
-
-.order-option {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0.5vw;
-    color: white;
-    background-color: chocolate;
-    margin: 0 0.5vw 0.1vh 0;
-    padding: 0.05vh 0.5vw;
-    text-align: center;
-    height: 3vh;
-    font-family: 'Gamja Flower', sans-serif;
-}
-
-.order-cold-option {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0.5vw;
-    color: white;
-    background-color: #56A8F5;
-    margin: 0 0.5vw 0.1vh 0;
-    padding: 0.05vh 0.5vw;
-    text-align: center;
-    height: 3vh;
-    font-family: 'Gamja Flower', sans-serif;
-}
-
-.order-item-close {
-    scale: 0.8;
-    z-index: 1;
-    position: relative;
-    top: -6vh;
-    right: -0.1vw;
-    background-color: rgba(255, 255, 255, 0.56);
-    height: 2vw;
-    border-radius: 50%;
-}
-
-.order-item-body {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: end;
-    width: 100%;
-}
-
-.order-item-top-left {
-    display: flex;
-    flex-direction: row;
-}
-
-.order-item-img {
-    width: 4.5vw;
-    height: 4.5vw;
-    object-fit: cover;
-    border-radius: 0.5vw;
-}
-
-.order-item-body-middle {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    width: 6.4vw;
-}
-
-.order-item-body-right {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-left: 4vw;
-}
-
-
-.order-price {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0.4vw;
-    font-size: 2.3vw;
-    font-weight: 600;
-    padding: 0.2vh 0.3vw;
-    margin-top: 0.4vh;
-    height: 2vh;
-}
-
-.order-item-option {
-    display: none;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: #fffff6;
-    border: 3px solid #b7a27e;
-    padding: 0.1vw 0.8vw;
-    border-radius: 5px;
-    font-size: 1.7vw;
-}
-
-
-.order-item-counter {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: #fffff6;
-    border: 3px solid #b7a27e;
-    border-radius: 5px;
-    margin-right: 0.5vw;
-}
-
-
-.order-quantity-btn {
-    font-size: 1.5vw !important;
-    font-weight: 600 !important;
-    margin: 0 0.2vw;
-}
-
-.order-quantity {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 2vw;
-    height: 0vh;
-    font-size: 2vw;
-    font-weight: 600;
-    /*margin: 0 1vw;*/
-}
-
-.order_delete_btn {
-    display: none;
-}
-
-.order-footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 93%;
-    height: 7vh;
-    font-size: 3vw;
-    font-weight: 600;
-    font-family: 'Dongle', sans-serif;
-}
-
-.order-total-quantity {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: 85%;
-    width: 30%;
-    border: 0.4vw solid #9f681f;
-    border-radius: 1vw;
-    background-color: #fff5ee;
-    color: #462304;
-}
-
-.order-total-quantity-num {
-    text-align: center;
-}
-
-.order-total-pay-price {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: 85%;
-    width: 60%;
-    border: 0.4vw solid #9f681f;
-    border-radius: 1vw;
-    background-color: #fff5ee;
-    color: #462304;
-}
-
-.order-pay-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 91%;
-    height: 12vh;
-    margin: 1.5vh 0; /* 빼면 이상해짐 */
-    font-family: 'Single Day', cursive;
-    color: white;
-}
-
-.order-delete-all {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 25%;
-    height: 100%;
-    border: 0.7vw solid #ff8f36;
-    border-radius: 1vw;
-    background-color: #ffa724;
-    font-size: 2.2vw;
-    font-weight: 600;
-}
-
-.order-pay-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    border-radius: 1vw;
-    font-size: 4.5vw;
-    border: 5px solid #ca9067;
-    background-color: #adadad4d;
-    color: #b38d72;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    font-weight: bold;
-    position: relative;
-    transition: all 0.4s;
-    overflow: hidden;
-}
-
-.order-pay-box.active {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    border-radius: 1vw;
-    font-size: 4.5vw;
-    border: 5px solid #d25500;
-    background-color: #ff9041;
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    font-weight: bold;
-    position: relative;
-    transition: all 0.4s;
-    overflow: hidden;
-
-}
-
-
-.pay-modal-overlay {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    z-index: 4;
-    left: 0;
-    top: 0;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(1.5px);
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.5s ease; /* 트랜지션 효과 추가 */
-}
-
-.pay-modal-window {
-    position: absolute;
-    opacity: 0;
-    transition: opacity 0.5s ease, transform 0.5s ease; /* 트랜지션 효과 추가 */
-    transform: translateY(100%); /* 처음에는 아래로 숨겨져 있음 */
-    background: #ffffff;
-    border: 1vw solid #FFB13DFF;
-    border-radius: 2vw;
-    color: #4d2107;
-    font-weight: 600;
-    font-size: 3vw;
-    padding: 1vw 0;
-}
-
-.pay-modal-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 70vw;
-    height: 50vh;
-}
-
-.pay-modal-title {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 84%;
-    height: 15vh;
-    font-size: 5vw;
-    margin-left: 6vw;
-    border-bottom: 3px solid #c2c2c2;
-}
-
-.pay-modal-close {
-    font-size: 5vw !important;
-    font-weight: 600 !important;
-}
-
-.pay-modal-top {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-    width: 100%;
-}
-
-.pay-modal-bottom {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
-
-.cash-pay-btn {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border-radius: 1vw;
-    background-color: #ff9800;
-    font-size: 4vw;
-    padding: 2vh 2vw;
-    width: 20vw;
-    height: 17vh;
-    color: white;
-}
-
-.point-pay-btn {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    /* border: 0.7vw solid #ff8f36; */
-    border-radius: 1vw;
-    background-color: #ff7928;
-    font-size: 4vw;
-    padding: 2vh 2vw;
-    width: 20vw;
-    height: 17vh;
-    color: white;
-}
-
-.cash-modal-overlay {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    z-index: 4;
-    left: 0;
-    top: 0;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(1.5px);
-    -webkit-backdrop-filter: blur(1.5px);
-    opacity: 1;
-    transition: opacity 0.3s ease, transform 0.3s ease; /* 트랜지션 효과 추가 */
-}
-
-.cash-modal-window {
-    backdrop-filter: blur(13.5px);
-    border-radius: 2vw;
-    border: 1vw solid rgb(255, 177, 61);
-    padding: 2.5vw;
-    font-family: 'Gamja Flower', sans-serif;
-    font-weight: 600;
-    color: #4d2107;
-    font-size: 3vw;
-    width: 55vw;
-    position: relative;
-    background-color: white;
-    transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-.cash-modal-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
-
-.cash-modal-order {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    font-size: 5vw;
-    padding-top: 2vh;
-    scale: 1.2;
-    transform: translateX(-4px);
-}
-
-.cash-modal-order-num {
-    font-size: 5vw;
-    scale: 1.5;
-    transform: translateY(-3%);
-    animation-name: heartbeat;
-    animation-duration: 1s;
-    animation-iteration-count: 3; /* 3번만 반복 */
-}
-
-.cash-modal-message {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5vh;
-    font-size: 4vw;
-}
-
-.cash-waiting {
-    display: flex;
-    flex-direction: row;
-    margin: 3vh 0;
-    font-size: 5vw;
-}
-
-.cash-modal-complete {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 20vw;
-    height: 12vh;
-    border: 1vw solid #ee5700;
-    border-radius: 2vw;
-    background-color: #ff8034;
-    color: white;
-    font-size: 6vw;
-}
-
-.point-modal-overlay {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    z-index: 4;
-    left: 0;
-    top: 0;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(1.5px);
-    opacity: 1;
-    transition: opacity 0.3s ease, transform 0.3s ease; /* 트랜지션 효과 추가 */
-}
-
-.point-modal-window {
-    backdrop-filter: blur(13.5px);
-    border-radius: 2vw;
-    border: 1vw solid rgb(255, 177, 61);
-    padding: 2.5vw;
-    font-family: 'Gamja Flower', sans-serif;
-    font-weight: 600;
-    color: #4d2107;
-    font-size: 3vw;
-    position: relative;
-    background-color: white;
-    transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-.point-modal-body {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
-
-
-.point-modal-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
-
-.point-modal-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 0.4vh solid #b9b9b9;
-    width: 100%;
-    font-size: 5vw;
-    padding-bottom: 2vh;
-}
-
-.point-modal-header-message {
-    margin-left: 1vw;
-    opacity: 1;
-    font-family: none, fangsong;
-}
-
-
-.point-close-btn {
-    font-size: 6vw !important;
-}
-
-.potion-select-name {
-    display: none;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    font-size: 4vw;
-    position: relative;
-}
-
-.point-select-box {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
-
-.point-select-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    border-bottom: 0.4vh solid #b9b9b9;
-    padding-bottom: 2vh;
-    margin-bottom: 4vh;
-}
-
-.point-select-message {
-    font-size: 4vw;
-}
-
-.point-select-name {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.point-select-close {
-    font-size: 5vw !important;
-    scale: 1.4;
-}
-
-#result {
-    font-size: 3.5vw;
-}
-
-.result-name {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-size: 6vw;
-    border: 1vw solid rgb(255, 177, 61);
-    border-radius: 2vw;
-    padding: 2vh 1vw;
-    margin: 2vh 0;
-    width: 18vw;
-}
-
-.number-board {
-    flex-direction: column;
-    position: relative;
-    background-color: white;
-    transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-.hidden {
-    transform: translateY(-100%);
-    opacity: 0;
-}
-
-.chsnOrder {
-    visibility: hidden;
-}
-
-.phone-input {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 38vw;
-    padding: 2vh 0 0 0;
-}
-
-.digit-input {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 7vw;
-    height: 7vw;
-    border: 0.6vw solid orange;
-    background-color: #fff3e3;
-    border-radius: 1vw;
-    font-size: 8vw;
-    color: chocolate;
-}
-
-.number-board-message {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    opacity: 1;
-    transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
-    text-align: center;
-    color: #afafaf;
-    font-size: 2.2vw;
-    padding: 1vh 0;
-}
-
-
-.number-buttons {
-    display: grid;
-    grid-template-columns: repeat(3, 12vw);
-    grid-gap: 7px;
-}
-
-.number {
-    font-size: 3vw;
-    border: 1px solid #ccc;
-    background-color: #fff;
-    cursor: pointer;
-    padding: 2vh 0;
-}
-
-.number:hover {
-    background-color: #f2f2f2;
-}
-
-.backspace {
-    font-size: 4vw !important;
-    scale: 2;
-    color: #5d5d5d;
-}
-
-#submitBtn {
-    display: none;
-}
-
-.point-pay {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
-
-.point-pay-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    border-bottom: 0.4vh solid #b9b9b9;
-    padding-bottom: 2vh;
-    margin-bottom: 2vh;
-}
-
-.point-pay-message {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    font-size: 4vw;
-    padding: 2vh;
-}
-
-.message-blank {
-    font-size: 5vw;
-}
-
-.point-pay-user {
-    font-size: 5vw;
-}
-
-.point-pay-close {
-    font-size: 5vw !important;
-}
-
-.point-pay-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
-
-.point-pay-number {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    margin-bottom: 2vh;
-    padding-bottom: 2vh;
-    border-bottom: 0.2vw solid #a4a4a4;
-}
-
-.point-pay-current-box {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-}
-
-.point-pay-current-text {
-}
-
-.point-pay-width {
-    width: 12vw;
-    text-align: end;
-}
-
-.point-pay-charge-box {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-}
-
-.point-pay-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 1vw; /* 기본 글꼴 크기 설정 */
+        font-weight: bolder;
+    }
+
+    body {
+        background-color: #ffefde;
+    }
+
+    .app-container {
+        display: flex;
+        flex-direction: column
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 7vh;
+        background-color: #ff962d;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+    }
+
+    .nav_item {
+        margin-left: 3.5vw;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 3.5rem;
+    }
+
+    .pick {
+        padding-bottom: 0.2vh;
+        border-bottom: 0.2vw solid #e34a1c;
+    }
+
+    .nav-left {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .date-time-section {
+        font-size: 3rem;
+        font-weight: bold;
+        color: white;
+        margin-right: 10vw;
+        font-family: 'Dongle', sans-serif;
+        scale: 2;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+    }
+
+    .kategoria {
+        position: fixed;
+        left: 0;
+        top: 7vh;
+        height: 6vh;
+        width: 100vw;
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        /* padding: 0.8vw 0; */
+        font-family: 'Single Day', cursive;
+        font-weight: 600;
+
+    }
+
+    .kategoria-left {
+        margin: 0 3.5vw;
+        font-size: 4.2vw;
+    }
+
+    .kategoria-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-size: 3.8vw;
+        font-weight: normal;
+    }
+
+    .kategoria-item {
+        border: dotted 0.6vw grey;
+        border-radius: 4.2vw;
+        width: 12vw;
+        margin: 0 0.7vw;
+        text-align: center;
+        scale: 0.9;
+        font-weight: 600;
+    }
+
+    /* 선택된 요소에 대한 스타일 */
+    .selected {
+        border: 0.5vw solid #ffb13d !important; /* 찐한 테두리 색상 */
+        opacity: 1 !important;
+    }
+
+    /* 나머지 요소에 대한 스타일 */
+    .not-selected {
+        opacity: 0.5; /* 불투명도 설정 (0.5는 50%의 불투명도를 의미) */
+    }
+
+    .menu-main {
+        /* background-color: #f3f4f8; */
+        position: fixed;
+        z-index: 2;
+        left: 0;
+        background-color: #ffefde;
+        font-family: 'Gamja Flower', sans-serif;
+        top: 13vh;
+        display: flex;
+        flex-direction: column;
+        overflow-y: hidden;
+        height: 45.6vh;
+        width: 100vw;
+    }
+
+    .menu-box {
+        overflow: scroll;
+    }
+
+    .menu-body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu-kategoria-box {
+    }
+
+    .menu-kategoria {
+        width: 13vw;
+        text-align: center;
+        margin: 1.8vw 1.5vw 1.5vw 3.5vw;
+        border: 0.7vw solid #3d1404;
+        border-radius: 3vw;
+        background-color: white;
+        font-size: 4vw;
+        font-weight: bold;
+    }
+
+    .menu-section {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .menu-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: normal;
+        align-items: start;
+        border-radius: 3.5vw;
+        margin-left: 3.5vw;
+        margin-bottom: 0.5vw;
+        width: 20.6vw;
+    }
+
+    .menu-image {
+        width: 20.6vw;
+        height: 20.6vw;
+        object-fit: cover;
+        border-radius: 3.5vw;
+        box-shadow: 1.2vw 1.2vw 2.4vw rgba(0, 0, 0, 0.5);
+        border: 0.5px solid #adadad;
+        transition: transform 0.3s ease-in;
+    }
+
+    .menu-image:active {
+        transform: scale(1.5); /* 또는 원하는 만큼의 이동 거리 설정 */
+    }
+
+    .menu-card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 1.2vw 0.5vw;
+    }
+
+    .menu_name {
+        font-size: 3.2rem;
+        font-weight: bold;
+        color: #462304;
+    }
+
+    .menu-price {
+        font-size: 3rem;
+        font-weight: bold;
+        color: #575757;
+    }
+
+    .modal_overlay {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: 4;
+        left: 0;
+        top: 0;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(1.5px);
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease; /* 트랜지션 효과 추가 */
+    }
+
+    .modal_window {
+        position: absolute;
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease; /* 트랜지션 효과 추가 */
+        transform: translateY(100%); /* 처음에는 아래로 숨겨져 있음 */
+        background: #ffffff;
+        backdrop-filter: blur(13.5px);
+        border-radius: 2vw;
+        border: 1vw solid rgb(255, 177, 61);
+        width: 70vw;
+        padding: 2.5vw;
+        font-family: 'Gamja Flower', sans-serif;
+        font-weight: 600;
+        color: #4d2107;
+        font-size: 3vw;
+    }
+
+
+    .modal-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .modal-top {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .modal-left {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 18vw;
+        padding-bottom: 2.5vw;
+    }
+
+    .modal-menu-img {
+        width: 18vw;
+        height: 18vw;
+        object-fit: cover;
+        border-radius: 1vw;
+        border: .4vw solid #774721;
+        background-color: black;
+    }
+
+    .modal-left-bottom {
+        display: flex;
+        flex-direction: column;
+        /*width: 100%;*/
+        height: 19vw;
+        padding-left: 2.5vw;
+    }
+
+    .modal-menu-name {
+        font-size: 4.5vw;
+    }
+
+
+    .madal-menu-total {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        /*width: 100%;*/
+        height: 100%;
+        padding-bottom: 0.2vw;
+    }
+
+    .modal-menu-price {
+        padding-left: 1vw;
+        font-size: 4rem;
+        opacity: 0.8;
+        transition: transform 0.1s ease-in-out; /* 부드러운 이동을 위한 transition 추가 */
+    }
+
+    .modal-menu-item-counter {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #fffff6;
+        border: 3px solid #ff9842;
+        border-radius: 5px;
+        width: 18vw;
+        padding: 0 1vw;
+    }
+
+    .modal-menu-quantity {
+        text-align: center;
+        font-size: 5vw;
+        font-weight: 600;
+        transition: transform 0.1s ease-in-out; /* 부드러운 이동을 위한 transition 추가 */
+        /*margin: 0 1vw;*/
+    }
+
+    .modal-menu-quantity-btn {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        font-weight: 400;
+    !important;
+        padding: 0 0.5vw;
+        font-size: 10rem;
+        height: 5.5vw;
+    }
+
+    .chsnOrder {
+        flex: none;
+        width: 0;
+        height: 0;
+    }
+
+    .modal-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+    }
+
+    .modal-option-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        width: 97.5%;
+        border: 1vw solid #ffbe76;
+        border-radius: 1.5vw;
+    }
+
+    .modal-option-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 93%;
+        padding: 0.2vw;
+    }
+
+    .modal-option-top {
+        display: none; /* 일부러 none처리해서 공간 확보함 */
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 10vw;
+        /*border-bottom: 3px solid rgba(155, 155, 155, 0.27);*/
+    }
+
+    .modal-option-top-left {
+        margin: 2vh 3.3vw;
+        font-size: 4vw;
+        width: 20vw;
+    }
+
+    .modal-option-top-right {
+        width: 100%;
+    }
+
+    .modal-option-line {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1vw 0;
+        height: 8rem;
+        border-top: 1vw solid rgba(155, 155, 155, 0.27);
+    }
+
+    /* 첫번째 옵션 공간에는 top 보더가 생기지 않다 */
+    .modal-option-line:first-of-type {
+        border: none;
+    }
+
+    .modal-option {
+        font-size: 4vw;
+        width: 30vw;
+        text-align: center;
+        margin-right: 0.6vw;
+    }
+
+    .modal-option-items {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        align-items: center;
+        width: 100%;
+        height: 75%;
+        border-left: 1vw solid rgba(155, 155, 155, 0.27);
+    }
+
+    .modal-option-item-text {
+        flex: 1;
+        height: 100%;
+        margin: 0 0.5vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border: #ffc597 3px solid;
+        background-color: #ffeddc;
+        border-radius: 1vw;
+        color: #cba99b;
+        transition: transform 0.1s ease-in-out; /* 부드러운 이동을 위한 transition 추가 */
+        font-weight: 100;
+        font-size: 4vw;
+        cursor: pointer;
+    }
+
+    .option-def {
+        border: #ff8000 3px solid;
+        background-color: #ffb14b;
+        color: white;
+        font-weight: 600;
+    }
+
+    .option-not-selected {
+        border: #ffc597 3px solid;
+        background-color: #ffeddc;
+        color: #cba99b;
+        font-weight: 100;
+    }
+
+    .option-selected {
+        border: #ff8000 3px solid;
+        background-color: #ffb14b;
+        color: white;
+        font-weight: 600 !important;
+    }
+
+    .modal-option-item-text:active {
+        transform: translateY(-0.8vh); /* 클릭 시 아래로 2px 이동 */
+    }
+
+    .modal-option-item-counter {
+        margin: 0 1vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        align-items: center;
+        border-radius: 3vw;
+    }
+
+    .modal-option-item-number {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-option-quantity-btn {
+        border: #ff8f36 0.6vw solid;
+        border-radius: 20%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        line-height: 0.5;
+    !important;
+        font-weight: 250;
+        font-style: normal;
+        font-size: 10rem;
+        letter-spacing: normal;
+        text-transform: none;
+        display: inline-block;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .modal-option-quantity {
+        text-align: center;
+        width: 7vw;
+        font-size: 6rem;
+        font-weight: 600;
+        transition: transform 0.1s ease-in-out; /* 부드러운 이동을 위한 transition 추가 */
+        /*margin: 0 1vw;*/
+    }
+
+    .modal-bottom {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 2.5vw;
+    }
+
+    .modal-cancle {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 18.5vw;
+        padding: 1vw 0;
+        border: #ff8f36 solid 1vw;
+        background-color: #ffc346;
+        color: white;
+        border-radius: 1.5vw;
+        font-size: 4vw;
+    }
+
+    .modal-order-complete {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 45vw;
+        padding: 1vw 0;
+        border: #ff603d solid 1vw;
+        background-color: #ff8f36;
+        color: white;
+        border-radius: 1vw;
+        font-size: 4vw;
+    }
+
+    .order-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        position: fixed;
+        width: calc(100% - 4.7rem);
+        height: 40vh;
+        bottom: 0;
+        left: 0;
+        background-color: #ffdba5;
+        border-top: #cb6718 1.5rem solid;
+        border-left: #cb6718 1.5rem solid;
+        border-right: #cb6718 1.5rem solid;
+        border-radius: 20px 20px 0 0;
+        padding: 1rem 1rem 0 1rem;
+    }
+
+    .order-header-cushion {
+    }
+
+    .order-header {;
+        display: flex;
+        flex-direction: row;
+        padding-top: 0.5vh;
+        padding-bottom: 0.5vh;
+        align-items: center;
+        font-weight: bold; /*.열심히 하구있구만! 굳굳! 헤헤*/
+        color: #ffffff;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .order-header-left {
+        margin-left: 10vw;
+        color: #cc6351;
+        width: 20vw;
+        font-size: 6vw;
+        font-family: 'Dongle', sans-serif;
+        scale: 1.4;
+    }
+
+    .order-reset-btn {
+        display: flex;
+        flex-direction: row;
+        width: 21rem;
+        height: 6rem;
+        justify-content: space-evenly;
+        padding-left: 1.5vw;
+        align-items: center;
+        margin-right: 5vw;
+        border: 3px solid #de951f;
+        border-radius: 5px;
+        background-color: #efb866;
+        text-align: center;
+        font-family: 'Nanum Pen Script', cursive;
+    }
+
+    .order-reset {
+        font-size: 4.4vw;
+        font-weight: 100;
+    }
+
+    .order-reset-icon {
+        font-size: 6vw !important;
+    }
+
+    .order-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: stretch;
+        width: 90%;
+        height: 23vh;
+        border: 4px solid #9f681f;
+        border-radius: 10px;
+        margin-bottom: 0.5vh;
+        background-color: #fff5ee;
+        font-family: 'Nanum Pen Script', cursive;
+        overflow: scroll;
+    }
+
+    .order-container {
+        padding: 0.5rem 2rem;
+    }
+
+    .order-swiper-container {
+        width: 100%;
+        overflow-x: scroll;
+        overflow-y: visible;
+        scroll-snap-type: x;
+    }
+
+    .order-swiper-box {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 2.5vw 0 0.5vw 0;
+        width: 100%;
+        height: 10vw;
+    }
+
+    .order-swiper-item {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 10vw;
+    }
+
+    .order-option-change-btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border: 3px solid #ff8d2f;
+        background-color: #ffc251;
+        color: white;
+        font-weight: 10;
+        border-radius: 5px;
+        width: 12rem;
+        height: 7rem;
+        font-size: 4vw;
+    }
+
+    .order-delete-btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border: 3px solid #ff4d33;
+        background-color: #ff8351;
+        color: white;
+        font-weight: 10;
+        border-radius: 5px;
+        width: 12rem;
+        height: 7rem;
+        font-size: 5vw;
+    }
+
+    .order-box {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 60%;
+        height: 7rem;
+        border-radius: 5px;
+        border: 3px solid #daa36d;
+        color: #79471a;
+        background-color: #ffedd2;
+        transition: transform 0.3s ease;
+        scroll-snap-align: center;
+        padding-right: 1rem;
+    }
+
+    .order-optionBox {
+        height: 4vw;
+        display: flex;
+        position: absolute;
+        transform: translateY(-2.5rem) translateX(1vw);
+        width: max-content;
+        font-size: 1.5vw;
+    }
+
+    .sugarPump {
+        border-radius: 0.5vw;
+        color: #ffffff;
+        background-color: #ffa100;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.5vw;
+        font-size: 2.5vw;
+        margin: 0 0.5vw 0.1vh 0;
+        padding: 0.05vh 0.7vw;
+        text-align: center;
+        height: 80%;
+        font-family: 'Gamja Flower', sans-serif;
+    }
+
+    .vanillaPump {
+        border-radius: 0.5vw;
+        color: #ffffff;
+        background-color: #ffa100;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.5vw;
+        font-size: 2.5vw;
+        margin: 0 0.5vw 0.1vh 0;
+        padding: 0.05vh 0.7vw;
+        text-align: center;
+        height: 80%;
+        font-family: 'Gamja Flower', sans-serif;
+    }
+
+    .caramelPump {
+        border-radius: 0.5vw;
+        color: #ffffff;
+        background-color: #ffa100;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.5vw;
+        font-size: 2.5vw;
+        margin: 0 0.5vw 0.1vh 0;
+        padding: 0.05vh 0.7vw;
+        text-align: center;
+        height: 80%;
+        font-family: 'Gamja Flower', sans-serif;
+    }
+
+    .iceCream {
+        border-radius: 0.5vw;
+        color: #ffffff;
+        background-color: #ffa100;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.5vw;
+        font-size: 2.5vw;
+        margin: 0 0.5vw 0.1vh 0;
+        padding: 0.05vh 0.7vw;
+        text-align: center;
+        height: 80%;
+        font-family: 'Gamja Flower', sans-serif;
+    }
+
+    .order-item {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .order-item-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 49%;
+    }
+
+    .order-item-right {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    .order-item-rigit-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+        margin-right: 1vw;
+    }
+
+    .order-item-right-right {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .order-item-left-top {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+    }
+
+    .order-name {
+        color: #4f2d0b;
+        font-size: 4rem;
+        font-weight: 600;
+        margin-bottom: 0.1vw;
+    }
+
+    .order-back-data {
+        display: none;
+    }
+
+    .order-option-box {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: 2vh;
+    }
+
+    .order-option {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.5vw;
+        font-size: 2.5vw;
+        font-weight: 10;
+        color: white;
+        background-color: chocolate;
+        margin: 0 0.5vw 0.1vh 0;
+        padding: 0.05vh 0.7vw;
+        text-align: center;
+        height: 80%;
+        font-family: 'Gamja Flower', sans-serif;
+    }
+
+    .order-cold-option {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.5vw;
+        font-size: 2.5vw;
+        font-weight: 10;
+        color: white;
+        background-color: #56A8F5;
+        margin: 0 0.5vw 0.1vh 0;
+        padding: 0.05vh 0.7vw;
+        text-align: center;
+        height: 80%;
+        font-family: 'Gamja Flower', sans-serif;
+    }
+
+    .order-item-close {
+        scale: 0.8;
+        z-index: 1;
+        position: relative;
+        top: -6vh;
+        right: -0.1vw;
+        background-color: rgba(255, 255, 255, 0.56);
+        height: 2vw;
+        border-radius: 50%;
+    }
+
+    .order-item-body {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: end;
+        width: 100%;
+    }
+
+    .order-item-top-left {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .order-item-img {
+        width: 4.5vw;
+        height: 4.5vw;
+        object-fit: cover;
+        border-radius: 0.5vw;
+    }
+
+    .order-item-body-middle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        width: 6.4vw;
+    }
+
+    .order-item-body-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: 4vw;
+    }
+
+
+    .order-price {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.4vw;
+        font-weight: 600;
+        /*??? 아뇨 아오ㅋㅋㅋㅋㅋㅋ저게뭐야 아앀ㅋㅋㅋㅋㅋ 민트초코는 커피가 될수없어요...하지만 되고싶다면 민초의 요정인 제가 */
+        /*소원을 이뤄주기 위해 샷을 부어줄거에요! 샷추가 옵션 등장!!! 옙*/
+        font-size: 4rem;
+    }
+
+    .order-item-option {
+        display: none;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: #fffff6;
+        border: 3px solid #b7a27e;
+        padding: 0.1vw 0.8vw;
+        border-radius: 5px;
+        font-size: 1.7vw;
+    }
+
+    .order-item-counter {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #fffff6;
+        border: 2px solid #b7a27e;
+        border-radius: 1vw;
+        margin-right: 0.5vw;
+        width: 23%;
+        height: 50%;
+    }
+
+    .order-quantity-btn {
+        font-size: 4vw !important;
+        font-weight: 600 !important;
+        margin: 0 0.1vw;
+    }
+
+    .order-quantity {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 2vw;
+        height: 1px;
+        font-size: 4vw;
+        font-weight: 600;
+        /*margin: 0 1vw;*/
+    }
+
+    .order_delete_btn {
+        display: none;
+    }
+
+    .order-footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        font-size: 3vw;
+        font-weight: 600;
+        font-family: 'Dongle', sans-serif;
+        margin-bottom: 3rem;
+    }
+
+    .order-total-quantity {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-size: 6vw;
+        width: 15rem;
+        height: 8rem;
+        border: 4px solid #9f681f;
+        border-radius: 8px;
+        background-color: #fff5ee;
+        color: #462304;
+    }
+
+    .order-total-quantity-num {
+        text-align: center;
+    }
+
+    .order-total-pay-price {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 32rem;
+        height: 8rem;
+        border: 4px solid #9f681f;
+        border-radius: 8px;
+        font-size: 6vw;
+        background-color: #fff5ee;
+        color: #462304;
+    }
+
+    .order-pay-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 33rem;
+        height: 8rem;
+        font-family: 'Single Day', cursive;
+        color: white;
+        margin-left: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .order-delete-all {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 25%;
+        height: 100%;
+        border: 0.7vw solid #ff8f36;
+        border-radius: 1vw;
+        background-color: #ffa724;
+        font-size: 2.2vw;
+        font-weight: 600;
+    }
+
+    .order-pay-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        font-size: 6rem;
+        border: 4px solid #ca9067;
+        background-color: #adadad4d;
+        color: #b38d72;
+        text-transform: uppercase;
+        letter-spacing: 1.2vw;
+        font-weight: bold;
+        position: relative;
+        transition: all 0.4s;
+        overflow: hidden;
+    }
+
+    .order-pay-box.active {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        font-size: 6rem;
+        border: 4px solid #ff691b;
+        background-color: #ff9041;
+        color: #ffffff;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-weight: bold;
+        position: relative;
+        transition: all 0.4s;
+        overflow: hidden;
+    }
+
+    .pay-modal-overlay {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: 4;
+        left: 0;
+        top: 0;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(1.5px);
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.5s ease; /* 트랜지션 효과 추가 */
+    }
+
+    .pay-modal-window {
+        position: absolute;
+        opacity: 0;
+        transition: opacity 0.5s ease, transform 0.5s ease; /* 트랜지션 효과 추가 */
+        transform: translateY(100%); /* 처음에는 아래로 숨겨져 있음 */
+        background: #ffffff;
+        border: 1vw solid #FFB13DFF;
+        border-radius: 2vw;
+        color: #4d2107;
+        font-weight: 600;
+        font-size: 3vw;
+    }
+
+    .pay-modal-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 70vw;
+    }
+
+    .pay-modal-top {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        width: 100%;
+    }
+
+    .pay-modal-title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 60vw;
+        margin: 5vw;
+        font-size: 5vw;
+        border-bottom: 3px solid #c2c2c2;
+    }
+
+    .pay-modal-close {
+        font-size: 5vw !important;
+        font-weight: 600 !important;
+    }
+
+    .pay-modal-bottom {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 60vw;
+        height: 20vw;
+        margin: 0 5vw 5vw 5vw;
+    }
+
+    .cash-pay-btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-radius: 1vw;
+        background-color: #ff9800;
+        font-size: 4.2vw;
+        width: 27.5vw;
+        height: 17vw;
+        color: white;
+    }
+
+    .point-pay-btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        /* border: 0.7vw solid #ff8f36; */
+        border-radius: 1vw;
+        background-color: #ff7928;
+        font-size: 4.1vw;
+        width: 27.5vw;
+        height: 17vw;
+        color: white;
+    }
+
+    .cash-modal-overlay {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: 4;
+        left: 0;
+        top: 0;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(1.5px);
+        -webkit-backdrop-filter: blur(1.5px);
+        opacity: 1;
+        transition: opacity 0.3s ease, transform 0.3s ease; /* 트랜지션 효과 추가 */
+    }
+
+    .cash-modal-window {
+        backdrop-filter: blur(13.5px);
+        border-radius: 2vw;
+        border: 1vw solid rgb(255, 177, 61);
+        font-family: 'Gamja Flower', sans-serif;
+        font-weight: 600;
+        color: #4d2107;
+        font-size: 3vw;
+        width: 55vw;
+        padding: 5vw;
+        position: relative;
+        position: relative;
+        background-color: white;
+        transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    .cash-modal-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .cash-modal-order {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border-bottom: 2px solid #b9b9b9;
+        width: 55vw;
+        font-size: 6.5rem;
+        padding: 2vw 0;
+    }
+
+    .cash-modal-order-num {
+        font-size: 5vw;
+        scale: 1.5;
+        transform: translateY(-3%);
+        animation-name: heartbeat;
+        animation-duration: 1s;
+        animation-iteration-count: 3; /* 3번만 반복 */
+    }
+
+    .cash-modal-message {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 3rem;
+        font-size: 4.5rem;
+    }
+
+    .cash-waiting {
+        display: flex;
+        flex-direction: row;
+        margin: 2rem 0;
+        font-size: 7rem;
+    }
+
+    .cash-modal-complete {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 20vw;
+        height: 9vw;
+        border: 1vw solid #ee5700;
+        border-radius: 2vw;
+        background-color: #ff8034;
+        color: white;
+        font-size: 6vw;
+    }
+
+    .point-modal-overlay {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: 4;
+        left: 0;
+        top: 0;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(1.5px);
+        opacity: 1;
+        transition: opacity 0.3s ease, transform 0.3s ease; /* 트랜지션 효과 추가 */
+    }
+
+    .point-modal-window {
+        backdrop-filter: blur(13.5px);
+        border-radius: 2vw;
+        border: 1vw solid rgb(255, 177, 61);
+        padding: 5vw;
+        font-family: 'Gamja Flower', sans-serif;
+        font-weight: 600;
+        color: #4d2107;
+        width: 60vw;
+        font-size: 3vw;
+        position: relative;
+        background-color: white;
+        transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    .point-modal-body {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .point-modal-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .point-modal-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 0.4vh solid #b9b9b9;
+        width: 100%;
+        font-size: 5vw;
+        padding-bottom: 2vh;
+    }
+
+    .point-modal-header-message {
+        margin-left: 1vw;
+        opacity: 1;
+        font-family: none, fangsong;
+    }
+
+
+    .point-close-btn {
+        font-size: 6vw !important;
+    }
+
+    .potion-select-name {
+        display: none;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        font-size: 4vw;
+        position: relative;
+    }
+
+    .point-select-box {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .point-select-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        border-bottom: 0.4vh solid #b9b9b9;
+        padding-bottom: 2vh;
+        margin-bottom: 2vh;
+    }
+
+    .point-select-message {
+        font-size: 4vw;
+    }
+
+    .point-select-name {
+        display: grid;
+        grid-template-columns: repeat(3, 19vw);
+        grid-gap: 2vw;
+        align-items: center;
+        width: 60vw !important;
+    }
+
+    .point-select-close {
+        font-size: 5vw !important;
+        scale: 1.4;
+    }
+
+    #result {
+        font-size: 3.5vw;
+    }
+
+    .result-name {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-size: 6vw;
+        border: 1vw solid rgb(255, 177, 61);
+        border-radius: 2vw;
+        width: 17vw;
+        height: 13vw;
+    }
+
+    .number-board {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 60vw;
+        position: relative;
+        background-color: white;
+        transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    .hidden {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    .chsnOrder {
+        visibility: hidden;
+    }
+
+    .phone-input {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 65vw;
+        padding: 2vh 0 0 0;
+    }
+
+    .digit-input {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 12vw;
+        height: 12vw;
+        border: 3px solid orange;
+        background-color: #fff3e3;
+        border-radius: 5px;
+        font-size: 13rem;
+        color: chocolate;
+    }
+
+    .number-board-message {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+        transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
+        text-align: center;
+        color: #afafaf;
+        font-size: 4vw;
+        padding: 1vh 0;
+    }
+
+
+    .number-buttons {
+        display: grid;
+        grid-template-columns: repeat(3, 18vw);
+        grid-gap: 3vw;
+    }
+
+    .number {
+        font-size: 7rem;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        cursor: pointer;
+        padding: 1.5vh 0;
+    }
+
+    .number:hover {
+        background-color: #f2f2f2;
+    }
+
+    .backspace {
+        font-size: 4vw !important;
+        scale: 2;
+        color: #5d5d5d;
+    }
+
+    .clear-btn {
+        font-size: 3vw !important;
+        padding: 0.2vw 5vw;
+    }
+
+    #submitBtn {
+        display: none;
+    }
+
+    .point-pay {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .point-pay-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        border-bottom: 0.4vh solid #b9b9b9;
+        padding-bottom: 3rem;
+        margin-bottom: 2vh;
+    }
+
+    .point-pay-message {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        font-size: 4rem;
+    }
+
+    .message-blank {
+        font-size: 5vw;
+    }
+
+    .point-pay-user {
+        font-size: 6rem;
+    }
+
+    .point-pay-close {
+        font-size: 5vw !important;
+    }
+
+    .point-pay-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .point-pay-number {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        margin-bottom: 3rem;
+        padding-bottom: 2vh;
+        border-bottom: 0.2vw solid #a4a4a4;
+        font-size: 4.5rem;
+    }
+
+    .point-pay-current-box {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+    }
+
+    .point-pay-current-text {
+    }
+
+    .point-pay-width {
+        width: 20vw;
+        text-align: end;
+    }
+
+    .point-pay-charge-box {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+    }
+
+    .point-pay-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+    }
+
+    .point-pay-question {
+    }
+
+    .point-pay-select {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 60vw;
+    }
+
+    .point-pay-cancel {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-radius: 1vw;
+        background-color: #ffab00;
+        border: 1vw solid #ff9a22;
+        font-size: 7vw;
+        width: 25vw;
+        height: 10rem;
+        color: white;
+    }
+
+    .point-pay-settle {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-radius: 1vw;
+        background-color: #ff7928;
+        border: 1vw solid #ee5700;
+        font-size: 6vw;
+        width: 25vw;
+        height: 10rem;
+        color: white;
+    }
+
+    .point-add-content {
+        display: none;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 50vw;
+    }
+
+    .point-add-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        border-bottom: 0.4vh solid #b9b9b9;
+        padding-bottom: 3.8vw;
+        margin-bottom: 4vw;
+        font-size: 8rem;
+    }
+
+    .point-add-title {
+    }
+
+    .point-add-close {
+        font-size: 6vw !important;
+    }
+
+    .point-add-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .point-add-top {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .point-add-counter {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .point-add-input {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        color: #a8a8a8;
+        width: 35vw;
+        height: 10vw;
+        border: solid 0.6vw #989898;
+        border-radius: 2vw;
+        font-size: 6rem;
+        margin-left: 1vw;
+        font-family: 'Dongle', sans-serif;
+    }
+
+    .point-add-input-footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        color: #a8a8a8;
+        border-bottom: 0.4vh solid #b9b9b9;
+        width: 100%;
+        font-size: 3.5rem;
+        font-weight: 300 !important;
+        padding-top: 1.7vw;
+        padding-bottom: 2.3vw;
+        margin-bottom: 4vw;
+    }
+
+    .point-add-recommend {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 4vw;
+        width: 100%;
+    }
+
+    .point-add-btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 3.5rem;
+        padding: 0 1vw;
+        height: 4rem;
+    }
+
+    .point-backspace {
+        font-size: 2.2vw !important;
+        scale: 3;
+    }
+
+    .천원 {
+        background-color: #fff2e0;
+        border: 0.7vw solid orange;
+        border-radius: 2vw;
+        color: #d96613;
+    }
+
+    .만원 {
+        background-color: #FFE9E0FF;
+        border: 0.7vw solid #dc5104;
+        border-radius: 2vw;
+        color: #9d361f;
+    }
+
+    .number-pad {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 5px;
+    }
+
+    .number-pad .btn {
+        flex: 1 0 calc(33.333% - 5px);
+        font-size: 7rem;
+        cursor: pointer;
+        font-family: 'Gamja Flower', sans-serif;
+    }
+
+    .number-pad .point-del {
+        flex: 1 0 calc(33.333% - 5px);
+        padding: 1vh 0;
+        font-size: 3.5vw;
+        cursor: pointer;
+    }
+
+    .point-add-check {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 9vw;
+        height: 10vw;
+        /* border: 1vw solid #ee5700; */
+        border-radius: 2vw;
+        background-color: #ff8034;
+        color: white;
+        font-size: 3.5vw;
+        margin-right: 1vw;
+    }
+
+    .point-manager-content {
+        display: none;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+    }
+
+    .point-manager-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        border-bottom: 0.4vh solid #b9b9b9;
+        padding-bottom: 2vh;
+        margin-bottom: 2vh;
+        font-size: 7rem;
+
+    }
+
+    .point-manager-header-message {
+    }
+
+    #countdown {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 6rem;
+    }
+
+    .point-loading {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        width: 40rem;
+        height: 40rem;
+        overflow: hidden;
+    }
+
+    .point-loading-img {
+        width: 50rem;
+    }
+
+    .point-manager-cancel {
+        border: 5px solid #ff8f36;
+        border-radius: 10px;
+        padding: 0.3rem 1rem;
+        background-color: #ffa724;
+        font-size: 5rem;
+        font-weight: 600;
+        color: white;
+    }
+
+    .point-manager-close {
+        font-size: 6vw !important;
+    }
+
+    .point-manager-body {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 5px;
+    }
+
+    .manager-name {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border: 1vw solid rgb(255, 177, 61);
+        border-radius: 2vw;
+        margin: 1vh 1vw;
+        width: 9vw;
+        flex: 1 0 calc(21% - 5px);
+        padding: 1vh 0;
+        font-size: 3.5vw;
+        cursor: pointer;
+    }
+
+
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    .point-last {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .point-last-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 60vw;
+        border-bottom: 0.4vh solid #b9b9b9;
+        margin-bottom: 2rem;
+        font-size: 6rem;
+        padding-bottom: 5vw;
+    }
+
+    .point-last-header-message {
+
+    }
+
+    .point-last-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        font-size: 3.5vw;
+        border-bottom: 0.4vh solid #b9b9b9;
+        padding-bottom: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .point-last-balance {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .point-last-balance-num {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-right: 5vw;
+    }
+
+    .point-waiting {
+        display: flex;
+        flex-direction: row;
+        /*margin: 3vh 0;*/
+        font-size: 5rem;
+    }
+
+    .point-waiting-number {
+        scale: 1.1;
+    }
+
+    .point-recharge-btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-radius: 1vw;
+        background-color: #ffb328;
+        border: 0.5vw solid #ee8600;
+        font-size: 4vw;
+        width: 12vw;
+        height: 7.5vw;
+        color: white;
+    }
+
+    .point-last-check {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-radius: 1vw;
+        background-color: #ff7928;
+        border: 1vw solid #ee5700;
+        font-size: 7rem;
+        width: 24rem;
+        height: 11.11vw;
+        color: white;
+    }
+
+    .point-complete-content {
+        display: none;
+    }
+}
+
+/*css-480 종료*/
+@media only screen and (min-width: 481px) {
+
+    body {
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 7vh;
+        background-color: #ff962d;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+    }
+
+    .nav_item {
+        margin-left: 20px;
+        font-size: 2vw;
+        font-weight: bold;
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .pick {
+        padding-bottom: 0.2vh;
+        border-bottom: 0.2vw solid #e34a1c;
+    }
+
+    .nav-left {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .date-time-section {
+        font-size: 2.3vw;
+        font-weight: bold;
+        color: white;
+        margin-right: 6vw;
+        font-family: 'Dongle', sans-serif;
+        scale: 2
+    }
+
+
+    .date-time-section {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+    }
+
+
+    .kategoria {
+        position: fixed;
+        left: 0;
+        top: 7vh;
+        height: 7vh;
+        width: 70vw;
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        /* padding: 0.8vw 0; */
+        font-size: 2vw;
+        font-weight: 600;
+        font-family: 'Single Day', cursive;
+    }
+
+    .kategoria-left {
+        margin: 0 22px;
+    }
+
+    .kategoria-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .kategoria-item {
+        border: dotted 3.5px grey;
+        border-radius: 20px;
+        width: 7vw;
+        margin: 0 2vw;
+        padding: 2px 0;
+        text-align: center;
+        scale: 0.9;
+    }
+
+    /* 선택된 요소에 대한 스타일 */
+    .selected {
+        border: 0.3vw solid #ffb13d !important; /* 찐한 테두리 색상 */
+        opacity: 1 !important;
+    }
+
+    /* 나머지 요소에 대한 스타일 */
+    .not-selected {
+        opacity: 0.5; /* 불투명도 설정 (0.5는 50%의 불투명도를 의미) */
+    }
+
+    .menu-main {
+        /* background-color: #f3f4f8; */
+        position: fixed;
+        z-index: 2;
+        left: 0;
+        background-color: #ffefde;
+        font-family: 'Gamja Flower', sans-serif;
+        top: 14vh;
+        display: flex;
+        flex-direction: column;
+        overflow-y: hidden;
+        height: 86vh;
+    }
+
+    .menu-box {
+        overflow: scroll;
+    }
+
+    .menu-body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu-kategoria-box {
+    }
+
+    .menu-kategoria {
+        width: 8vw;
+        text-align: center;
+        margin: 10px 10px 10px 15px;
+        border: 5px solid #3d1404;
+        border-radius: 20px;
+        background-color: white;
+        font-size: 2.5vw;
+        font-weight: 600;
+    }
+
+    .menu-section {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 70vw;
+    }
+
+    .menu-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        border-radius: 13px;
+        margin-left: 1.2vw;
+    }
+
+    .menu-image {
+        width: 15.8vw;
+        height: 15.8vw;
+        object-fit: cover;
+        border-radius: 2vw;
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+        border: 0.5px solid #adadad;
+        transition: transform 0.3s ease-in;
+    }
+
+    .menu-image:active {
+        transform: scale(1.5); /* 또는 원하는 만큼의 이동 거리 설정 */
+    }
+
+    .menu-card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 6vw;
+        margin: 0.7vw 0.5vw;
+    }
+
+    .menu_name {
+        font-size: 2.5vw;
+        font-weight: 600;
+        color: #462304;
+    }
+
+    .menu-price {
+        font-size: 2.5vw;
+        color: #575757;
+    }
+
+    .modal_overlay {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: 4;
+        left: 0;
+        top: 0;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(1.5px);
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease; /* 트랜지션 효과 추가 */
+    }
+
+    .modal_window {
+        position: absolute;
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease; /* 트랜지션 효과 추가 */
+        transform: translateY(100%); /* 처음에는 아래로 숨겨져 있음 */
+        background: #ffffff;
+        backdrop-filter: blur(13.5px);
+        border-radius: 2vw;
+        border: 1vw solid rgb(255, 177, 61);
+        width: 70vw;
+        padding: 2.5vw;
+        font-family: 'Gamja Flower', sans-serif;
+        font-weight: 600;
+        color: #4d2107;
+        font-size: 3vw;
+    }
+
+
+    .modal-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .modal-top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 1vh;
+    }
+
+    .modal-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        width: 20vw;
+    }
+
+    .modal-menu-img {
+        width: 20vw;
+        height: 20vw;
+        object-fit: cover;
+        border-radius: 1vw;
+        border: .4vw solid #774721;
+        background-color: black;
+    }
+
+    .modal-left-bottom {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        height: 30%;
+    }
+
+    .modal-menu-name {
+    }
+
+
+    .madal-menu-total {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+    }
+
+    .modal-menu-price {
+        width: 10vw;
+        transition: transform 0.1s ease-in-out; /* 부드러운 이동을 위한 transition 추가 */
+    }
+
+    .modal-menu-item-counter {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: #fffff6;
+        border: 0.5vw solid #ff9842;
+        border-radius: 1vw;
+    }
+
+    .modal-menu-quantity {
+        text-align: center;
+        width: 2.5vw;
+        font-size: 2.5vw;
+        font-weight: 600;
+        transition: transform 0.1s ease-in-out; /* 부드러운 이동을 위한 transition 추가 */
+        /*margin: 0 1vw;*/
+    }
+
+    .modal-menu-quantity-btn {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 0 0.5vw;
+        font-weight: 600 !important;
+    }
+
+    .modal-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        width: 47vw;
+        margin-bottom: 2vw;
+    }
+
+    .modal-option-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        width: 97%;
+        padding-bottom: 7vw;
+        border: 5px solid #cb7618;
+        border-radius: 1.5vw;
+    }
+
+    .modal-option-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 93%;
+        padding: 0.2vw;
+    }
+
+    .modal-option-top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        border-bottom: 3px solid rgba(155, 155, 155, 0.27);
+    }
+
+    .modal-option-top-left {
+        margin: 2vh 3.3vw;
+        font-size: 4vw;
+        width: 20vw;
+    }
+
+    .modal-option-top-right {
+        width: 100%;
+    }
+
+    .modal-option-line {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1vw 0;
+        height: 7vh;
+        border-bottom: 3px solid rgba(155, 155, 155, 0.27);
+    }
+
+    .modal-option {
+        font-size: 3vw;
+        width: 20vw;
+        text-align: center;
+        border-right: 3px solid rgba(155, 155, 155, 0.27);
+        margin-right: 0.6vw;
+    }
+
+    .modal-option-items {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        align-items: center;
+        width: 100%;
+    }
+
+    .modal-option-item-text {
+        flex: 1;
+        margin: 0 0.5vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border: #ffc597 0.4vw solid;
+        background-color: #ffeddc;
+        border-radius: 1vw;
+        color: #cba99b;
+        transition: transform 0.1s ease-in-out; /* 부드러운 이동을 위한 transition 추가 */
+        font-weight: 100;
+        cursor: pointer;
+    }
+
+    .option-def {
+        border: #ff8000 0.4vw solid;
+        background-color: #ffb14b;
+        color: white;
+        font-weight: 600;
+    }
+
+    .option-not-selected {
+        border: #ffc597 0.4vw solid;
+        background-color: #ffeddc;
+        color: #cba99b;
+        font-weight: 100;
+    }
+
+    .option-selected {
+        border: #ff8000 0.4vw solid;
+        background-color: #ffb14b;
+        color: white;
+        font-weight: 600 !important;
+        scale: 1;
+    }
+
+    .modal-option-item-text:active {
+        transform: translateY(-0.8vh); /* 클릭 시 아래로 2px 이동 */
+    }
+
+    .modal-option-item-counter {
+        margin: 0 1vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        align-items: center;
+        border-radius: 3vw;
+    }
+
+    .modal-option-item-number {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-option-quantity-btn {
+        border: #ff8f36 0.6vw solid;
+        border-radius: 20%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        line-height: 0.5;
+    !important;
+        font-weight: 250;
+        font-style: normal;
+        font-size: 9vw;
+        letter-spacing: normal;
+        text-transform: none;
+        display: inline-block;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        -webkit-font-smoothing: antialiased;
+    }
+
+
+    .modal-option-quantity {
+        text-align: center;
+        width: 6vw;
+        font-size: 4vw;
+        font-weight: 600;
+        transition: transform 0.1s ease-in-out; /* 부드러운 이동을 위한 transition 추가 */
+        /*margin: 0 1vw;*/
+    }
+
+    .modal-bottom {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .modal-cancle {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 18.5vw;
+        padding: 1vw 0;
+        border: #ff8f36 solid 1vw;
+        background-color: #ffc346;
+        color: white;
+        border-radius: 1.5vw;
+        font-size: 4vw;
+    }
+
+    .modal-order-complete {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 45vw;
+        padding: 1vw 0;
+        border: #ff4e28 solid 1vw;
+        background-color: #ff8f36;
+        color: white;
+        border-radius: 1vw;
+        font-size: 4vw;
+    }
+
+    .order-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        width: 30vw;
+        height: 100%;
+        top: 0;
+        right: 0;
+        background-color: #ffdba5;
+    }
+
+    .order-header-cushion {
+        height: 6vh;
+    }
+
+    .order-header {;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        margin: 10px 10px 0 30px;
+        font-weight: bold;
+        color: #ffffff;
+    }
+
+    .order-header-left {
+        color: #cc6351;
+        width: 10vw;
+        font-size: 3vw;
+        scale: 1.3;
+        font-family: 'Dongle', sans-serif;
+    }
+
+    .order-reset-btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-size: 3vw;
+
+        border: 0.5vw solid #de951f;
+        border-radius: .7vw;
+        background-color: #efb866;
+        padding: 0.3vh 0 0 0.5vw;
+        text-align: center;
+        font-family: 'Nanum Pen Script', cursive;
+    }
+
+    .order-reset {
+        font-size: 2vw;
+        font-weight: 100;
+    }
+
+    .order-reset-icon {
+    }
+
+    .order-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: stretch;
+        width: 91%;
+        height: 58vh;
+        margin: .45vw;
+        padding: 1vh 0.2vw;
+        border: 0.4vw solid #9f681f;
+        border-radius: 1vw;
+        background-color: #fff5ee;
+        font-family: 'Nanum Pen Script', cursive;
+        overflow: scroll;
+    }
+
+    .order-container {
+
+    }
+
+    .order-swiper-container {
+        width: 100%;
+        overflow-x: scroll;
+        overflow-y: visible;
+        scroll-snap-type: x
+    }
+
+    .order-swiper-box {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        margin: 2vh 0 0.5vh 1.4vw;
+        width: 48vw;
+    }
+
+    .order-swiper-item {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 10vw;
+    }
+
+    .order-option-change-btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border: 0.3vw solid #ff8d2f;
+        background-color: #ffc251;
+        color: white;
+        font-weight: 600;
+        border-radius: 1vw;
+        width: 7vw;
+        height: 6vh;
+        font-size: 2.1vw;
+    }
+
+    .order-delete-btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border: 0.3vw solid #ff2f2f;
+        background-color: #ff8351;
+        color: white;
+        font-weight: 600;
+        border-radius: 1vw;
+        width: 7vw;
+        height: 6vh;
+        font-size: 2.5vw;
+    }
+
+    .order-box {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 24.5vw;
+        padding: 0.1vh 0.3vw 0.1vh 0.5vw;
+        border-radius: 10px;
+        border: 0.5vw solid #daa36d;
+        color: #79471a;
+        background-color: #ffedd2;
+        transition: transform 0.3s ease;
+        scroll-snap-align: center;
+    }
+
+    .order-optionBox {
+        display: flex;
+        position: absolute;
+        transform: translateY(-2.3vh);
+        width: max-content;
+        font-size: 1.5vw;
+    }
+
+    .sugarPump {
+        border-radius: 0.5vw;
+        color: #ffffff;
+        background-color: #ffa100;
+        margin: 0 0.5vw 0.1vh 0;
+        padding: 0.05vh 0.5vw;
+        text-align: center;
+        font-family: 'Gamja Flower', sans-serif;
+        height: 3vh;
+    }
+
+    .vanillaPump {
+        border-radius: 0.5vw;
+        color: #ffffff;
+        background-color: #ffa100;
+        margin: 0 0.5vw 0.1vh 0;
+        padding: 0.05vh 0.5vw;
+        text-align: center;
+        font-family: 'Gamja Flower', sans-serif;
+        height: 3vh;
+    }
+
+    .caramelPump {
+        border-radius: 0.5vw;
+        color: #ffffff;
+        background-color: #ffa100;
+        margin: 0 0.5vw 0.1vh 0;
+        padding: 0.05vh 0.5vw;
+        text-align: center;
+        font-family: 'Gamja Flower', sans-serif;
+        height: 3vh;
+    }
+
+    .iceCream {
+        border-radius: 0.5vw;
+        color: #ffffff;
+        background-color: #ffa100;
+        margin: 0 0.5vw 0.1vh 0;
+        padding: 0.05vh 0.5vw;
+        text-align: center;
+        font-family: 'Gamja Flower', sans-serif;
+        height: 3vh;
+    }
+
+    .order-item {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 6vh;
+    }
+
+    .order-item-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 47%;
+    }
+
+    .order-item-right {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    .order-item-rigit-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+        margin-right: 1vw;
+    }
+
+    .order-item-right-right {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .order-item-left-top {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+    }
+
+    .order-name {
+        color: #4f2d0b;
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-bottom: 0.1vw;
+    }
+
+    .order-back-data {
+        display: none;
+    }
+
+    .order-option-box {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: 2vh;
+    }
+
+    .order-option {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.5vw;
+        color: white;
+        background-color: chocolate;
+        margin: 0 0.5vw 0.1vh 0;
+        padding: 0.05vh 0.5vw;
+        text-align: center;
+        height: 3vh;
+        font-family: 'Gamja Flower', sans-serif;
+    }
+
+    .order-cold-option {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.5vw;
+        color: white;
+        background-color: #56A8F5;
+        margin: 0 0.5vw 0.1vh 0;
+        padding: 0.05vh 0.5vw;
+        text-align: center;
+        height: 3vh;
+        font-family: 'Gamja Flower', sans-serif;
+    }
+
+    .order-item-close {
+        scale: 0.8;
+        z-index: 1;
+        position: relative;
+        top: -6vh;
+        right: -0.1vw;
+        background-color: rgba(255, 255, 255, 0.56);
+        height: 2vw;
+        border-radius: 50%;
+    }
+
+    .order-item-body {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: end;
+        width: 100%;
+    }
+
+    .order-item-top-left {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .order-item-img {
+        width: 4.5vw;
+        height: 4.5vw;
+        object-fit: cover;
+        border-radius: 0.5vw;
+    }
+
+    .order-item-body-middle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        width: 6.4vw;
+    }
+
+    .order-item-body-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: 4vw;
+    }
+
+
+    .order-price {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.4vw;
+        font-size: 2.3vw;
+        font-weight: 600;
+        padding: 0.2vh 0.3vw;
+        margin-top: 0.4vh;
+        height: 2vh;
+    }
+
+    .order-item-option {
+        display: none;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: #fffff6;
+        border: 3px solid #b7a27e;
+        padding: 0.1vw 0.8vw;
+        border-radius: 5px;
+        font-size: 1.7vw;
+    }
+
+
+    .order-item-counter {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: #fffff6;
+        border: 3px solid #b7a27e;
+        border-radius: 5px;
+        margin-right: 0.5vw;
+    }
+
+
+    .order-quantity-btn {
+        font-size: 1.5vw !important;
+        font-weight: 600 !important;
+        margin: 0 0.2vw;
+    }
+
+    .order-quantity {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 2vw;
+        height: 0vh;
+        font-size: 2vw;
+        font-weight: 600;
+        /*margin: 0 1vw;*/
+    }
+
+    .order_delete_btn {
+        display: none;
+    }
+
+    .order-footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 93%;
+        height: 7vh;
+        font-size: 3vw;
+        font-weight: 600;
+        font-family: 'Dongle', sans-serif;
+    }
+
+    .order-total-quantity {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 85%;
+        width: 30%;
+        border: 0.4vw solid #9f681f;
+        border-radius: 1vw;
+        background-color: #fff5ee;
+        color: #462304;
+    }
+
+    .order-total-quantity-num {
+        text-align: center;
+    }
+
+    .order-total-pay-price {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 85%;
+        width: 60%;
+        border: 0.4vw solid #9f681f;
+        border-radius: 1vw;
+        background-color: #fff5ee;
+        color: #462304;
+    }
+
+    .order-pay-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 91%;
+        height: 12vh;
+        margin: 1.5vh 0; /* 빼면 이상해짐 */
+        font-family: 'Single Day', cursive;
+        color: white;
+    }
+
+    .order-delete-all {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 25%;
+        height: 100%;
+        border: 0.7vw solid #ff8f36;
+        border-radius: 1vw;
+        background-color: #ffa724;
+        font-size: 2.2vw;
+        font-weight: 600;
+    }
+
+    .order-pay-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        border-radius: 1vw;
+        font-size: 4.5vw;
+        border: 5px solid #ca9067;
+        background-color: #adadad4d;
+        color: #b38d72;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-weight: bold;
+        position: relative;
+        transition: all 0.4s;
+        overflow: hidden;
+    }
+
+    .order-pay-box.active {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        border-radius: 1vw;
+        font-size: 4.5vw;
+        border: 5px solid #d25500;
+        background-color: #ff9041;
+        color: #ffffff;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-weight: bold;
+        position: relative;
+        transition: all 0.4s;
+        overflow: hidden;
+
+    }
+
+    .pay-modal-overlay {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: 4;
+        left: 0;
+        top: 0;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(1.5px);
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.5s ease; /* 트랜지션 효과 추가 */
+    }
+
+    .pay-modal-window {
+        position: absolute;
+        opacity: 0;
+        transition: opacity 0.5s ease, transform 0.5s ease; /* 트랜지션 효과 추가 */
+        transform: translateY(100%); /* 처음에는 아래로 숨겨져 있음 */
+        background: #ffffff;
+        border: 1vw solid #FFB13DFF;
+        border-radius: 2vw;
+        color: #4d2107;
+        font-weight: 600;
+        font-size: 3vw;
+        padding: 1vw 0;
+    }
+
+    .pay-modal-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 70vw;
+        height: 50vh;
+    }
+
+    .pay-modal-title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 84%;
+        height: 15vh;
+        font-size: 5vw;
+        margin-left: 6vw;
+        border-bottom: 3px solid #c2c2c2;
+    }
+
+    .pay-modal-close {
+        font-size: 5vw !important;
+        font-weight: 600 !important;
+    }
+
+    .pay-modal-top {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        width: 100%;
+    }
+
+    .pay-modal-bottom {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .cash-pay-btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-radius: 1vw;
+        background-color: #ff9800;
+        font-size: 4vw;
+        padding: 2vh 2vw;
+        width: 20vw;
+        height: 17vh;
+        color: white;
+    }
+
+    .point-pay-btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        /* border: 0.7vw solid #ff8f36; */
+        border-radius: 1vw;
+        background-color: #ff7928;
+        font-size: 4vw;
+        padding: 2vh 2vw;
+        width: 20vw;
+        height: 17vh;
+        color: white;
+    }
+
+    .cash-modal-overlay {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: 4;
+        left: 0;
+        top: 0;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(1.5px);
+        -webkit-backdrop-filter: blur(1.5px);
+        opacity: 1;
+        transition: opacity 0.3s ease, transform 0.3s ease; /* 트랜지션 효과 추가 */
+    }
+
+    .cash-modal-window {
+        backdrop-filter: blur(13.5px);
+        border-radius: 2vw;
+        border: 1vw solid rgb(255, 177, 61);
+        padding: 3rem;
+        font-family: 'Gamja Flower', sans-serif;
+        font-weight: 600;
+        color: #4d2107;
+        font-size: 3vw;
+        width: 55vw;
+        position: relative;
+        background-color: white;
+        transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    .cash-modal-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .cash-modal-order {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        font-size: 5vw;
+        padding-top: 2vh;
+        scale: 1.2;
+        transform: translateX(-4px);
+    }
+
+    .cash-modal-order-num {
+        font-size: 5vw;
+        scale: 1.5;
+        transform: translateY(-3%);
+        animation-name: heartbeat;
+        animation-duration: 1s;
+        animation-iteration-count: 3; /* 3번만 반복 */
+    }
+
+    .cash-modal-message {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5vh;
+        font-size: 4vw;
+    }
+
+    .cash-waiting {
+        display: flex;
+        flex-direction: row;
+        margin: 3vh 0;
+        font-size: 5vw;
+    }
+
+    .cash-modal-complete {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 20vw;
+        height: 12vh;
+        border: 1vw solid #ee5700;
+        border-radius: 2vw;
+        background-color: #ff8034;
+        color: white;
+        font-size: 6vw;
+    }
+
+    .point-modal-overlay {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: 4;
+        left: 0;
+        top: 0;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(1.5px);
+        opacity: 1;
+        transition: opacity 0.3s ease, transform 0.3s ease; /* 트랜지션 효과 추가 */
+    }
+
+    .point-modal-window {
+        backdrop-filter: blur(13.5px);
+        border-radius: 2vw;
+        border: 1vw solid rgb(255, 177, 61);
+        padding: 2.5vw;
+        font-family: 'Gamja Flower', sans-serif;
+        font-weight: 600;
+        color: #4d2107;
+        font-size: 3vw;
+        position: relative;
+        background-color: white;
+        transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    .point-modal-body {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .point-modal-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .point-modal-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 0.4vh solid #b9b9b9;
+        width: 100%;
+        font-size: 5vw;
+        padding-bottom: 2vh;
+    }
+
+    .point-modal-header-message {
+        margin-left: 1vw;
+        opacity: 1;
+        font-family: none, fangsong;
+    }
+
+
+    .point-close-btn {
+        font-size: 6vw !important;
+    }
+
+    .potion-select-name {
+        display: none;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        font-size: 4vw;
+        position: relative;
+    }
+
+    .point-select-box {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .point-select-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        border-bottom: 0.4vh solid #b9b9b9;
+        padding-bottom: 2vh;
+        margin-bottom: 4vh;
+    }
+
+    .point-select-message {
+        font-size: 4vw;
+    }
+
+    .point-select-name {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .point-select-close {
+        font-size: 5vw !important;
+        scale: 1.4;
+    }
+
+    #result {
+        font-size: 3.5vw;
+    }
+
+    .result-name {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-size: 6vw;
+        border: 1vw solid rgb(255, 177, 61);
+        border-radius: 2vw;
+        padding: 2vh 1vw;
+        margin: 2vh 0;
+        width: 18vw;
+    }
+
+    .number-board {
+        flex-direction: column;
+        position: relative;
+        background-color: white;
+        transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    .hidden {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    .chsnOrder {
+        visibility: hidden;
+    }
+
+    .phone-input {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 38vw;
+        padding: 2vh 0 0 0;
+    }
+
+    .digit-input {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 7vw;
+        height: 7vw;
+        border: 0.6vw solid orange;
+        background-color: #fff3e3;
+        border-radius: 1vw;
+        font-size: 8vw;
+        color: chocolate;
+    }
+
+    .number-board-message {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+        transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
+        text-align: center;
+        color: #afafaf;
+        font-size: 2.2vw;
+        padding: 1vh 0;
+    }
+
+
+    .number-buttons {
+        display: grid;
+        grid-template-columns: repeat(3, 12vw);
+        grid-gap: 7px;
+    }
+
+    .number {
+        font-size: 3vw;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        cursor: pointer;
+        padding: 2vh 0;
+    }
+
+    .number:hover {
+        background-color: #f2f2f2;
+    }
+
+    .backspace {
+        font-size: 4vw !important;
+        scale: 2;
+        color: #5d5d5d;
+    }
+
+    #submitBtn {
+        display: none;
+    }
+
+    .point-pay {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .point-pay-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        border-bottom: 0.4vh solid #b9b9b9;
+        padding-bottom: 2vh;
+        margin-bottom: 2vh;
+    }
+
+    .point-pay-message {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        font-size: 4vw;
+        padding: 2vh;
+    }
+
+    .message-blank {
+        font-size: 5vw;
+    }
+
+    .point-pay-user {
+        font-size: 5vw;
+    }
+
+    .point-pay-close {
+        font-size: 5vw !important;
+    }
+
+    .point-pay-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .point-pay-number {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        margin-bottom: 2vh;
+        padding-bottom: 2vh;
+        border-bottom: 0.2vw solid #a4a4a4;
+    }
+
+    .point-pay-current-box {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+    }
+
+    .point-pay-current-text {
+    }
+
+    .point-pay-width {
+        width: 12vw;
+        text-align: end;
+    }
+
+    .point-pay-charge-box {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+    }
+
+    .point-pay-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+    }
+
+    .point-pay-question {
+    }
+
+    .point-pay-select {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 55vw;
+    }
+
+    .point-pay-cancel {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-radius: 1vw;
+        background-color: #ffab00;
+        border: 1vw solid #ff9a22;
+        font-size: 4vw;
+        padding: 2vh 2vw;
+        width: 12vw;
+        height: 5vh;
+        color: white;
+    }
+
+    .point-pay-settle {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-radius: 1vw;
+        background-color: #ff7928;
+        border: 1vw solid #ee5700;
+        font-size: 4vw;
+        padding: 2vh 2vw;
+        width: 20vw;
+        height: 5vh;
+        color: white;
+    }
+
+    .point-add-content {
+        display: none;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 55vw;
+    }
+
+    .point-add-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        border-bottom: 0.4vh solid #b9b9b9;
+        padding-bottom: 2vh;
+        margin-bottom: 4vh;
+        font-size: 6vw;
+    }
+
+    .point-add-title {
+    }
+
+    .point-add-close {
+        font-size: 6vw !important;
+    }
+
+    .point-add-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .point-add-top {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .point-add-counter {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .point-add-input {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        color: #a8a8a8;
+        width: 35vw;
+        height: 10vh;
+        border: solid 0.6vw #989898;
+        border-radius: 2vw;
+        font-size: 5vw;
+        margin-left: 3vw;
+        font-family: 'Dongle', sans-serif;
+    }
+
+    .point-add-input-footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        color: #a8a8a8;
+        border-bottom: 0.4vh solid #b9b9b9;
+        width: 100%;
+        font-size: 2.7vw;
+        font-weight: 300 !important;
+        padding-bottom: 1vh;
+        margin-bottom: 2vh;
+    }
+
+    .point-add-recommend {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 2vh;
+        width: 100%;
+    }
+
+    .point-add-btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 2.5vw;
+        padding: 0 1vw;
+        height: 4vh;
+    }
+
+    .point-backspace {
+        font-size: 2.2vw !important;
+        scale: 3;
+    }
+
+    .천원 {
+        background-color: #fff2e0;
+        border: 0.7vw solid orange;
+        border-radius: 2vw;
+        color: #d96613;
+    }
+
+    .만원 {
+        background-color: #FFE9E0FF;
+        border: 0.7vw solid #dc5104;
+        border-radius: 2vw;
+        color: #9d361f;
+    }
+
+    .number-pad {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 5px;
+    }
+
+    .number-pad .btn {
+        flex: 1 0 calc(33.333% - 5px);
+        padding: 1vh 0;
+        font-size: 3.5vw;
+        cursor: pointer;
+        font-family: 'Gamja Flower', sans-serif;
+    }
+
+    .number-pad .point-del {
+        flex: 1 0 calc(33.333% - 5px);
+        padding: 1vh 0;
+        font-size: 3.5vw;
+        cursor: pointer;
+    }
+
+    .point-add-check {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 9vw;
+        height: 10vh;
+        /* border: 1vw solid #ee5700; */
+        border-radius: 2vw;
+        background-color: #ff8034;
+        color: white;
+        font-size: 3.5vw;
+    }
+
+    .point-manager-content {
+        display: none;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 30rem;
+    }
+
+    .point-manager-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        border-bottom: 0.4vh solid #b9b9b9;
+        padding-bottom: 2vh;
+        margin-bottom: 2vh;
+        font-size: 3rem;
+
+    }
+
+    .point-manager-header-message {
+    }
+
+    #countdown {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 6rem;
+    }
+
+    .point-loading {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        width: 15rem;
+        height: 15rem;
+        overflow: hidden;
+    }
+
+    .point-loading-img {
+        width: 20rem;
+    }
+
+    .point-manager-cancel {
+        border: 5px solid #ff8f36;
+        border-radius: 10px;
+        padding: 0.3rem 1rem;
+        background-color: #ffa724;
+        font-size: 2rem;
+        font-weight: 600;
+        color: white;
+    }
+
+    .point-manager-close {
+        font-size: 6vw !important;
+    }
+
+    .point-manager-body {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 5px;
+    }
+
+    .manager-name {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border: 1vw solid rgb(255, 177, 61);
+        border-radius: 2vw;
+        margin: 1vh 1vw;
+        width: 9vw;
+        flex: 1 0 calc(21% - 5px);
+        padding: 1vh 0;
+        font-size: 3.5vw;
+        cursor: pointer;
+    }
+
+
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    /**/
+    .point-last {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .point-last-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 92%;
+        border-bottom: 0.4vh solid #b9b9b9;
+        padding: 3vh;
+        margin-bottom: 4vh;
+        font-size: 5vw;
+    }
+
+    .point-last-header-message {
+
+    }
+
+    .point-last-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        font-size: 5rem;
+        border-bottom: 0.4vh solid #b9b9b9;
+        padding-bottom: 4vh;
+        margin-bottom: 2vh;
+    }
+
+    .point-last-balance {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .point-last-balance-num {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 16vw;
+    }
+
+    .point-waiting {
+        display: flex;
+        flex-direction: row;
+        /*margin: 3vh 0;*/
+        font-size: 3.8vw;
+    }
+
+    .point-waiting-number {
+        scale: 1.1;
+    }
+
+    .point-recharge-btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-radius: 1vw;
+        background-color: #ffb328;
+        border: 0.5vw solid #ee8600;
+        font-size: 3vw;
+        padding: 2vh 2vw;
+        width: 5vw;
+        height: 2vh;
+        color: white;
+    }
+
+    .point-last-check {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-radius: 1vw;
+        background-color: #ff7928;
+        border: 1vw solid #ee5700;
+        font-size: 5vw;
+        padding: 2vh 2vw;
+        width: 15vw;
+        height: 6vh;
+        color: white;
+    }
+
+    .point-complete-content {
+        display: none;
+    }
 }
 
-.point-pay-question {
-}
-
-.point-pay-select {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 55vw;
-}
-
-.point-pay-cancel {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border-radius: 1vw;
-    background-color: #ffab00;
-    border: 1vw solid #ff9a22;
-    font-size: 4vw;
-    padding: 2vh 2vw;
-    width: 12vw;
-    height: 5vh;
-    color: white;
-}
-
-.point-pay-settle {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border-radius: 1vw;
-    background-color: #ff7928;
-    border: 1vw solid #ee5700;
-    font-size: 4vw;
-    padding: 2vh 2vw;
-    width: 20vw;
-    height: 5vh;
-    color: white;
-}
-
-.point-add-content {
-    display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width: 50vw;
-}
-
-.point-add-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    border-bottom: 0.4vh solid #b9b9b9;
-    padding-bottom: 2vh;
-    margin-bottom: 4vh;
-    font-size: 6vw;
-}
-
-.point-add-title {
-}
-
-.point-add-close {
-    font-size: 6vw !important;
-}
-
-.point-add-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
-
-.point-add-top {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-.point-add-counter {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-.point-add-input {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    color: #a8a8a8;
-    width: 35vw;
-    height: 10vh;
-    border: solid 0.6vw #989898;
-    border-radius: 2vw;
-    font-size: 5vw;
-    margin-left: 3vw;
-    font-family: 'Dongle', sans-serif;
-}
-
-.point-add-input-footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    color: #a8a8a8;
-    border-bottom: 0.4vh solid #b9b9b9;
-    width: 100%;
-    height: 6vh;
-    font-size: 2.7vw;
-    font-weight: 300 !important;
-    padding-bottom: 1vh;
-    margin-bottom: 2vh;
-}
-
-.point-add-recommend {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    margin-bottom: 2vh;
-    width: 100%;
-}
-
-.point-add-btn {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    font-size: 2.5vw;
-    padding: 0 1vw;
-    height: 4vh;
-}
-
-.point-backspace {
-    font-size: 2.2vw !important;
-    scale: 3;
-}
-
-.천원 {
-    background-color: #fff2e0;
-    border: 0.7vw solid orange;
-    border-radius: 2vw;
-    color: #d96613;
-}
-
-.만원 {
-    background-color: #FFE9E0FF;
-    border: 0.7vw solid #dc5104;
-    border-radius: 2vw;
-    color: #9d361f;
-}
-
-.number-pad {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-    gap: 5px;
-}
-
-.number-pad .btn {
-    flex: 1 0 calc(33.333% - 5px);
-    padding: 1vh 0;
-    font-size: 3.5vw;
-    cursor: pointer;
-    font-family: 'Gamja Flower', sans-serif;
-}
-
-.number-pad .point-del {
-    flex: 1 0 calc(33.333% - 5px);
-    padding: 1vh 0;
-    font-size: 3.5vw;
-    cursor: pointer;
-}
-
-.point-add-check {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 9vw;
-    height: 10vh;
-    /* border: 1vw solid #ee5700; */
-    border-radius: 2vw;
-    background-color: #ff8034;
-    color: white;
-    font-size: 3.5vw;
-}
-
-.point-manager-content {
-    display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width: 50vw;
-}
-
-.point-manager-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    border-bottom: 0.4vh solid #b9b9b9;
-    padding-bottom: 2vh;
-    margin-bottom: 2vh;
-    font-size: 6vw;
-}
-
-.point-manager-header-message {
-}
-
-.point-manager-close {
-    font-size: 6vw !important;
-}
-
-.point-manager-body {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-    gap: 5px;
-}
-
-.manager-name {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border: 1vw solid rgb(255, 177, 61);
-    border-radius: 2vw;
-    margin: 1vh 1vw;
-    width: 9vw;
-    flex: 1 0 calc(21% - 5px);
-    padding: 1vh 0;
-    font-size: 3.5vw;
-    cursor: pointer;
-}
-
-
 /**/
 /**/
 /**/
@@ -1812,139 +3990,7 @@ body {
 /**/
 /**/
 /**/
-
-.point-last {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
-
-.point-last-header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 92%;
-    border-bottom: 0.4vh solid #b9b9b9;
-    padding: 3vh;
-    margin-bottom: 4vh;
-    font-size: 5vw;
-}
-
-.point-last-header-message {
-
-}
-
-.point-last-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-    font-size: 3.5vw;
-    border-bottom: 0.4vh solid #b9b9b9;
-    padding-bottom: 4vh;
-    margin-bottom: 2vh;
-}
-
-.point-last-balance {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.point-last-balance-num {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 16vw;
-}
-
-.point-waiting {
-    display: flex;
-    flex-direction: row;
-    /*margin: 3vh 0;*/
-    font-size: 3.8vw;
-}
-
-.point-waiting-number {
-    scale: 1.1;
-}
-
-.point-recharge-btn {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border-radius: 1vw;
-    background-color: #ffb328;
-    border: 0.5vw solid #ee8600;
-    font-size: 3vw;
-    padding: 2vh 2vw;
-    width: 5vw;
-    height: 2vh;
-    color: white;
-}
-
-.point-last-check {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border-radius: 1vw;
-    background-color: #ff7928;
-    border: 1vw solid #ee5700;
-    font-size: 5vw;
-    padding: 2vh 2vw;
-    width: 15vw;
-    height: 6vh;
-    color: white;
-}
-
-.point-complete-content {
-    display: none;
-}
-
-/**/
-/**/
-/**/
-/**/
-/**/
 /**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-
-
 /*이놈들을 가장 마지막에 있어야 모달들이 적용이 된다! (* 우선순위땜시)*/
 .overlay-show {
     opacity: 1; /* 클래스가 추가되면 투명도를 1로 변경 */

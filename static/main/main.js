@@ -9,21 +9,21 @@ function scrollToCategory(category) {
 	}
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 	var scrollableDiv = document.getElementById("ktgr");
 	var ktgry = document.querySelector('.kategoria-row');
 
 	if (scrollableDiv) {
 		// 0.1초 간격으로 스크롤을 감지하는 함수 호출
-		setInterval(function() {
+		setInterval(function () {
 
 			// 스크롤 위치 가져오기
 			var scrollPosition = scrollableDiv.scrollTop;
-			// console.log(scrollPosition)
+			var maxScrollHeight = scrollableDiv.scrollHeight - scrollableDiv.clientHeight;
 
-			// 0 이상 255 미만
+			// 커피
 			if (scrollPosition >= 0) {
-				if (scrollPosition < 741) {
+				if (scrollPosition < maxScrollHeight * 0.36) {
 					ktgry.children[0].classList.add("selected");
 					ktgry.children[1].classList.remove("selected");
 					ktgry.children[2].classList.remove("selected");
@@ -31,9 +31,9 @@ document.addEventListener("DOMContentLoaded", function() {
 				}
 			}
 
-			// 255 이상 1147 미만
-			if (scrollPosition >= 741) {
-				if (scrollPosition < 1533) {
+			// 논커피
+			if (scrollPosition >= maxScrollHeight * 0.36) {
+				if (scrollPosition < maxScrollHeight * 0.75) {
 					ktgry.children[1].classList.add("selected");
 					ktgry.children[2].classList.remove("selected");
 					ktgry.children[3].classList.remove("selected");
@@ -41,9 +41,9 @@ document.addEventListener("DOMContentLoaded", function() {
 				}
 			}
 
-			// 1147 이상 2027 미만
-			if (scrollPosition >= 1533) {
-				if (scrollPosition < 2024) {
+			// 차
+			if (scrollPosition >= maxScrollHeight * 0.75) {
+				if (scrollPosition < maxScrollHeight - 16) {
 					ktgry.children[2].classList.add("selected");
 					ktgry.children[3].classList.remove("selected");
 					ktgry.children[0].classList.remove("selected");
@@ -51,8 +51,8 @@ document.addEventListener("DOMContentLoaded", function() {
 				}
 			}
 
-			// 2027 이상
-			if (scrollPosition >= 2024) {
+			// 음료수
+			if (scrollPosition >= maxScrollHeight - 16) {
 				ktgry.children[3].classList.add("selected");
 				ktgry.children[2].classList.remove("selected");
 				ktgry.children[1].classList.remove("selected");
@@ -981,7 +981,7 @@ function selectName(name, phoneNumber) {
 					if (current_point - totalPayPoint >= 0) {
 						pointPaySettle.innerText = '결제하기';
 						pointPaySettle.onclick = function () {
-							orderData();
+							orderData(name, phoneNumber, current_point, totalPayPoint);
 							finalPayment(name, phoneNumber, current_point, totalPayPoint);
 						};
 					}
@@ -1008,6 +1008,7 @@ function pointAdd_paying(name, phoneNumber, current_point, totalPayPoint) {
 	var pointAddTotalPayPoint = document.querySelector('.point-add-totalPayPoint');
 	var pointAddCheck = document.querySelector('.point-add-check');
 	var pointAddInput = document.querySelector('.point-add-input');
+	var pointAddClose = document.querySelector('.point-add-close');
 
 
 	// 먼저 윈도우를 올림
@@ -1022,8 +1023,13 @@ function pointAdd_paying(name, phoneNumber, current_point, totalPayPoint) {
 		pointAddInput.innerText = '얼마를 충전 할까요?'
 		// 확인버튼에 온클릭 부여
 		pointAddCheck.onclick = function () {
+			// 결제를 하다가 포인트가 부족한 경우
 			pointManager(name, phoneNumber, current_point, totalPayPoint)
 			// 매니저를 선택하기만 하고 디스플레이를 출력하는건 따로 분리하는 작업이 필요하다!
+		};
+		// 결제중에 닫기를 누르는 경우
+		pointAddClose.onclick = function () {
+			pointAddClose_paying()
 		};
 	}, 500)
 }
@@ -1039,6 +1045,7 @@ function pointAdd_complete_pay(name, phoneNumber, current_point, totalPayPoint) 
 	var pointAddCheck = document.querySelector('.point-add-check');
 	var pointAddInput = document.querySelector('.point-add-input');
 	var pointLast = document.querySelector('.point-last');
+	var pointAddClose = document.querySelector('.point-add-close');
 
 
 	// 먼저 윈도우를 올림
@@ -1053,8 +1060,13 @@ function pointAdd_complete_pay(name, phoneNumber, current_point, totalPayPoint) 
 		pointAddInput.innerText = '얼마를 충전 할까요?'
 		// 확인버튼에 온클릭 부여
 		pointAddCheck.onclick = function () {
+			// 결제를 다하고 추가로 충전을 원하는 경우
 			pointManager(name, phoneNumber, current_point, totalPayPoint)
 			// 매니저를 선택하기만 하고 디스플레이를 출력하는건 따로 분리하는 작업이 필요하다!
+		};
+		// 결제를 완료 하고 추가 충전에서 닫기를 누르는 경우
+		pointAddClose.onclick = function () {
+			pointAddClose_complete_pay()
 		};
 	}, 500)
 }
@@ -1159,7 +1171,7 @@ function pointAddBackSpace() {
 
 
 // 포인트_충전 화면 닫기
-function pointAddClose() {
+function pointAddClose_paying() {
 	var pointModal = document.querySelector('.point-modal-window');
 	var pointPay = document.querySelector('.point-pay');
 	var pointAddContent = document.querySelector('.point-add-content');
@@ -1179,12 +1191,37 @@ function pointAddClose() {
 	}, 500)
 }
 
+function pointAddClose_complete_pay() {
+	var pointModal = document.querySelector('.point-modal-window');
+	var pointLast = document.querySelector('.point-last');
+	var pointAddContent = document.querySelector('.point-add-content');
+	var pointAddCurrentPoint = document.querySelector('.point-add-currentPoint');
+	var pointAddTotalPayPoint = document.querySelector('.point-add-totalPayPoint');
+	var pointAddCheck = document.querySelector('.point-add-check');
+
+	// 먼저 윈도우를 올림
+	pointModal.classList.add('hidden');
+
+	setTimeout(function () {
+		pointModal.classList.remove('hidden');
+		pointLast.style.display = 'flex'
+		pointAddContent.style.display = 'none'
+		pointAddCurrentPoint.innerText = ''
+		pointAddTotalPayPoint.innerText = ''
+	}, 500)
+}
+
 function pointManager(name, phoneNumber, current_point, totalPayPoint) {
 
 	var pointModal = document.querySelector('.point-modal-window');
 	var pointManagerContent = document.querySelector('.point-manager-content');
 	var pointAddContent = document.querySelector('.point-add-content');
-	var managerNames = document.querySelectorAll('.manager-name');
+	var inputElement = document.querySelector('.point-add-input');
+	var chargeCancel = document.querySelector('.point-manager-cancel');
+	const point_manager_header_message = document.querySelector('.point-manager-header-message');
+
+	// 충전 금액
+	var point_charge_value = parseInt(inputElement.textContent.replace(/,/g, ""), 10).toString()
 
 	// 먼저 윈도우를 올림
 	pointModal.classList.add('hidden');
@@ -1193,22 +1230,146 @@ function pointManager(name, phoneNumber, current_point, totalPayPoint) {
 		pointModal.classList.remove('hidden');
 		pointAddContent.style.display = 'none'
 		pointManagerContent.style.display = 'flex'
+		point_manager_header_message.innerText = '--- 승인 받는중 ---'
 
-		// 매니저 이름이 등장하게 만듬
-		managerNames.forEach(function (managerName) {
-			managerName.addEventListener('click', function () {
-				managerCheck(name, phoneNumber, current_point, totalPayPoint, this);
-			});
+		let fd_point = new FormData();
+
+		fd_point.append('charge_status', '미승인');
+		fd_point.append('client_name', name);
+		fd_point.append('push_point', point_charge_value);
+		fd_point.append('current_point', current_point);
+		fd_point.append('password', phoneNumber)
+
+		$.ajax({
+			url: '/ManagerOrderData/',
+			data: fd_point,
+			method: "POST",
+			processData: false,
+			contentType: false,
+			success: function (data) {
+				console.log('일단 데이터를 전송하긴함.');
+				chargeCancel.onclick = function () {
+					point_charge_cancel(name, phoneNumber, current_point, totalPayPoint)
+					// 매니저를 선택하기만 하고 디스플레이를 출력하는건 따로 분리하는 작업이 필요하다!
+				};
+				// 재시도 횟수
+				var retryCount = 0;
+				// 최대 재시도 횟수
+				var maxRetries = 40;
+				// 재시도 간격 (밀리초)
+				var retryInterval = 3000; // 3초
+
+				// 재시도 함수
+				function retryRequest() {
+					$.ajax({
+						url: '/ManagerCheck/',
+						data: fd_point,
+						method: 'POST',
+						processData: false,
+						contentType: false,
+						success: function (data) {
+							if (data.charge_status === '승인') {
+								// 성공한 경우 처리
+								console.log('승인받음')
+								point_manager_header_message.innerText = '* 승인 완료 *'
+								setTimeout(function () {
+									managerCheck(name, phoneNumber, current_point, totalPayPoint)
+								}, 500)
+							}
+						},
+						error: function (xhr, status, error) {
+							// 요청이 실패한 경우, 에러를 처리할 수 있습니다.
+							console.log('승인 받는중:', retryCount);
+
+							// 재시도 횟수 증가
+							retryCount++;
+
+							// 최대 재시도 횟수를 초과하지 않으면 다시 요청
+							if (retryCount < maxRetries) {
+								setTimeout(retryRequest, retryInterval);
+							}
+						}
+					});
+				}
+
+				// 초기 요청
+				retryRequest();
+			},
+			error: function (error) {
+				console.log('전송 중 오류가 발생했습니다.');
+			}
 		});
 	}, 500)
 }
 
+function point_charge_cancel(name, phoneNumber, current_point, totalPayPoint) {
+
+	var pointModal = document.querySelector('.point-modal-window');
+	var pointManagerContent = document.querySelector('.point-manager-content');
+	var pointPay = document.querySelector('.point-pay');
+	var pointPayUserText = document.querySelector('.point-pay-user-text');
+	var pointPayCurrentPoint = document.querySelector('.point-pay-current-point');
+	var pointPaySettle = document.querySelector('.point-pay-settle');
+	var inputElement = document.querySelector('.point-add-input');
+	var pointLastBalanceNum = document.querySelector('.point-last-balance-num');
+	var pointLast = document.querySelector('.point-last');
+	var pointLastHeaderMessage = document.querySelector('.point-last-header-message');
+
+	// 충전 금액
+	var point_charge_value = parseInt(inputElement.textContent.replace(/,/g, ""), 10).toString()
+
+
+	let fd_point_delete = new FormData();
+
+	fd_point_delete.append('charge_status', '미승인');
+	fd_point_delete.append('client_name', name);
+	fd_point_delete.append('push_point', point_charge_value);
+	fd_point_delete.append('current_point', current_point);
+
+	$.ajax({
+		url: '/ManagerDelete/',
+		data: fd_point_delete,
+		method: "POST",
+		processData: false,
+		contentType: false,
+		success: function (data) {
+			console.log('데이터를 삭제함.');
+			// 이후에 디스플레이 대한 css 작업을 해야함
+		},
+		error: function (error) {
+			console.log('전송 중 오류가 발생했습니다.');
+		}
+	});
+
+	if (pointLastBalanceNum.textContent.trim() === '') {
+		console.log('아직 걸재전')
+		setTimeout(function () {
+			pointModal.classList.remove('hidden');
+			pointManagerContent.style.display = 'none'
+			pointPay.style.display = 'flex'
+			pointPayUserText.innerText = '_님 환영합니다!'
+			pointPayCurrentPoint.innerText = current_point + '원'
+
+			pointPaySettle.innerText = '충전하기';
+			pointPaySettle.onclick = function () {
+				pointAdd_paying(name, phoneNumber, current_point, totalPayPoint)
+			};
+
+		}, 500)
+	} else {
+		console.log('결제 이후 추가로 충전요구')
+		setTimeout(function () {
+			pointModal.classList.remove('hidden');
+			pointManagerContent.style.display = 'none'
+			pointLast.style.display = 'flex'
+			pointLastHeaderMessage.innerText = '주문이 완료 되었습니다!'
+		}, 500)
+
+	}
+}
+
 // 이름 선택시 발동되는 함수 ** 데이터만 전송시키는 코드와 display를 분리한다.
 function managerCheck(name, phoneNumber, current_point, totalPayPoint, manager) {
-	var manager_name = manager.textContent
-
-	// 포인트 충전하는 함수
-	pointPush(name, phoneNumber, current_point, totalPayPoint)
 
 	var pointModal = document.querySelector('.point-modal-window');
 	var pointManagerContent = document.querySelector('.point-manager-content');
@@ -1224,7 +1385,6 @@ function managerCheck(name, phoneNumber, current_point, totalPayPoint, manager) 
 	var pointCompleteContent = document.querySelector('.point-complete-content');
 	var pointLast = document.querySelector('.point-last');
 	var pointLastHeaderMessage = document.querySelector('.point-last-header-message');
-
 
 	// 충전 금액
 	var point_charge_value = parseInt(inputElement.textContent.replace(/,/g, ""), 10)
@@ -1256,7 +1416,7 @@ function managerCheck(name, phoneNumber, current_point, totalPayPoint, manager) 
 			if (point_push_value - totalPayPoint >= 0) {
 				pointPaySettle.innerText = '결제하기';
 				pointPaySettle.onclick = function () {
-					orderData();
+					orderData(name, phoneNumber, current_point, totalPayPoint);
 					finalPayment(name, phoneNumber, current_point, totalPayPoint);
 				};
 			}
@@ -1275,10 +1435,9 @@ function managerCheck(name, phoneNumber, current_point, totalPayPoint, manager) 
 			pointManagerContent.style.display = 'none'
 			pointLast.style.display = 'flex'
 			pointLastHeaderMessage.innerText = '충전이 완료 되었습니다!'
-			pointLastBalanceNum.innerText = point_charge_value + point_charge_pay_value
+			pointLastBalanceNum.innerText = (point_charge_value + point_charge_pay_value).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + '원'
 		}, 500)
 	}
-
 }
 
 function backPayment() {
@@ -1332,7 +1491,7 @@ function finalPayment(name, phoneNumber, current_point, totalPayPoint) {
 	// 보유 포인트 - 결제 금액
 	var pointLastBalanceNum = balance_point - totalPayPoint
 	// 잔여금액으로 표기하기
-	pointLastBalance.innerText = pointLastBalanceNum + '원'
+	pointLastBalance.innerText = pointLastBalanceNum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + '원'
 
 	// 윈도우 창을 올림
 	pointModal.classList.add('hidden');
@@ -1405,7 +1564,7 @@ function payEnd() {
 }
 
 // 옥션은사실 옥션이 아니라 옵션이다.
-function orderData(order_person) {
+function orderData(order_person, phoneNumber) {
 	console.log(order_person)
 	// container에 있는 모든 box요소를 돌린다.
 	var orderContainer = document.querySelector('#order-container');
@@ -1419,7 +1578,7 @@ function orderData(order_person) {
 
 		// 메뉴의 수량을 가져오는 코드
 		var menu_quantity = parseInt(orderBox.querySelector('.order-quantity').textContent, 10)
-		var formatted_menu_quantity = menu_quantity <10 ? '0' + menu_quantity : menu_quantity
+		var formatted_menu_quantity = menu_quantity < 10 ? '0' + menu_quantity : menu_quantity
 
 		// id값은 1의 자리인 경우 1으로 출력됨으로 앞에 0을 붙혀서 출력한다.
 		var orderId = orderBox.querySelector('.order-id');
@@ -1470,6 +1629,9 @@ function orderData(order_person) {
 	// 주문자 이름 가져오기
 	var order_nameElement = document.querySelector('.point-pay-user')
 
+	// 주문자 번호 가져오기
+	var phone_number = phoneNumber
+
 	// 주문자가 공백을 트림 시키고 변수를 저장한다
 	if (order_nameElement.textContent.trim() === '') {
 		var order_name = order_person
@@ -1487,6 +1649,7 @@ function orderData(order_person) {
 	let fd = new FormData();
 
 	fd.append('order_name', order_name);
+	fd.append('phone_number', phone_number);
 	fd.append('total_quantity', total_quantity);
 	fd.append('total_price', total_price);
 	fd.append('order_status', order_status);

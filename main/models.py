@@ -39,6 +39,7 @@ class OrderList(models.Model):
     order_menu = models.CharField(max_length=255)
     total_price = models.DecimalField(max_digits=10, decimal_places=0, default=0, null=True)
     total_quantity = models.DecimalField(max_digits=10, decimal_places=0, default=0, null=True)
+    phone_number = models.CharField(max_length=15, null=True)
     order_name = models.CharField(max_length=255)
     modified_at = models.DateTimeField(auto_now=True)  # 현재 시간으로 기본값 설정
     order_status = models.CharField(max_length=20, choices=ORDER_STATUS_CHOICES, default='pending')
@@ -47,7 +48,7 @@ class OrderList(models.Model):
 class ClientNumberData(models.Model):
     name = models.CharField(max_length=15, null=False)
     phone_number = models.CharField(max_length=15, null=False)
-    current_point = models.CharField(max_length=15, null=True, blank=True)
+    current_point = models.IntegerField(null=True, blank=True)
     charge_point = models.CharField(max_length=15, null=True, blank=True)
     position = models.CharField(max_length=15, null=True, blank=True)
     age = models.IntegerField(null=True, blank=True)
@@ -61,15 +62,11 @@ class CafeManager(models.Model):
 
 
 class PointList(models.Model):
-    manager = models.CharField(max_length=15)
-    client_data = models.CharField(max_length=15)
+    manager = models.CharField(max_length=15, null=True)
+    charge_status = models.CharField(max_length=15)
+    password = models.CharField(max_length=15, null=True)
+    client_name = models.CharField(max_length=15, null=True)
     push_point = models.CharField(max_length=15)
     current_point = models.IntegerField(null=True, blank=True)
     created_at = models.DateTimeField(default=timezone.now)
-
-    @classmethod
-    def create_from_client_data(cls, client_data):
-        return cls(
-            client_name=client_data.name,
-            current_point=client_data.current_point,
-        )
+    updated_at = models.DateTimeField(auto_now=True)

@@ -123,6 +123,7 @@ body {
     font-family: 'Dongle', sans-serif;
     scale: 2;
     margin-left: 7vw;
+    text-decoration: none !important; /* 밑줄 제거 */
 }
 
 .order-header-right {
@@ -255,6 +256,10 @@ td:not(:last-child) {
     display: none;
 }
 
+.order-phone-number {
+    display: none;
+}
+
 tr {
     width: 100%;
 }
@@ -317,6 +322,7 @@ tr {
     transition: all 0.4s;
     height: 1.5vw;
 }
+
 /*.이게 그 반응형 css야 media라고 표기하고 조건값을 작성하면 그 {} 조건에 맞게 css가 따로 적용된다!
 그래서 아마 주문내역을 보면 새로와 가로의 css를 따로 볼 수 있다! 이해했나.
 예알겠슴다!!!
@@ -373,6 +379,7 @@ tr {
     .order-header-left {
         scale: 3.5;
         margin-left: 16vw;
+        text-decoration: none !important; /* 밑줄 제거 */
     }
 
     th, td {

@@ -67,6 +67,13 @@ function OrderDataSearch() {
 
 
 				// console.log(data.order_data[i].order_status)
+				var phone_number = document.createElement('td');
+				phone_number.className = 'order-phone-number'
+				phone_number.innerText = data.order_data[i].phone_number
+				table_row.appendChild(phone_number)
+
+
+				// console.log(data.order_data[i].order_status)
 				var status = document.createElement('td');
 				status.className = 'order-status-column'
 				status.innerText = data.order_data[i].order_status
@@ -153,12 +160,22 @@ function numberWithCommas(x) {
 function order_delete(element) {
 	// 행에서 id값을 가져와 필터링하고 삭제한다.
 	var id = element.parentNode.parentNode.querySelector('.order-id-column')
+	var name = element.parentNode.parentNode.querySelector('.order-name-column').textContent
+	var phone_number = element.parentNode.parentNode.querySelector('.order-phone-number').textContent
+	var price = element.parentNode.parentNode.querySelector('.total-price-column').textContent
 	var str_id = id.textContent
+
+	var renew_number = parseInt(price.replace(/,/g, ''));
+
+	console.log(id, name, phone_number, renew_number)
 
 	$.ajax({
 		url: '/OrderDelete/',
 		data: JSON.stringify({
 			selected_id: str_id,
+			name: name,
+			phone_number: phone_number,
+			price: renew_number,
 		}),
 		method: "POST",
 		contentType: "application/json",  // 추가: JSON 데이터를 전송함을 명시

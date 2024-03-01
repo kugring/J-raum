@@ -51,7 +51,7 @@ body {
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
-    height: 80vh;
+    height: calc(100% - 10rem);
     z-index: 2;
 }
 
@@ -61,7 +61,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 90%;
-    height: 70%;
+    height: 130vw;
     transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
 }
 
@@ -70,7 +70,7 @@ body {
 }
 
 .number-board {
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -100,13 +100,15 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 16vw;
+    height: 16vw;
     border: 0.25rem solid orange;
     background-color: #fff3e3;
     border-radius: 10px;
-    font-size: 8vw;
     color: chocolate;
+    font-size: 5rem;
+    font-weight: 600;
+    font-family: 'Gamja Flower', sans-serif;
 }
 
 .number-board-message {
@@ -120,21 +122,33 @@ body {
     color: #afafaf;
     font-size: 1.2rem;
     padding: 0.5rem 0;
+    font-family: 'Gamja Flower', sans-serif;
 }
-
 
 .number-buttons {
     display: grid;
-    grid-template-columns: repeat(3, 25vw);
+    grid-template-columns: repeat(3, 24vw);
     grid-gap: 10px;
 }
 
 .number {
-    font-size: 2.5rem;
+    font-size: 14vw;
     border: 1px solid #ccc;
+    border-radius: 10px;
     background-color: #fff;
     cursor: pointer;
-    padding: 0.5rem 1rem;
+    font-family: 'Gamja Flower', sans-serif;
+    color: #4d2107;
+}
+
+.clear-btn {
+    font-size: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    font-weight: 600;
+    font-family: 'Gamja Flower', sans-serif;
+    color: #4d2107;
 }
 
 .number:hover {
@@ -144,23 +158,55 @@ body {
 .backspace {
     font-size: 2rem !important;
     scale: 2;
-    color: #5d5d5d;
+    color: #4d2107;
+    border-radius: 10px;
 }
 
 #submitBtn {
     display: none;
 }
 
-.point-board {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
+.manager-name {
+    display: none;
+}
+
+.point-body-select {
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 90%;
+    margin-bottom: 1rem;
+
+}
+
+.select-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: #ff6f6f 7px solid;
+    padding: 0.5rem 1rem;
+    background-color: #ff8b75;
+    color: white;
+    font-size: 7vw;
+    font-weight: 600;
+    font-family: 'Gamja Flower', sans-serif;
+}
+
+
+.point-board {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*혹시 다 내보내주실수 있슴까 2명다*/
+    width: 90%;
     height: 100%;
     border: 7px solid rgb(255, 177, 61);
     border-radius: 20px;
-    background-color: #ffeccf;
+    background-color: #fff4e4;
     font-size: 1.5rem;
     font-weight: 600;
     font-family: 'Gamja Flower', sans-serif;
@@ -178,7 +224,7 @@ body {
     height: 12rem;
     background-color: white;
     border-radius: 15px;
-    border: #ffad7e 5px solid;
+    border: #ffae3a 5px solid;
     margin-top: 1rem;
 }
 
@@ -197,6 +243,18 @@ body {
     border-bottom: 2px solid #ffdcc3;
 }
 
+.point-charge-text {
+    color: white;
+    background-color: #ff7e7e;
+    border-radius: 5px;
+    padding: 0 0.4rem;
+    font-size: 1.2rem;
+}
+
+.point-charge-num {
+    color: #9d3b00;
+}
+
 .point-box-body {
     display: flex;
     flex-direction: column;
@@ -206,29 +264,115 @@ body {
     height: 5rem;
 }
 
+.point-date {
+    color: #cba589;
+    font-size: 1.3rem;
+}
+
+.point-origin-date {
+    display: none;
+}
+
+.point-password {
+    display: none;
+}
+
+.point-id {
+    display: none;
+}
+
+.point-client-name {
+    font-size: 1.8rem;
+}
+
 .point-select-btn {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     width: 100%;
     height: 2.5rem;
-        padding: 0.4rem 0;
+    padding: 0.4rem 0;
     border-top: 2px solid #ffdcc3;
 }
 
-.point-yes-btn{
-    border: #ff8f36 solid 5px;
-    border-radius: 5px;
+.point-yes-btn {
+    border: #ff9600 solid 5px;
+    background: #ffb52f;
+    border-radius: 10px;
     height: 2rem;
     padding: 0 1rem;
+    color: white;
 }
 
-.point-no-btn{
+.point-no-btn {
     border: #ff8f36 solid 5px;
-    border-radius: 5px;
+    border-radius: 10px;
     height: 2rem;
     padding: 0 1rem;
+    color: chocolate;
+    background-color: #ffeed5;
 }
+
+.point-detail-list {
+    display: none;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border: 7px solid rgb(255, 177, 61);
+    border-radius: 20px;
+    background-color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: 'Gamja Flower', sans-serif;
+    color: #4d2107;
+    transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
+    overflow: scroll;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: black;
+}
+
+thead {
+    height: 5vh;
+    font-family: "Gowun Dodum", sans-serif;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    background-color: #ffd2c0;
+    z-index: 1;
+    font-family: 'Gamja Flower', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #af300e;
+}
+
+th, td {
+    text-align: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #ff0000;
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: "Gowun Dodum", sans-serif;
+    font-style: normal;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+td:not(:last-child) {
+    border-right: 1px solid #ff9c9c;
+}
+
+
 footer {
     display: flex;
     flex-direction: row;
@@ -248,3 +392,4 @@ footer {
     text-decoration: none;
     color: white;
 }
+

@@ -42,9 +42,9 @@
 <div class="order-section">
     <div class="order-container">
         <div class="order-header">
-            <div class="order-header-left">
+            <a class="order-header-left" href="{% url 'download-excel' %}">
                 주문 내역
-            </div>
+            </a>
             <div class="order-header-right">
                 <form class="order-radio">
                     <div class="order-status">
@@ -86,6 +86,7 @@
                 {% for data in order_list %}
                 <tr>
                     <td class="order-id-column">{{ data.id }}</td>
+                    <td class="order-phone-number">{{ data.phone_number }}</td>
                     <td class="order-status-column">{{ data.order_status }}</td>
                     <td class="order-name-column">{{ data.order_name }}</td>
                     <td class="total-quantity-column">{{ data.total_quantity }}잔</td>

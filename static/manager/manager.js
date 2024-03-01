@@ -3,11 +3,11 @@ document.addEventListener('DOMContentLoaded', function () {
 	$.ajax({
 		url: '/ManagerOrderData/',
 		method: 'GET',
-		success: function (order_list_values) {
+		success: function (data) {
 			// 성공적으로 응답을 받은 경우, response 변수에 JSON 데이터가 포함됩니다.
-			console.log(order_list_values[0]); // 응답 데이터를 콘솔에 출력합니다.
+			console.log(data.order_list_values[0]); // 응답 데이터를 콘솔에 출력합니다.
 
-			for (let i = 0; i < order_list_values.length; i++) {
+			for (let i = 0; i < data.order_list_values.length; i++) {
 				const order_waiting_container = document.querySelector('.order-waiting-container')
 				const order_waiting_box = document.createElement('div');
 				const order_waiting_item = document.createElement('div');
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				const order_icon = document.createElement('div');
 				const order_id = document.createElement('div');
 
-				order_waiting_box.className = 'order-waiting-box'
+				order_waiting_box.className = `order-waiting-box id_${data.order_list_values[i].id}`
 				order_waiting_item.className = 'order-waiting-item'
 				client_name.className = 'client-name'
 				order_icon.className = 'order-icon'
@@ -30,22 +30,22 @@ document.addEventListener('DOMContentLoaded', function () {
 					orderListCheck(this);
 				};
 				// 주문의 id
-				order_id.innerText = order_list_values[i].id
+				order_id.innerText = data.order_list_values[i].id
 
 				// 주문자의 이름
-				if (order_list_values[i].order_name.match(/\d+/g) > 0) {
-					client_name.innerText = 'No. ' + order_list_values[i].order_name
+				if (data.order_list_values[i].order_name.match(/\d+/g) > 0) {
+					client_name.innerText = 'No. ' + data.order_list_values[i].order_name
 				} else {
-					client_name.innerText = order_list_values[i].order_name
+					client_name.innerText = data.order_list_values[i].order_name
 				}
 
 				// 아이콘과 수량 체크하기
-				const menu_list = order_list_values[i].order_menu.split(',')
+				const menu_list = data.order_list_values[i].order_menu.split(',')
 				let hot = 0
 				let cold = 0
 				for (let i = 0; i < menu_list.length; i++) {
 					// 수량[2,3] id[4,5], deg[6], shot_num[7], add_shot[8], hot[9], cold[10], sugar[11], vanilla[12], caramel[13], iceCream[14]
-					var menu_quantity =  parseInt(menu_list[i].substring(2, 4), 10)
+					var menu_quantity = parseInt(menu_list[i].substring(2, 4), 10)
 					console.log(menu_quantity)
 					// { hot: 0 / cold: 1 } 6번째가 온도 관련 문자
 					if (menu_list[i][6] === '0') {
@@ -60,14 +60,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 			// 대기의 첫번째 주문
-			const first_order_list = order_list_values[0].order_menu.split(',')
+			const first_order_list = data.order_list_values[0].order_menu.split(',')
 
 			// 오더 id값 넣기
 			const order_menu_body = document.querySelector('.order-menu-body')
 			const order_id = document.createElement('div');
 			order_id.className = 'order-id'
 			order_menu_body.appendChild(order_id)
-			order_id.innerText = order_list_values[0].id
+			order_id.innerText = data.order_list_values[0].id
 
 			for (let i = 0; i < first_order_list.length; i++) {
 
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 				order_menu_box.className = 'order-menu-box'
 				menu_left.className = 'menu-left'
-				menu_name.className = 'menu-menu-name'
+				menu_name.className = 'menu-name'
 				menu_options.className = 'menu-options'
 				menu_option.className = 'menu-option'
 				menu_right.className = 'menu-right'
@@ -127,7 +127,38 @@ document.addEventListener('DOMContentLoaded', function () {
 					}
 				}
 				menu_options.appendChild(menu_option)
-
+				// 설탕 시럽 옵션 넣기
+				if (parseInt(first_order_list[i][11], 10) > 0) {
+					const menu_option = document.createElement('div')
+					menu_option.className = 'menu-option';
+					menu_option.innerText = '설탕:' + parseInt(first_order_list[i][11], 10)
+					menu_option.style.backgroundColor = '#ffa100';
+					menu_options.appendChild(menu_option)
+				}
+				// 바닐라 시럽 옵션 넣기
+				if (parseInt(first_order_list[i][12], 10) > 0) {
+					const menu_option = document.createElement('div')
+					menu_option.className = 'menu-option';
+					menu_option.innerText = '바닐라:' + parseInt(first_order_list[i][12], 10)
+					menu_option.style.backgroundColor = '#ffa100';
+					menu_options.appendChild(menu_option)
+				}
+				// 카라멜 시럽 옵션 넣기
+				if (parseInt(first_order_list[i][13], 10) > 0) {
+					const menu_option = document.createElement('div')
+					menu_option.className = 'menu-option';
+					menu_option.innerText = '카라멜:' + parseInt(first_order_list[i][13], 10)
+					menu_option.style.backgroundColor = '#ffa100';
+					menu_options.appendChild(menu_option)
+				}
+				// 아이스 크림 옵션 넣기
+				if (parseInt(first_order_list[i][14], 10) > 0) {
+					const menu_option = document.createElement('div')
+					menu_option.className = 'menu-option';
+					menu_option.innerText = '아이스크림:' + parseInt(first_order_list[i][14], 10)
+					menu_option.style.backgroundColor = '#5b81ff';
+					menu_options.appendChild(menu_option)
+				}
 
 				const menu_id = first_order_list[i].substring(4, 6);
 				console.log(menu_id)
@@ -159,6 +190,78 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	});
 });
+
+function menu_request() {
+	$.ajax({
+		url: '/ManagerOrderData/',
+		method: 'GET',
+		success: function (data) {
+			// 성공적으로 응답을 받은 경우, response 변수에 JSON 데이터가 포함됩니다.
+
+			const order_waiting_container = document.querySelector('.order-waiting-container')
+			const order_waiting_num = document.querySelector('.order-waiting-num')
+			order_waiting_num.innerText = '대기주문: ' + data.waiting_count
+			order_waiting_container.innerText = ''
+
+			for (let i = 0; i < data.order_list_values.length; i++) {
+				const order_waiting_container = document.querySelector('.order-waiting-container')
+				const order_waiting_box = document.createElement('div');
+				const order_waiting_item = document.createElement('div');
+				const client_name = document.createElement('div');
+				const order_icon = document.createElement('div');
+				const order_id = document.createElement('div');
+
+				order_waiting_box.className = `order-waiting-box id_${data.order_list_values[i].id}`
+				order_waiting_item.className = 'order-waiting-item'
+				client_name.className = 'client-name'
+				order_icon.className = 'order-icon'
+				order_id.className = 'order-id'
+
+				order_waiting_container.appendChild(order_waiting_box)
+				order_waiting_box.appendChild(order_waiting_item)
+				order_waiting_item.appendChild(order_id)
+				order_waiting_item.appendChild(order_icon)
+				order_waiting_item.appendChild(client_name)
+				order_waiting_item.onclick = function () {
+					orderListCheck(this);
+				};
+				// 주문의 id
+				order_id.innerText = data.order_list_values[i].id
+
+				// 주문자의 이름
+				if (data.order_list_values[i].order_name.match(/\d+/g) > 0) {
+					client_name.innerText = 'No. ' + data.order_list_values[i].order_name
+				} else {
+					client_name.innerText = data.order_list_values[i].order_name
+				}
+
+				// 아이콘과 수량 체크하기
+				const menu_list = data.order_list_values[i].order_menu.split(',')
+				let hot = 0
+				let cold = 0
+				for (let i = 0; i < menu_list.length; i++) {
+					// 수량[2,3] id[4,5], deg[6], shot_num[7], add_shot[8], hot[9], cold[10], sugar[11], vanilla[12], caramel[13], iceCream[14]
+					var menu_quantity = parseInt(menu_list[i].substring(2, 4), 10)
+					// { hot: 0 / cold: 1 } 6번째가 온도 관련 문자
+					if (menu_list[i][6] === '0') {
+						hot += menu_quantity
+					} else {
+						cold += menu_quantity
+					}
+				}
+				// 컵 종류 분리하기
+				order_icon.innerText = '🔥' + hot + '   🧊' + cold
+			}
+		},
+		error: function (xhr, status, error) {
+			// 요청이 실패한 경우, 에러를 처리할 수 있습니다.
+			console.error(error);
+		}
+	});
+}
+
+// menu_request() 함수를 5초마다 호출
+setInterval(menu_request, 5000); // 5000 밀리초 = 5초
 
 function orderListCheck(element) {
 	// 선택한 헤더의 아이디 가져오기
@@ -208,7 +311,7 @@ function orderListCheck(element) {
 
 				order_menu_box.className = 'order-menu-box'
 				menu_left.className = 'menu-left'
-				menu_name.className = 'menu-menu-name'
+				menu_name.className = 'menu-name'
 				menu_options.className = 'menu-options'
 				menu_option.className = 'menu-option'
 				menu_right.className = 'menu-right'
@@ -254,7 +357,38 @@ function orderListCheck(element) {
 					}
 				}
 				menu_options.appendChild(menu_option)
-
+				// 설탕 시럽 옵션 넣기
+				if (parseInt(order_list[i][11], 10) > 0) {
+					const menu_option = document.createElement('div')
+					menu_option.className = 'menu-option';
+					menu_option.innerText = '설탕:' + parseInt(order_list[i][11], 10)
+					menu_option.style.backgroundColor = '#ffa100';
+					menu_options.appendChild(menu_option)
+				}
+				// 바닐라 시럽 옵션 넣기
+				if (parseInt(order_list[i][12], 10) > 0) {
+					const menu_option = document.createElement('div')
+					menu_option.className = 'menu-option';
+					menu_option.innerText = '바닐라:' + parseInt(order_list[i][12], 10)
+					menu_option.style.backgroundColor = '#ffa100';
+					menu_options.appendChild(menu_option)
+				}
+				// 카라멜 시럽 옵션 넣기
+				if (parseInt(order_list[i][13], 10) > 0) {
+					const menu_option = document.createElement('div')
+					menu_option.className = 'menu-option';
+					menu_option.innerText = '카라멜:' + parseInt(order_list[i][13], 10)
+					menu_option.style.backgroundColor = '#ffa100';
+					menu_options.appendChild(menu_option)
+				}
+				// 아이스 크림 옵션 넣기
+				if (parseInt(order_list[i][14], 10) > 0) {
+					const menu_option = document.createElement('div')
+					menu_option.className = 'menu-option';
+					menu_option.innerText = '아이스크림:' + parseInt(order_list[i][14], 10)
+					menu_option.style.backgroundColor = '#5b81ff';
+					menu_options.appendChild(menu_option)
+				}
 
 				const menu_id = order_list[i].substring(4, 6);
 				console.log(menu_id)
@@ -319,12 +453,17 @@ function orderComplete() {
 			console.log('전송 중 오류가 발생했습니다.');
 		}
 	});
-	// .order-waiting-container의 두 번째 자식 요소를 선택합니다.
+
+
+	var complete_order = order_waiting_container.querySelector('.id_' + order_id);
+	console.log(complete_order);
+
+	complete_order.remove();
 
 
 	// 다음 주문을 요소를 클릭합니다.
 	try {
-		var next_order = order_waiting_container.children[1].children[0];
+		var next_order = order_waiting_container.children[0].children[0];
 		if (next_order) {
 			next_order.click();
 		} else {
@@ -335,7 +474,4 @@ function orderComplete() {
 		order_menu_body.innerText = ''
 		order_total_quantity.innerText = ''
 	}
-
-	var complete_order = order_waiting_container.children[0];
-	complete_order.remove();
 }
