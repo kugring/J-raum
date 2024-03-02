@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="google" content="notranslate">
-    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
     <title>Title</title>
 
     {% load static %}
@@ -31,10 +31,9 @@
         <div class="logo-section">
             <a class="nav_item" href="/">상품</a>
             <a class="nav_item pick" href="/OrderData">주문 내역</a>
-            <a class="nav_item" href="/manager">마이페이지</a>
         </div>
         <div class="nav-left">
-            <div class="date-time-section">{{ today|date:"Y.m.d" }}</div>
+            <a class="date-time-section" href="/PointExamine">{{ today|date:"Y.m.d" }}</a>
         </div>
     </nav>
 </div>
@@ -65,7 +64,8 @@
                     <!--날짜 인풋-->
                     <input type="date" id="dateInput" class="order-input-select" onclick="OrderDataSearch()">
                     <!--이름 인풋-->
-                    <input type="text" id="nameInput" class="order-input-select name" placeholder="성함입력" onclick="OrderDataSearch()">
+                    <input type="text" id="nameInput" class="order-input-select name" placeholder="성함입력"
+                           onclick="OrderDataSearch()">
                     <div class="order-search" onclick="OrderDataSearch()">검색</div>
                 </div>
             </div>

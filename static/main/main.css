@@ -97,7 +97,7 @@
         /* padding: 0.8vw 0; */
         font-family: 'Single Day', cursive;
         font-weight: 600;
-
+        color: #462304;
     }
 
     .kategoria-left {
@@ -562,7 +562,7 @@
         flex-wrap: wrap;
         position: fixed;
         width: calc(100% - 4.7rem);
-        height: 40%;
+        height: 42%;
         top: 48.6vh;
         left: 0;
         background-color: #ffdba5;
@@ -2057,7 +2057,7 @@
     }
 
     .nav_item {
-        margin-left: 20px;
+        margin-left: 3rem;
         font-size: 2vw;
         font-weight: bold;
         color: #ffffff;
@@ -2108,6 +2108,7 @@
         font-size: 2vw;
         font-weight: 600;
         font-family: 'Single Day', cursive;
+        color: #462304;
     }
 
     .kategoria-left {

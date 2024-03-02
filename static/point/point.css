@@ -41,6 +41,7 @@ body {
     font-weight: 600;
     color: white;
     scale: 2;
+    text-decoration: none;
 }
 
 .point-content {
@@ -396,27 +397,35 @@ footer {
 }
 
 @media only screen and (min-width: 481px) {
+    .point-body {
+        width: 90%;
+        height: 95%;
+    }
+
     .number-board {
-        scale: 0.5;
+
     }
 
     .phone-input {
-        padding-top: 3rem;
+        width: 85%;
     }
 
     .digit-input {
+        width: 11vw;
+        height: 11vw;
         font-size: 10rem;
     }
 
     .number-board-message {
-        font-size: 3.2rem;
+        font-size: 2.2rem;
+    }
+
+    .number {
+        font-size: 6vw;
     }
 
     .clear-btn {
-        font-size: 4.5rem;
+        font-size: 2.5rem;
     }
 
-    .backspace {
-        font-size: 6rem !important;
-    }
 }

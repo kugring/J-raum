@@ -70,7 +70,9 @@ body {
     color: white;
     margin-right: 6vw;
     font-family: 'Dongle', sans-serif;
-    scale: 2
+    scale: 2;
+    text-decoration: none;
+
 }
 
 
