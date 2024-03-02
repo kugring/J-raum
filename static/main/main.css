@@ -3608,7 +3608,7 @@
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        width: 55vw;
+        width: 50vw;
     }
 
     .point-add-header {
@@ -3619,8 +3619,8 @@
         width: 100%;
         border-bottom: 0.4vh solid #b9b9b9;
         padding-bottom: 2vh;
-        margin-bottom: 4vh;
-        font-size: 6vw;
+        margin-bottom: 2vh;
+        font-size: 5vw;
     }
 
     .point-add-title {
@@ -3732,8 +3732,8 @@
 
     .number-pad .btn {
         flex: 1 0 calc(33.333% - 5px);
-        padding: 1vh 0;
-        font-size: 3.5vw;
+        font-size: 2.5rem;
+        color: #4d2107;
         cursor: pointer;
         font-family: 'Gamja Flower', sans-serif;
     }
@@ -3946,7 +3946,7 @@
         border-radius: 1vw;
         background-color: #ffb328;
         border: 0.5vw solid #ee8600;
-        font-size: 3vw;
+        font-size: 1.5rem;
         padding: 2vh 2vw;
         width: 5vw;
         height: 2vh;
