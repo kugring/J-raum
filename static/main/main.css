@@ -2550,7 +2550,7 @@
     }
 
     .order-header-cushion {
-        height: 7vh;
+        height: calc(7vh + 1px);
         width: 100%;
         background-color: #ff962d;
     }
@@ -2884,7 +2884,7 @@
         justify-content: center;
         align-items: center;
         border-radius: 0.4vw;
-        font-size: 1.7rem;
+        font-size: 1.5rem;
         font-weight: 600;
         padding: 0.2vh 0.3vw;
         margin-top: 0.4vh;
@@ -2927,7 +2927,7 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        width: 2vw;
+        width: 1vw;
         height: 0vh;
         font-size: 2vw;
         font-weight: 600;
