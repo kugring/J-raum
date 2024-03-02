@@ -3440,7 +3440,7 @@
     }
 
     .number {
-        font-size: 4rem;
+        font-size: 3rem;
         border: 1px solid #ccc;
         background-color: #fff;
         cursor: pointer;
@@ -3453,12 +3453,12 @@
     }
 
     .clear-btn {
-        font-size: 2rem;
+        font-size: 1.5rem;
         color: #4d2107;
     }
 
     .backspace {
-        font-size: 4vw !important;
+        font-size: 2rem !important;
         scale: 2;
         color: #5d5d5d;
     }
