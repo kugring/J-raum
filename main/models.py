@@ -47,7 +47,7 @@ class OrderList(models.Model):
 
 class ClientNumberData(models.Model):
     name = models.CharField(max_length=15, null=False)
-    phone_number = models.CharField(max_length=15, null=False)
+    phone_number = models.CharField(max_length=15, null=True)
     current_point = models.IntegerField(null=True, blank=True)
     charge_point = models.CharField(max_length=15, null=True, blank=True)
     position = models.CharField(max_length=15, null=True, blank=True)
