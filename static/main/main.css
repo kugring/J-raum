@@ -1788,7 +1788,7 @@
     }
 
     .number-pad .btn {
-        flex: 1 0 calc(33.333% - 10px);
+        flex: 3 0 calc(33.333% - 10px);
         font-size: 8rem;
         text-align: center;
         color: #4d2107;
