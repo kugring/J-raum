@@ -395,3 +395,28 @@ footer {
     color: white;
 }
 
+@media only screen and (min-width: 481px) {
+    .number-board {
+        scale: 0.5;
+    }
+
+    .phone-input {
+        padding-top: 3rem;
+    }
+
+    .digit-input {
+        font-size: 10rem;
+    }
+
+    .number-board-message {
+        font-size: 3.2rem;
+    }
+
+    .clear-btn {
+        font-size: 4.5rem;
+    }
+
+    .backspace {
+        font-size: 6rem !important;
+    }
+}
