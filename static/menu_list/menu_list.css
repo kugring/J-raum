@@ -212,7 +212,7 @@ td:not(:last-child) {
 
 .menu-add-input {
     width: 36vw;
-    height: 7vw;
+    height: 6vw;
     border: #ff8f36 5px solid;
     border-radius: 10px;
     margin-left: 1rem;
