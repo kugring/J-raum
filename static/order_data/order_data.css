@@ -292,6 +292,7 @@ tr {
 
 .delete {
     font-size: 1.5vw;
+    /* font-weight: 600; */
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -300,10 +301,9 @@ tr {
     border-radius: 0.5vw;
     background-color: #ff9041;
     color: #ffffff;
-    padding: 0.5vh 0.1vw;
+    padding: 0.5vh 0;
     font-weight: bold;
     transition: all 0.4s;
-    height: 1.5vw;
 }
 
 
@@ -419,9 +419,10 @@ tr {
     }
 
     .delete {
+        font-size: 0.5rem;
         border: 0.4vw solid #ec5f00;
         border-radius: 1vw;
-        margin: 0 0.5vw;
+        margin: 0 1vw;
     }
 
     .date-time-section {
