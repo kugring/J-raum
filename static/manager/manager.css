@@ -301,3 +301,15 @@ footer {
     text-decoration: none;
     color: white;
 }
+
+@media only screen and (min-width: 481px) {
+    .menu-name {
+        font-size: 2rem;
+    }
+    .order-total-quantity{
+        font-size: 3rem;
+    }
+    .order-menu-body{
+        padding-top: 1rem;
+    }
+}
