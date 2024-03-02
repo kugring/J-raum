@@ -3742,7 +3742,7 @@
     }
 
     .number-pad .btn {
-        flex: 1 0 calc(33.333% - 5px);
+        flex: 3 0 calc(33.333% - 10px);
         font-size: 4rem;
         color: #4d2107;
         cursor: pointer;
@@ -3754,7 +3754,7 @@
     }
 
     .number-pad .point-del {
-        flex: 1 0 calc(33.333% - 5px);
+        flex: 3 0 calc(33.333% - 10px);
         padding: 1vh 0;
         font-size: 3.5vw;
         cursor: pointer;
