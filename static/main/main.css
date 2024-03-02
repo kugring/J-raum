@@ -2275,8 +2275,8 @@
     }
 
     .modal-menu-img {
-        width: 21vw;
-        height: 21vw;
+        width: 21.3vw;
+        height: 21.3vw;
         object-fit: cover;
         border-radius: 1vw;
         border: .4vw solid #774721;
