@@ -31,7 +31,7 @@ body {
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    height: 5rem;
+    height: 4rem;
     background-color: #ff8f36;
     font-family: 'Dongle', sans-serif;
 }
@@ -385,7 +385,7 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 5rem;
+    height: 4rem;
 }
 
 .footer-icon {
