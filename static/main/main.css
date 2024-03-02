@@ -1496,6 +1496,7 @@
 
     .number {
         font-size: 10rem;
+        padding: 0;
         border: 1px solid #ccc;
         border-radius: 5px;
         background-color: #fff;
@@ -1761,8 +1762,7 @@
     }
 
     .point-backspace {
-        font-size: 3.2vw !important;
-        scale: 3;
+        scale: 2;
     }
 
     .천원 {
@@ -1784,12 +1784,12 @@
         flex-direction: row;
         flex-wrap: wrap;
         width: 100%;
-        gap: 5px;
+        gap: 10px;
     }
 
     .number-pad .btn {
-        flex: 1 0 calc(33.333% - 5px);
-        font-size: 10rem;
+        flex: 1 0 calc(33.333% - 10px);
+        font-size: 8rem;
         text-align: center;
         color: #4d2107;
         cursor: pointer;
@@ -1806,7 +1806,7 @@
         border: 1px solid #ccc;
         border-radius: 5px;
         background-color: #fff;
-        font-size: 7rem;
+        font-size: 0rem;
         text-align: center;
     }
 
@@ -3743,13 +3743,14 @@
 
     .number-pad .btn {
         flex: 1 0 calc(33.333% - 5px);
-        font-size: 10rem;
+        font-size: 4rem;
         color: #4d2107;
         cursor: pointer;
         font-family: 'Gamja Flower', sans-serif;
         border: 1px solid #ccc;
         border-radius: 5px;
         background-color: #fff;
+        text-align: center;
     }
 
     .number-pad .point-del {
@@ -3757,6 +3758,10 @@
         padding: 1vh 0;
         font-size: 3.5vw;
         cursor: pointer;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
+        text-align: center;
     }
 
     .point-add-check {
