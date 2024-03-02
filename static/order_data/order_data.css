@@ -391,6 +391,33 @@ tr {
         font-size: 4vw;
     }
 
+
+    /* 테이블 헤더 셀의 너비 지정 */
+    .order-status-column {
+        width: 10% !important; /* 주문 상태 컬럼의 너비 */
+    }
+
+    .order-name-column {
+        width: 15% !important; /* 주문자 컬럼의 너비 */
+    }
+
+    .total-quantity-column {
+        width: 10% !important; /* 총 수량 컬럼의 너비 */
+    }
+
+    /* 테이블 데이터 셀의 너비 지정 */
+    .total-price-column {
+        width: 20% !important; /* 결제 가격 컬럼의 너비 */
+    }
+
+    .modified-at-column {
+        width: 30% !important; /* 결제 시간 컬럼의 너비 */
+    }
+
+    .order-etc {
+        width: 15% !important; /* 결제 시간 컬럼의 너비 */
+    }
+
     .delete {
         border: 0.4vw solid #ec5f00;
         border-radius: 1vw;
