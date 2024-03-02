@@ -132,6 +132,7 @@ body {
 }
 
 .number {
+    text-align: center;
     font-size: 14vw;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -142,6 +143,7 @@ body {
 }
 
 .clear-btn {
+    text-align: center;
     font-size: 1.5rem;
     border: 1px solid #ccc;
     border-radius: 10px;
