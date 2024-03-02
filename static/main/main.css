@@ -1800,7 +1800,7 @@
     }
 
     .number-pad .point-del {
-        flex: 1 0 calc(33.333% - 5px);
+        flex: 3 0 calc(33.333% - 5px);
         padding: 1vh 0;
         cursor: pointer;
         border: 1px solid #ccc;
