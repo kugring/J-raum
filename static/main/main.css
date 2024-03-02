@@ -43,7 +43,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        height: 7vh;
+        height: 6vh;
         background-color: #ff962d;
         position: fixed;
         top: 0;
@@ -142,11 +142,11 @@
         left: 0;
         background-color: #ffefde;
         font-family: 'Gamja Flower', sans-serif;
-        top: 13vh;
+        top: 12vh;
         display: flex;
         flex-direction: column;
         overflow-y: hidden;
-        height: 45.6vh;
+        height: 46.6vh;
         width: 100vw;
     }
 
@@ -563,7 +563,7 @@
         position: fixed;
         width: calc(100% - 4.7rem);
         height: 40%;
-        top: 58.6vh;
+        top: 49.6vh;
         left: 0;
         background-color: #ffdba5;
         border-top: #cb6718 1.5rem solid;
