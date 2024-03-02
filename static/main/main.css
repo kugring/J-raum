@@ -3608,7 +3608,7 @@
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        width: 50vw;
+        width: 60vw;
     }
 
     .point-add-header {
@@ -3650,7 +3650,7 @@
     .point-add-counter {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
         width: 100%;
     }
@@ -3728,6 +3728,7 @@
         flex-wrap: wrap;
         width: 100%;
         gap: 5px;
+        color: #4d2107;
     }
 
     .number-pad .btn {
