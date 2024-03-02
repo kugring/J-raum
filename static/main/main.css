@@ -243,8 +243,8 @@
     .modal_window {
         position: absolute;
         opacity: 0;
-        transition: opacity 0.3s ease, transform 0.3s ease; /* 트랜지션 효과 추가 */
-        transform: translateY(100%); /* 처음에는 아래로 숨겨져 있음 */
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        transform: translateY(100%);
         background: #ffffff;
         backdrop-filter: blur(13.5px);
         border-radius: 2vw;
@@ -836,7 +836,7 @@
 
     .order-name {
         color: #4f2d0b;
-        font-size: 4rem;
+        font-size: 3.5rem;
         font-weight: 600;
         margin-bottom: 0.1vw;
     }
@@ -1500,6 +1500,9 @@
         background-color: #fff;
         cursor: pointer;
         padding: 1.5vh 0;
+        color: #4d2107;
+        font-family: 'Gamja Flower', sans-serif;
+
     }
 
     .number:hover {
@@ -2314,15 +2317,16 @@
         background-color: #fffff6;
         border: 0.5vw solid #ff9842;
         border-radius: 1vw;
+        height: 2.5rem;
+        padding: 0 0.2rem;
     }
 
     .modal-menu-quantity {
         text-align: center;
-        width: 2.5vw;
-        font-size: 2.5vw;
+        width: 3rem;
+        font-size: 2.5rem;
         font-weight: 600;
-        transition: transform 0.1s ease-in-out; /* 부드러운 이동을 위한 transition 추가 */
-        /*margin: 0 1vw;*/
+        transition: transform 0.1s ease-in-out;
     }
 
     .modal-menu-quantity-btn {
@@ -2349,7 +2353,6 @@
         justify-content: start;
         align-items: center;
         width: 97%;
-        padding-bottom: 7vw;
         border: 5px solid #cb7618;
         border-radius: 1.5vw;
     }
@@ -2360,6 +2363,10 @@
         justify-content: space-between;
         width: 93%;
         padding: 0.2vw;
+    }
+
+    .modal-option-box > :last-child {
+        border-bottom: none;
     }
 
     .modal-option-top {
@@ -2466,16 +2473,15 @@
     }
 
     .modal-option-quantity-btn {
-        border: #ff8f36 0.6vw solid;
+        border: #ff8f36 5px solid;
         border-radius: 20%;
         flex-direction: row;
         align-items: center;
         justify-content: center;
         line-height: 0.5;
-    !important;
         font-weight: 250;
         font-style: normal;
-        font-size: 9vw;
+        font-size: 4rem;
         letter-spacing: normal;
         text-transform: none;
         display: inline-block;
@@ -2483,6 +2489,7 @@
         word-wrap: normal;
         direction: ltr;
         -webkit-font-smoothing: antialiased;
+        padding: 2px;
     }
 
 
@@ -2543,7 +2550,9 @@
     }
 
     .order-header-cushion {
-        height: 6vh;
+        height: 7vh;
+        width: 100%;
+        background-color: #ff962d;
     }
 
     .order-header {;
@@ -2875,7 +2884,7 @@
         justify-content: center;
         align-items: center;
         border-radius: 0.4vw;
-        font-size: 2.3vw;
+        font-size: 1.7rem;
         font-weight: 600;
         padding: 0.2vh 0.3vw;
         margin-top: 0.4vh;
@@ -3431,15 +3440,21 @@
     }
 
     .number {
-        font-size: 3vw;
+        font-size: 4rem;
         border: 1px solid #ccc;
         background-color: #fff;
         cursor: pointer;
-        padding: 2vh 0;
+        color: #4d2107;
+        font-family: 'Gamja Flower', sans-serif;
     }
 
     .number:hover {
         background-color: #f2f2f2;
+    }
+
+    .clear-btn {
+        font-size: 2rem;
+        color: #4d2107;
     }
 
     .backspace {
