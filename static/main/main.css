@@ -212,7 +212,7 @@
     }
 
     .menu_name {
-        font-size: 3.2rem;
+        font-size: 3rem;
         font-weight: bold;
         color: #462304;
     }
@@ -1959,7 +1959,7 @@
         justify-content: space-around;
         align-items: center;
         width: 100%;
-        font-size: 3.5vw;
+        font-size: 5rem;
         border-bottom: 0.4vh solid #b9b9b9;
         padding-bottom: 2rem;
         margin-bottom: 2rem;
@@ -3878,7 +3878,7 @@
         border-bottom: 0.4vh solid #b9b9b9;
         padding: 3vh;
         margin-bottom: 4vh;
-        font-size: 5vw;
+        font-size: 3rem;
     }
 
     .point-last-header-message {
@@ -3891,7 +3891,7 @@
         justify-content: space-evenly;
         align-items: center;
         width: 100%;
-        font-size: 5rem;
+        font-size: 2.5rem;
         border-bottom: 0.4vh solid #b9b9b9;
         padding-bottom: 4vh;
         margin-bottom: 2vh;
