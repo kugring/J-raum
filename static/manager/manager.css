@@ -31,7 +31,7 @@ body {
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    height: 5rem;
+    height: 4rem;
     background-color: #ff8f36;
     font-family: 'Dongle', sans-serif;
 }
@@ -44,8 +44,8 @@ body {
 }
 
 .main {
-    position: absolute;
-    top: 5rem;
+    position: fixed;
+    top: 4rem;
     width: 100%;
     height: calc(100% - 10rem);
 }
@@ -134,7 +134,7 @@ body {
     justify-content: start;
     align-items: center;
     width: 100%;
-    height: calc(100% - 5rem);
+    height: calc(100% - 4rem);
     font-size: 6.6vw;
     font-weight: 600;
     font-family: 'Nanum Pen Script', cursive;
@@ -146,7 +146,7 @@ body {
     justify-content: start;
     align-items: center;
     width: 90%;
-    height: calc(100% - 8rem);
+    height: 100%;
     border: 5px solid #9f681f;
     border-radius: 10px;
     background-color: #fff5ee;
@@ -258,7 +258,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 30%;
-    height: 4rem;
+    height: 3rem;
     border: 5px solid #9f681f;
     border-radius: 10px;
     background-color: white;
@@ -273,12 +273,12 @@ body {
     justify-content: center;
     align-items: center;
     width: 60%;
-    height: 4rem;
+    height: 3rem;
     border: 5px solid #ee5700;
     border-radius: 10px;
     background-color: #ff8034;
     color: white;
-    font-size: 4rem;
+    font-size: 3rem;
     font-family: 'Dongle', sans-serif;
 }
 
@@ -292,7 +292,7 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 5rem;
+    height: 4rem;
 }
 
 .footer-icon {
