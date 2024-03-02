@@ -172,39 +172,40 @@
                 </div>
                 {% endfor %}
             </div>
+            <!--여기서부터 주문내역입니다-->
+            <div class="order-section">
+                <div class="order-header-cushion"></div>
+                <div class="order-header">
+                    <div class="order-header-left">
+                        주문 내역
+                    </div>
+                    <div class="order-reset-btn">
+                        <div class="order-reset" onclick="orderAllDelete()">메뉴 초기화</div>
+                        <span class="order-reset-icon material-symbols-outlined">delete</span>
+                    </div>
+                </div>
+                <div class="order-body">
+                    <div id="order-container" class="order-container">
+                        <!--통채로 div태그가 들어갈곳!-->
+                    </div>
+                </div>
+                <div class="order-footer">
+                    <div class="order-total-quantity">
+                        <div>총: &nbsp;</div>
+                        <div class="order-total-quantity-num">0</div>
+                        <div>잔</div>
+                    </div>
+                    <div class="order-total-pay-price">
+                        <div class="order-total-pay-price-num">주문 부탁드립니다^^</div>
+                    </div>
+                </div>
+                <div class="order-pay-container">
+                    <div class="order-pay-box" onclick="openPayModal()"> 결제하기</div>
+                </div>
+            </div>
+            <!--여기까지 주문내역입니다-->
         </div>
-        <!--여기서부터 주문내역입니다-->
-        <div class="order-section">
-            <div class="order-header-cushion"></div>
-            <div class="order-header">
-                <div class="order-header-left">
-                    주문 내역
-                </div>
-                <div class="order-reset-btn">
-                    <div class="order-reset" onclick="orderAllDelete()">메뉴 초기화</div>
-                    <span class="order-reset-icon material-symbols-outlined">delete</span>
-                </div>
-            </div>
-            <div class="order-body">
-                <div id="order-container" class="order-container">
-                    <!--통채로 div태그가 들어갈곳!-->
-                </div>
-            </div>
-            <div class="order-footer">
-                <div class="order-total-quantity">
-                    <div>총: &nbsp;</div>
-                    <div class="order-total-quantity-num">0</div>
-                    <div>잔</div>
-                </div>
-                <div class="order-total-pay-price">
-                    <div class="order-total-pay-price-num">주문 부탁드립니다^^</div>
-                </div>
-            </div>
-            <div class="order-pay-container">
-                <div class="order-pay-box" onclick="openPayModal()"> 결제하기</div>
-            </div>
-        </div>
-        <!--여기까지 주문내역입니다-->
+
     </div>
 </div>
 
