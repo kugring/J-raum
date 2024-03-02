@@ -1495,11 +1495,11 @@
     }
 
     .number {
-        font-size: 7rem;
+        font-size: 10rem;
         border: 1px solid #ccc;
+        border-radius: 5px;
         background-color: #fff;
         cursor: pointer;
-        padding: 1.5vh 0;
         color: #4d2107;
         font-family: 'Gamja Flower', sans-serif;
 
@@ -1518,6 +1518,7 @@
     .clear-btn {
         font-size: 3vw !important;
         padding: 0.2vw 5vw;
+        color: #4d2107;
     }
 
     #submitBtn {
@@ -1760,7 +1761,7 @@
     }
 
     .point-backspace {
-        font-size: 2.2vw !important;
+        font-size: 3.2vw !important;
         scale: 3;
     }
 
@@ -1788,17 +1789,25 @@
 
     .number-pad .btn {
         flex: 1 0 calc(33.333% - 5px);
-        font-size: 2.5rem;
+        font-size: 10rem;
+        text-align: center;
         color: #4d2107;
         cursor: pointer;
         font-family: 'Gamja Flower', sans-serif;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
     }
 
     .number-pad .point-del {
         flex: 1 0 calc(33.333% - 5px);
         padding: 1vh 0;
-        font-size: 3.5vw;
         cursor: pointer;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
+        font-size: 7rem;
+        text-align: center;
     }
 
     .point-add-check {
@@ -3734,10 +3743,13 @@
 
     .number-pad .btn {
         flex: 1 0 calc(33.333% - 5px);
-        font-size: 2.5rem;
+        font-size: 10rem;
         color: #4d2107;
         cursor: pointer;
         font-family: 'Gamja Flower', sans-serif;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
     }
 
     .number-pad .point-del {
