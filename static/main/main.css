@@ -1663,7 +1663,7 @@
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        width: 50vw;
+        width: 60vw;
     }
 
     .point-add-header {
@@ -1705,7 +1705,7 @@
     .point-add-counter {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
         width: 100%;
     }
@@ -1788,7 +1788,8 @@
 
     .number-pad .btn {
         flex: 1 0 calc(33.333% - 5px);
-        font-size: 7rem;
+        font-size: 2.5rem;
+        color: #4d2107;
         cursor: pointer;
         font-family: 'Gamja Flower', sans-serif;
     }
