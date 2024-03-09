@@ -42,7 +42,9 @@ function updateClient(button) {
 		success: function (response) {
 			// 업데이트 성공 시 처리할 코드
 			console.log('클라이언트의 정보가 수정되었습니다.');
-			window.location.href = "/Client_list/";
+			setTimeout(function () {
+				window.location.href = "/Client_list/";
+			}, 2000)
 		},
 		error: function (xhr, status, error) {
 			// 오류 발생 시 처리할 코드

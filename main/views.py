@@ -521,7 +521,6 @@ class ClientUpdate(APIView):
         print(client_id, position, client_name, phone_number)
 
         update_client = ClientNumberData.objects.get(id=client_id)
-
         if position == '' and client_name == '' and phone_number == '':
             update_client.delete()
         else:
