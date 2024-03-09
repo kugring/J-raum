@@ -100,7 +100,7 @@ function point_yes(element) {
 	var point_id = request_box.querySelector('.point-id').textContent
 	var client_name = request_box.querySelector('.point-client-name').textContent
 	var manager_name = document.querySelector('.manager-name').textContent
-	var originalPoint = request_box.querySelector('.point-currentpointofclientbuthidden').textContent.replace(/,/g, '').match(/\d+/g)[0];;
+	var originalPoint = parseInt(request_box.querySelector('.point-currentpointofclientbuthidden').textContent.replace(/\s/g, ''), 10);
 
 	console.log(charge_num, created_at, point_password, client_name)
 	console.log('잔액이 ' + originalPoint + '원 남은 ' + client_name + '고객님의 ' + charge_num + '원 충전을 승인하였습니다.')

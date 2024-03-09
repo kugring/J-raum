@@ -1693,7 +1693,7 @@ document.addEventListener('touchmove', function (event) {
 var lastTouchEnd = 0;
 document.addEventListener('touchend', function (event) {
 	var now = (new Date()).getTime();
-	if (now - lastTouchEnd <= 200) {
+	if (now - lastTouchEnd <= 150) {
 		event.preventDefault();
 	}
 	lastTouchEnd = now;
