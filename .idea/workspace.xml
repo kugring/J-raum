@@ -6,9 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="564414b1-3150-4499-964a-162e1b210395" name="변경" comment="민서바보">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/main/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/point_request.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/point_request.html" afterDir="false" />
     </list>
     <list id="7fc4207b-5696-4bc3-bdd7-650e0d9aa81a" name="LG 님이 변경한 내용" comment="">
+      <change beforePath="$PROJECT_DIR$/static/point/point.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/point/point.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/point/point.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/point/point.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -189,7 +192,7 @@
       <workItem from="1709426653322" duration="374000" />
       <workItem from="1709470865536" duration="43000" />
       <workItem from="1709472451696" duration="572000" />
-      <workItem from="1709964312825" duration="10021000" />
+      <workItem from="1709964312825" duration="13314000" />
     </task>
     <task id="LOCAL-00001" summary="민서바보">
       <option name="closed" value="true" />

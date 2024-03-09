@@ -1225,6 +1225,7 @@ function pointManager(name, phoneNumber, current_point, totalPayPoint) {
 	var point_charge_value = parseInt(inputElement.textContent.replace(/,/g, ""), 10).toString()
 	console.log(point_charge_value);
 
+
 	// 먼저 윈도우를 올림
 	pointModal.classList.add('hidden');
 
@@ -1391,9 +1392,14 @@ function managerCheck(name, phoneNumber, current_point, totalPayPoint, manager) 
 	// 충전 금액
 	var point_charge_value = parseInt(inputElement.textContent.replace(/,/g, ""), 10)
 
-	// 충전된 금액
-	var point_push_value = parseInt(inputElement.textContent.replace(/,/g, ""), 10) + parseInt(current_point);
+	// 충전된 금액Number(inputElement.textContent.replace(/,/g, "")) + Number(current_point)
+	// 또는 Number(current_point)
+	// 원본 parseInt(inputElement.textContent.replace(/,/g, ""), 10); + parseInt(current_point)
+	var point_push_value = Number(inputElement.textContent.replace(/,/g, "")) + Number(current_point)
+	console.log(parseInt(inputElement.textContent.replace(/,/g, ""), 10))
+	console.log(parseInt(current_point))
 
+	console.log(Number(inputElement.textContent.replace(/,/g, "")) + Number(current_point))
 	// 결제 후 충전된 금액
 	var point_charge_pay_value = parseInt(pointLastBalanceNum.textContent.replace(/,/g, ""), 10);
 	+parseInt(inputElement.textContent.replace(/,/g, ""), 10)
@@ -1412,7 +1418,8 @@ function managerCheck(name, phoneNumber, current_point, totalPayPoint, manager) 
 			pointManagerContent.style.display = 'none'
 			pointPay.style.display = 'flex'
 			pointPayUserText.innerText = '_님 충전완료 되었습니다!'
-			pointPayCurrentPoint.innerText = point_charge_value + '원'
+			pointPayCurrentPoint.innerText = point_push_value + '원'
+			console.log('되는게 맞나?')
 
 			// 남은 포인트가 결제금액 보다 많은 경우
 			if (point_push_value - totalPayPoint >= 0) {
@@ -1681,7 +1688,6 @@ function orderData(order_person, phoneNumber) {
 	}, 500)
 
 }
-
 
 
 document.addEventListener('touchmove', function (event) {

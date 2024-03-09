@@ -100,11 +100,13 @@ function point_yes(element) {
 	var point_id = request_box.querySelector('.point-id').textContent
 	var client_name = request_box.querySelector('.point-client-name').textContent
 	var manager_name = document.querySelector('.manager-name').textContent
-	var originalPoint = parseInt(request_box.querySelector('.point-currentpointofclientbuthidden').textContent.replace(/\s/g, ''), 10);
+	var originalPoint = request_box.querySelector('.point-currentpointofclientbuthidden').textContent.replace(/,/g, '').match(/\d+/g)[0];
+
+	var finalPoint = Number(originalPoint) + Number(charge_num)
 
 	console.log(charge_num, created_at, point_password, client_name)
 	console.log('잔액이 ' + originalPoint + '원 남은 ' + client_name + '고객님의 ' + charge_num + '원 충전을 승인하였습니다.')
-	console.log('충전 이후 잔액은 ')
+	console.log('충전 이후 잔액은 ' + finalPoint + '입니다.')
 
 	let fd_point = new FormData();
 
@@ -114,6 +116,8 @@ function point_yes(element) {
 	fd_point.append('point_password', point_password);
 	fd_point.append('point_id', point_id);
 	fd_point.append('manager_name', manager_name);
+	fd_point.delete('current_point');
+	fd_point.append('current_point', finalPoint);
 
 	$.ajax({
 		url: '/ManagerCheck/',
