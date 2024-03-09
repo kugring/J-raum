@@ -41,14 +41,14 @@ function updateClient(button) {
 		},
 		success: function (response) {
 			// 업데이트 성공 시 처리할 코드
-			console.log('메뉴가 업데이트되었습니다.');
+			console.log('클라이언트의 정보가 수정되었습니다.');
+			window.location.href = "/Client_list/";
 		},
 		error: function (xhr, status, error) {
 			// 오류 발생 시 처리할 코드
 			console.error('메뉴 업데이트 중 오류가 발생했습니다:', error);
 		}
 	});
-	window.location.href = "/Client_list/";
 }
 
 function submitForm() {

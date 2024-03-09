@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="564414b1-3150-4499-964a-162e1b210395" name="변경" comment="민서바보">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/client_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/client_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/manager.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/manager.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/menu_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/menu_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/order_data.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/order_data.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/point.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/point.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/client_list/client_list.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/client_list/client_list.js" afterDir="false" />
     </list>
     <list id="7fc4207b-5696-4bc3-bdd7-650e0d9aa81a" name="LG 님이 변경한 내용" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,6 +68,7 @@
     &quot;database.data.extractors.current.export.id&quot;: &quot;Excel(xlsx)&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/gram&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -187,7 +184,10 @@
       <workItem from="1708396897638" duration="19017000" />
       <workItem from="1708430284051" duration="120785000" />
       <workItem from="1709095456663" duration="58409000" />
-      <workItem from="1709426653322" duration="286000" />
+      <workItem from="1709426653322" duration="374000" />
+      <workItem from="1709470865536" duration="43000" />
+      <workItem from="1709472451696" duration="572000" />
+      <workItem from="1709964312825" duration="2443000" />
     </task>
     <task id="LOCAL-00001" summary="민서바보">
       <option name="closed" value="true" />
