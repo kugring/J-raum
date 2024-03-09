@@ -102,6 +102,7 @@ function point_yes(element) {
 	var manager_name = document.querySelector('.manager-name').textContent
 
 	console.log(charge_num, created_at, point_password, client_name)
+	console.log('잔액이 ' +  + '원 남은 ' + client_name + '고객님께서 ' + charge_num + '원을')
 
 	let fd_point = new FormData();
 
