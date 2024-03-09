@@ -23,7 +23,6 @@
     <!-- 정적 파일 링크 -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script type="text/javascript" src="{% static 'point/point.js' %}"></script>
-    <script type="text/javascript" src="{% static 'main/zoom_Ban.js' %}"></script>
 
 </head>
 <body>
@@ -74,6 +73,7 @@
                     <div class="point-charge-text">충전</div>
                     {% load humanize %}
                     <div class="point-charge-num">{{ data.push_point|intcomma }}원</div>
+                    <div class="point-currentpointofclientbuthidden">{{ data.push_point|intcomma }}</div>
                 </div>
                 <div class="point-box-body">
                     <div class="point-date">{{ data.created_at|date:"[ m월 d일 ]" }}</div>

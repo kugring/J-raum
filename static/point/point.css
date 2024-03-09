@@ -258,6 +258,10 @@ body {
     color: #9d3b00;
 }
 
+.point-currentpointofclientbuthidden {
+    display: none;
+}
+
 .point-box-body {
     display: flex;
     flex-direction: column;
