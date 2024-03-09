@@ -42,7 +42,7 @@ function updateClient(button) {
 		success: function (response) {
 			// 업데이트 성공 시 처리할 코드
 			console.log('클라이언트의 정보가 수정되었습니다.');
-				window.location.href = "/Client_list/";
+			window.location.href = "/Client_list/";
 		},
 		error: function (xhr, status, error) {
 			// 오류 발생 시 처리할 코드
@@ -121,7 +121,7 @@ document.addEventListener('touchmove', function (event) {
 var lastTouchEnd = 0;
 document.addEventListener('touchend', function (event) {
 	var now = (new Date()).getTime();
-	if (now - lastTouchEnd <= 100) {
+	if (now - lastTouchEnd <= 200) {
 		event.preventDefault();
 	}
 	lastTouchEnd = now;
