@@ -1256,7 +1256,7 @@ function pointManager(name, phoneNumber, current_point, totalPayPoint) {
 				// 재시도 횟수
 				var retryCount = 0;
 				// 최대 재시도 횟수
-				var maxRetries = 40;
+				var maxRetries = 100;
 				// 재시도 간격 (밀리초)
 				var retryInterval = 3000; // 3초
 
