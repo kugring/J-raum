@@ -1223,6 +1223,7 @@ function pointManager(name, phoneNumber, current_point, totalPayPoint) {
 
 	// 충전 금액
 	var point_charge_value = parseInt(inputElement.textContent.replace(/,/g, ""), 10).toString()
+	console.log(point_charge_value);
 
 	// 먼저 윈도우를 올림
 	pointModal.classList.add('hidden');
