@@ -38,7 +38,8 @@
         </div>
         <div class="order-menu-bottom">
             <div class="order-total-quantity"> 총: {{ order_list.total_quantity }}잔</div>
-            <div class="order-complete" onclick="orderComplete()">완성</div>
+            <div class="order-name-title">{{ order_list.order_name }}</div>
+            <div class="order-complete" onclick="orderCheck()">완성</div>
         </div>
     </div>
 </div>

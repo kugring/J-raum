@@ -816,7 +816,6 @@ function checkAndSubmit() {
 
 function searchPhoneNumber(phoneNumber) {
 
-
 	fetch(`/api/Phone_number_search/?phone_number=${phoneNumber}`)
 		.then(response => {
 			if (!response.ok) {
@@ -965,7 +964,7 @@ function selectName(name, phoneNumber) {
 
 				// views에서 가져온 현재 포인트
 				const current_point = data.result.split(',').map(Number);
-				console.log(current_point)
+				console.log('현재 잔액은 ' + current_point + '원이다.')
 
 				// 작업을 끝내고 윈도우창을 내림
 				setTimeout(function () {

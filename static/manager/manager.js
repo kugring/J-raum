@@ -271,6 +271,9 @@ function orderListCheck(element) {
 	order_menu_body.innerText = ''
 	// 총 수량 표기
 	const order_total_quantity = document.querySelector('.order-total-quantity')
+	// 주문자 이름 표기
+	const order_name_title = document.querySelector('.order-name-title')
+
 
 
 	$.ajax({
@@ -285,6 +288,7 @@ function orderListCheck(element) {
 
 			// 선택한 주문
 			var order_list = data.order_list[0].order_menu.split(',')
+			var order_name = data.order_list[0].order_name
 
 			// 오더 id값 넣기
 			const order_menu_body = document.querySelector('.order-menu-body')
@@ -414,7 +418,8 @@ function orderListCheck(element) {
 				});
 			}
 			order_total_quantity.innerText = '총: ' + total_quantity + '잔'
-
+			order_name_title.innerText = order_name
+			console.log(order_name)
 		},
 		error: function (error) {
 			console.log('전송 중 오류가 발생했습니다.');
@@ -425,6 +430,16 @@ function orderListCheck(element) {
 function toggleDarken(element) {
 	element.classList.toggle('clicked');
 }
+
+function orderCheck() {
+	var userChoice = confirm('주문이 완성 되었습니까?');
+	if (userChoice) {
+		alert('주문이 완료되었습니다!');
+		orderComplete()
+	} else {
+	}
+}
+
 
 function orderComplete() {
 	const order_waiting_num = document.querySelector('.order-waiting-num')

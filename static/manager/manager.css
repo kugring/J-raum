@@ -262,6 +262,21 @@ body {
     border: 5px solid #9f681f;
     border-radius: 10px;
     background-color: white;
+    font-size: 11vw;
+    color: #79471a;
+    font-family: 'Dongle', sans-serif;
+}
+
+.order-name-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 3rem;
+    border: 5px solid #9f681f;
+    border-radius: 10px;
+    background-color: white;
     font-size: 12vw;
     color: #79471a;
     font-family: 'Dongle', sans-serif;
@@ -272,7 +287,7 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 60%;
+    width: 25%;
     height: 3rem;
     border: 5px solid #ee5700;
     border-radius: 10px;
