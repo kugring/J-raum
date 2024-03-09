@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="564414b1-3150-4499-964a-162e1b210395" name="변경" comment="민서바보">
-      <change afterPath="$PROJECT_DIR$/static/zoom _Ban.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/zoom _Ban.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/zoom _Ban.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main/client_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/client_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main/manager.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/manager.html" afterDir="false" />
@@ -87,6 +86,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\gram\PycharmProjects\J-raum_(django)\static\main" />
       <recent name="C:\Users\gram\PycharmProjects\J-raum_(django)\templates\main" />
       <recent name="C:\Users\gram\PycharmProjects\J-raum_(django)\static\order_data" />
       <recent name="C:\Users\gram\PycharmProjects\J-raum_(django)\static\manager" />
@@ -193,7 +193,7 @@
       <workItem from="1709426653322" duration="374000" />
       <workItem from="1709470865536" duration="43000" />
       <workItem from="1709472451696" duration="572000" />
-      <workItem from="1709964312825" duration="8668000" />
+      <workItem from="1709964312825" duration="8848000" />
     </task>
     <task id="LOCAL-00001" summary="민서바보">
       <option name="closed" value="true" />
