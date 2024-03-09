@@ -12,14 +12,9 @@
       <change beforePath="$PROJECT_DIR$/static/menu_list/menu_list.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/menu_list/menu_list.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/order_data/order_data.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/order_data/order_data.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/point/point.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/point/point.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/client_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/client_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/manager.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/manager.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/menu_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/menu_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/order_data.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/order_data.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/point.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/point.html" afterDir="false" />
     </list>
     <list id="7fc4207b-5696-4bc3-bdd7-650e0d9aa81a" name="LG 님이 변경한 내용" comment="">
-      <change beforePath="$PROJECT_DIR$/static/point/point.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/point/point.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/point/point.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/point/point.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main/point.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/point.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,10 +50,10 @@
     </option>
   </component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/templates/main/point.html">
+    <file path="$PROJECT_DIR$/static/point/point.js">
       <ranges>
-        <range start1="25" end1="26" start2="25" end2="25" changelist="564414b1-3150-4499-964a-162e1b210395" />
-        <range start1="76" end1="76" start2="75" end2="76" changelist="7fc4207b-5696-4bc3-bdd7-650e0d9aa81a" />
+        <range start1="102" end1="102" start2="102" end2="103" changelist="7fc4207b-5696-4bc3-bdd7-650e0d9aa81a" />
+        <range start1="201" end1="202" start2="202" end2="203" changelist="564414b1-3150-4499-964a-162e1b210395" />
       </ranges>
     </file>
   </component>
@@ -208,7 +203,7 @@
       <workItem from="1709426653322" duration="374000" />
       <workItem from="1709470865536" duration="43000" />
       <workItem from="1709472451696" duration="572000" />
-      <workItem from="1709964312825" duration="9190000" />
+      <workItem from="1709964312825" duration="9432000" />
     </task>
     <task id="LOCAL-00001" summary="민서바보">
       <option name="closed" value="true" />

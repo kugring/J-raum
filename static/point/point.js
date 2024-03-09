@@ -100,6 +100,7 @@ function point_yes(element) {
 	var point_id = request_box.querySelector('.point-id').textContent
 	var client_name = request_box.querySelector('.point-client-name').textContent
 	var manager_name = document.querySelector('.manager-name').textContent
+	var originalPoint = request_box.querySelector('.point-currentpointofclientbuthidden').textContent.replace(/,/g, '').match(/\d+/g)[0];;
 
 	console.log(charge_num, created_at, point_password, client_name)
 	console.log('잔액이 ' +  + '원 남은 ' + client_name + '고객님께서 ' + charge_num + '원을')
@@ -199,7 +200,7 @@ document.addEventListener('touchmove', function (event) {
 var lastTouchEnd = 0;
 document.addEventListener('touchend', function (event) {
 	var now = (new Date()).getTime();
-	if (now - lastTouchEnd <= 300) {
+	if (now - lastTouchEnd <= 100) {
 		event.preventDefault();
 	}
 	lastTouchEnd = now;

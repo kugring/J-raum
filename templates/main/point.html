@@ -73,7 +73,7 @@
                     <div class="point-charge-text">충전</div>
                     {% load humanize %}
                     <div class="point-charge-num">{{ data.push_point|intcomma }}원</div>
-                    <div class="point-currentpointofclientbuthidden">{{ data.push_point|intcomma }}</div>
+                    <div class="point-currentpointofclientbuthidden">{{ data.current_point|intcomma }}</div>
                 </div>
                 <div class="point-box-body">
                     <div class="point-date">{{ data.created_at|date:"[ m월 d일 ]" }}</div>
