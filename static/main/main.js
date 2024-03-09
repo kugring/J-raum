@@ -1392,7 +1392,7 @@ function managerCheck(name, phoneNumber, current_point, totalPayPoint, manager) 
 	// 충전 금액
 	var point_charge_value = parseInt(inputElement.textContent.replace(/,/g, ""), 10)
 
-	// 충전된 금액Number(inputElement.textContent.replace(/,/g, "")) + Number(current_point)
+	// 충전된 금액 Number(inputElement.textContent.replace(/,/g, "")) + Number(current_point)
 	// 또는 Number(current_point)
 	// 원본 parseInt(inputElement.textContent.replace(/,/g, ""), 10); + parseInt(current_point)
 	var point_push_value = Number(inputElement.textContent.replace(/,/g, "")) + Number(current_point)

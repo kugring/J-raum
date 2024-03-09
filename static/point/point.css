@@ -259,7 +259,7 @@ body {
 }
 
 .point-currentpointofclientbuthidden {
-    visibility: hidden;
+    display: none;
 }
 
 .point-box-body {
