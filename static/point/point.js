@@ -104,6 +104,7 @@ function point_yes(element) {
 
 	console.log(charge_num, created_at, point_password, client_name)
 	console.log('잔액이 ' + originalPoint + '원 남은 ' + client_name + '고객님의 ' + charge_num + '원 충전을 승인하였습니다.')
+	console.log('충전 이후 잔액은 ')
 
 	let fd_point = new FormData();
 
