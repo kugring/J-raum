@@ -1008,6 +1008,7 @@ function pointAdd_paying(name, phoneNumber, current_point, totalPayPoint) {
 	var pointAddCheck = document.querySelector('.point-add-check');
 	var pointAddInput = document.querySelector('.point-add-input');
 	var pointAddClose = document.querySelector('.point-add-close');
+	console
 
 
 	// 먼저 윈도우를 올림
