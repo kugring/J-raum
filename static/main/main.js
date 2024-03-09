@@ -1008,7 +1008,8 @@ function pointAdd_paying(name, phoneNumber, current_point, totalPayPoint) {
 	var pointAddCheck = document.querySelector('.point-add-check');
 	var pointAddInput = document.querySelector('.point-add-input');
 	var pointAddClose = document.querySelector('.point-add-close');
-	console.log('너는 지금 ' + current_point + '원이 있고 필요한 금액은 ' + totalPayPoint);
+	console.log('너는 지금 ' + current_point + '원이 있고 필요한 금액은 ' + totalPayPoint + '원이다.');
+	// 그래 여기까진 문제없다구....ㅠㅠㅠㅠ
 
 
 	// 먼저 윈도우를 올림
