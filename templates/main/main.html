@@ -2,10 +2,10 @@
 <html translate="no" lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="HandheldFriendly" content="true" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="HandheldFriendly" content="true"/>
     <meta name="google" content="notranslate">
-    <title>J-raum 키오스크</title>
+    <title>혐암교회 [J-raum 키오스크]</title>
 
 
     {% load static %}
@@ -93,10 +93,6 @@
                                                     {{ cafemenu.name }}
                                                 </div>
                                                 <div class="madal-menu-total">
-                                                    <div class="modal-menu-price {{ cafemenu.en }} {{cafemenu.category}}">
-                                                        <!--메뉴 가격이 들어감-->
-                                                        {{ cafemenu.price }}원
-                                                    </div>
                                                     <div class="modal-menu-item-counter">
                                                         <span class="modal-menu-quantity-btn"
                                                               onclick="decreaseQuantity('{{ cafemenu.en }}','{{ cafemenu.category }}','{{ cafemenu.price }}')">-</span>
@@ -114,9 +110,13 @@
                                         <div class="modal-right">
                                             <div class="modal-option-container">
                                                 <div class="modal-option-top">
-                                                    <div class="modal-option-top-left">옵션명</div>
+                                                    <div class="modal-option-top-left">결제가격&nbsp;&nbsp;➡
+                                                    </div>
                                                     <div class="modal-option-top-right">
-                                                        <!--아직 뭘 넣을 생각이 없음-->
+                                                        <div class="modal-menu-price {{ cafemenu.en }} {{cafemenu.category}}">
+                                                            <!--메뉴 가격이 들어감-->
+                                                            {{ cafemenu.price }}원
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="modal-option-box">
