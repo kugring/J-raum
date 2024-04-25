@@ -169,13 +169,13 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
     border: 0.4vw solid #9f681f;
+    align-items: center;
     border-radius: 1vw;
     background-color: #fff5ee;
     color: #462304;
     padding: 0 1vw;
-    font-size: 3vw;
+    font-size: 1.8em;
     height: 4vw;
     font-family: 'Gamja Flower', sans-serif;
     font-weight: 600;
@@ -325,11 +325,7 @@ tr {
     height: 1.5vw;
 }
 
-/*.이게 그 반응형 css야 media라고 표기하고 조건값을 작성하면 그 {} 조건에 맞게 css가 따로 적용된다!
-그래서 아마 주문내역을 보면 새로와 가로의 css를 따로 볼 수 있다! 이해했나.
-예알겠슴다!!!
-조아! 나는 밥을 묵어라 가야하므로 ! 이따가 질문이 있으면 카톡을 남겨두도록 아마도 겁나 어려울것이다!
-나도 해본적이 없어서 ㅠㅠ 이따봐요~!!!! 화이팅!!!!!*/
+
 @media (max-width: 480px) {
     /* iPhone 12 Pro */
     .nav_item {
