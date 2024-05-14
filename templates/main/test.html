@@ -1,10 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>얼굴 인식</title>
+<style>
+    #videoElement {
+        width: 400px;
+        height: 300px;
+        background-color: #666;
+    }
+</style>
 </head>
 <body>
-$END$
+    <h1>내장 카메라로 얼굴 인식하기</h1>
+    <video id="videoElement" autoplay></video>
+    <button id="captureButton">캡처</button>
+    <canvas id="canvas" style="display:none;"></canvas>
+    <script>
+        // 사용자의 내장 카메라 접근
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function (stream) {
+                var video = document.getElementById('videoElement');
+                // 비디오 요소에 스트림 연결
+                video.srcObject = stream;
+            })
+            .catch(function (err) {
+                console.log("카메라 접근 실패: ", err);
+            });
+
+        // 캡처 버튼 클릭 시 이미지 캡처 및 저장
+        document.getElementById('captureButton').addEventListener('click', function () {
+            var video = document.getElementById('videoElement');
+            var canvas = document.getElementById('canvas');
+            var context = canvas.getContext('2d');
+            // 캔버스 크기를 비디오의 크기와 동일하게 설정
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            // 캔버스에 현재 비디오 프레임을 그림
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            // 이미지 URL 생성
+            var imageUrl = canvas.toDataURL('image/png');
+            // 이미지 다운로드 링크 생성
+            var link = document.createElement('a');
+            link.href = imageUrl;
+            link.download = 'captured_image.png';
+            // 링크 클릭하여 이미지 다운로드
+            link.click();
+        });
+    </script>
 </body>
 </html>

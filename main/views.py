@@ -19,6 +19,12 @@ from django.http import HttpResponse
 from openpyxl import Workbook
 import pytz # 엑셀파일을 출력중에 날짜 데이터는 해석할 수 없으므로 필요한 라이브러리
 
+
+class Ezen(APIView):
+    def get(self, request):
+
+        return render(request, 'main/test3.html')
+
 class Main(APIView):
     def get(self, request):
         cafemenus = CafeMenu.objects.all()
@@ -41,7 +47,6 @@ class Main(APIView):
             'manager_list': manager_list
         }
         return render(request, 'main/main.html', context)
-
 
 class OrderListView(APIView):
     def get(self, request):
