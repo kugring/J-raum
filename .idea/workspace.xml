@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="564414b1-3150-4499-964a-162e1b210395" name="변경" comment="민서바보">
-      <change afterPath="$PROJECT_DIR$/static/cake.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/came.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/gift.jpg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/birthday/gift.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/birthday/hbd.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/birthday/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/birthday/photo.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JraumKiosk/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/JraumKiosk/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/main.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +202,7 @@
       <workItem from="1715482478233" duration="2695000" />
       <workItem from="1715515290699" duration="7000" />
       <workItem from="1715663197496" duration="1181000" />
-      <workItem from="1715999827992" duration="4085000" />
+      <workItem from="1715999827992" duration="4185000" />
     </task>
     <task id="LOCAL-00001" summary="민서바보">
       <option name="closed" value="true" />

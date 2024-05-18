@@ -20,11 +20,6 @@ from openpyxl import Workbook
 import pytz  # 엑셀파일을 출력중에 날짜 데이터는 해석할 수 없으므로 필요한 라이브러리
 
 
-class GiBeom(APIView):
-    def get(self, request):
-        return render(request, 'main/test3.html')
-
-
 class Home(APIView):
     def get(self, request):
         return render(request, 'birthday/home.html')
