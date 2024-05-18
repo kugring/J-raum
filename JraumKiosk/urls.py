@@ -5,12 +5,11 @@ from main.views import OrderData, OrderDetail, OrderDelete, Manager, ManagerOrde
 from main.views import PointExamine, ManagerDelete, ManagerTest, ClientList, ClientAppend, ClientUpdate
 from main.views import MenuList, MenuAppend, MenuUpdate, download_excel
 from django.conf.urls.static import static
-from main.views import GiBeom, Home, gift, Photo, HBD
+from main.views import Home, gift, Photo, HBD
 
 from .settings import MEDIA_URL, MEDIA_ROOT
 
 urlpatterns = [
-    path('GiBeom/', GiBeom.as_view()),
     path('GiBeom/Home', Home.as_view()),
     path('GiBeom/gift', gift.as_view()),
     path('GiBeom/Photo', Photo.as_view()),
