@@ -17,13 +17,33 @@ import time
 from django.db.models import F
 from django.http import HttpResponse
 from openpyxl import Workbook
-import pytz # 엑셀파일을 출력중에 날짜 데이터는 해석할 수 없으므로 필요한 라이브러리
+import pytz  # 엑셀파일을 출력중에 날짜 데이터는 해석할 수 없으므로 필요한 라이브러리
 
 
-class Ezen(APIView):
+class GiBeom(APIView):
     def get(self, request):
-
         return render(request, 'main/test3.html')
+
+
+class Home(APIView):
+    def get(self, request):
+        return render(request, 'birthday/home.html')
+
+
+class gift(APIView):
+    def get(self, request):
+        return render(request, 'birthday/gift.html')
+
+
+class Photo(APIView):
+    def get(self, request):
+        return render(request, 'birthday/photo.html')
+
+
+class HBD(APIView):
+    def get(self, request):
+        return render(request, 'birthday/hbd.html')
+
 
 class Main(APIView):
     def get(self, request):
@@ -47,6 +67,7 @@ class Main(APIView):
             'manager_list': manager_list
         }
         return render(request, 'main/main.html', context)
+
 
 class OrderListView(APIView):
     def get(self, request):

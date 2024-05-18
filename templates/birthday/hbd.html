@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /*background-image:url("gift.gif.gif");*/
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-position: center;
+            font-family: "Nanum Pen Script", cursive;
+            font-size: 10px;
+            font-weight: 700;
+            line-height: 22px;
+            letter-spacing: -0.02em;
+            text-align: center;
+            color: black;
+            margin-bottom: 10px;
+            background-color: beige;
+        }
+
+        .transition-all {
+            transition-property: all;
+            transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+            transition-duration: .15s;
+        }
+
+        .base-gif {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 700px;
+            width: 100%;
+            height: 90vh;
+            /*background-image: url("image/base.gif");*/
+            background-image: url("../../static/base.gif");
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: contain;
+
+            position: relative;
+
+
+        }
+
+        .bsLOzF.active {
+            background-color: lightgoldenrodyellow
+        }
+
+        .bsLOzF {
+            font-family: "Nanum Pen Script", sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 10px;
+            letter-spacing: -0.02em;
+            text-align: center;
+            background-color: transparent;
+            color: black;
+            border: none;
+            cursor: pointer;
+            height: 48px;
+            padding: 13px 24px;
+            border-radius: 6px;
+            margin-top: 0px;
+            margin-left: 30px;
+        }
+
+        button:hover {
+            background-color: lightgoldenrodyellow;
+        }
+
+        .gwvvor {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: -20px;
+        }
+
+        .gwvvor a {
+            text-decoration: none
+        }
+
+        h1 {
+            text-shadow: 0px 0px 5px skyblue;
+            margin-top: 0px;
+        }
+
+        a:hover {
+            color: mistyrose;
+        }
+
+        a {
+            color: black;
+        }
+
+        span {
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: -4%;
+        }
+
+        .cakebox {
+            position: absolute;
+            left: 41%;
+            top: -4%;
+        }
+
+
+    </style>
+</head>
+<body>
+
+
+<input type="image" id="bb" src="../../static/cake.gif" width="200" height="200">
+<!-- <h1>❤️ Happy Gi Beom day❤️</h1> -->
+<div class="base-gif">
+    <div class="sc-jIJgYh gwvvor">
+        <button class="sc-ilpitK bsLOzF"><a href="/GiBeom/Home">Home</a></button>
+        <button class="sc-ilpitK bsLOzF"><a href="/GiBeom/gift">Gift</a></button>
+        <!-- <button class="sc-ilpitK bsLOzF"><a href="letter.html">Letter</a></button> -->
+        <button class="sc-ilpitK bsLOzF"><a href="/GiBeom/Photo">Photo</a></button>
+        <button class="sc-ilpitK bsLOzF active"><a href="/GiBeom/HBD">HBD</a></button>
+    </div>
+    <!-- <img class="cakebox" src="./imagee/cake.jpg" width="150" height="150" > -->
+    <div id="player" style="display: none;"></div>
+</div>
+</div>
+<script>
+	var tag = document.createElement('script');
+	tag.src = "https://www.youtube.com/iframe_api";
+	var firstScriptTag = document.getElementsByTagName('script')[0];
+	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+	var player;
+
+	function onYouTubeIframeAPIReady() {
+		player = new YT.Player('player', {
+			height: '20',
+			width: '20',
+			videoId: '3Do4fPWW_0A', // 여기에 비디오 ID를 입력하세요.
+			events: {
+				'onReady': onPlayerReady
+			}
+		});
+	}
+
+	function onPlayerReady(event) {
+		document.getElementById('bb').addEventListener('click', function () {
+			player.playVideo();
+		});
+	}
+</script>
+</body>
+</html>
+
+
+<!-- web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></span>
+</body> -->
+
+<!-- <body>
+    <input type="image" src="./imagee/cake.jpg" width="300" height="300">
+    <h1>❤️ Happy Gi Beom day❤️</h1>
+    <div class="sc-jIJgYh gwvvor">
+        <button class="sc-ilpitK bsLOzF"><a href="home.html">Home</a></button>
+        <button class="sc-ilpitK bsLOzF"><a href="gift.html">Gift</a></button>
+        <button class="sc-ilpitK bsLOzF"><a href="letter.html">Letter</a></button>
+        <button class="sc-ilpitK bsLOzF"><a href="photo.html">Photo</a></button>
+        <button class="sc-ilpitK bsLOzF active"><a href="hbd.html">HBD</a></button>
+    </div>
+    <input type="image" src="./imagee/bir.gif" width="500" height="500">
+    <span>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/3Do4fPWW_0A?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </span>
+</body> --> 
