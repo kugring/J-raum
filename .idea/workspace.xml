@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="564414b1-3150-4499-964a-162e1b210395" name="변경" comment="민서바보">
+      <change afterPath="$PROJECT_DIR$/static/gift.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/hbd1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/home.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/pho.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/birthday/gift.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/birthday/gift.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/birthday/hbd.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/birthday/hbd.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/birthday/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/birthday/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/birthday/photo.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/birthday/photo.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,10 +87,10 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\gram\PycharmProjects\J-raum_(django)\static" />
+      <recent name="C:\Users\gram\PycharmProjects\J-raum_(django)\static\point" />
       <recent name="C:\Users\gram\PycharmProjects\J-raum_(django)\templates\birthday" />
       <recent name="C:\Users\gram\PycharmProjects\J-raum_(django)\media" />
       <recent name="C:\Users\gram\PycharmProjects\J-raum_(django)\static\main" />
-      <recent name="C:\Users\gram\PycharmProjects\J-raum_(django)\templates\main" />
     </key>
   </component>
   <component name="RunManager" selected="Python.0017_alter_clientnumberdata_age_and_more">
@@ -201,7 +208,7 @@
       <workItem from="1715482478233" duration="2695000" />
       <workItem from="1715515290699" duration="7000" />
       <workItem from="1715663197496" duration="1181000" />
-      <workItem from="1715999827992" duration="4931000" />
+      <workItem from="1715999827992" duration="5564000" />
     </task>
     <task id="LOCAL-00001" summary="민서바보">
       <option name="closed" value="true" />
