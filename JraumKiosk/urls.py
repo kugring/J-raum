@@ -3,17 +3,13 @@ from django.urls import path, include
 from main.views import Main, OrderListView, search_phone_number, search_manager_number, select_name, FinalPayment
 from main.views import OrderData, OrderDetail, OrderDelete, Manager, ManagerOrderData, ManagerMenuList, ManagerCheck
 from main.views import PointExamine, ManagerDelete, ManagerTest, ClientList, ClientAppend, ClientUpdate
-from main.views import MenuList, MenuAppend, MenuUpdate, download_excel
+from main.views import MenuList, MenuAppend, MenuUpdate, download_excel, PointChargeDirect
 from django.conf.urls.static import static
-from main.views import Home, gift, Photo, HBD
 
 from .settings import MEDIA_URL, MEDIA_ROOT
 
 urlpatterns = [
-    path('GiBeom/Home', Home.as_view()),
-    path('GiBeom/gift', gift.as_view()),
-    path('GiBeom/Photo', Photo.as_view()),
-    path('GiBeom/HBD', HBD.as_view()),
+
     path('admin/', admin.site.urls),
     path('', Main.as_view()),
     path('orderList/', OrderListView.as_view()),
@@ -37,6 +33,7 @@ urlpatterns = [
     path('Menu_list/', MenuList.as_view()),
     path('MenuAppend/', MenuAppend.as_view()),
     path('MenuUpdate/', MenuUpdate.as_view()),
+    path('pointChargeDirect/', PointChargeDirect.as_view()),
     path('download-excel/', download_excel, name='download-excel'),
 ]
 

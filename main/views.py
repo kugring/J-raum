@@ -20,25 +20,6 @@ from openpyxl import Workbook
 import pytz  # 엑셀파일을 출력중에 날짜 데이터는 해석할 수 없으므로 필요한 라이브러리
 
 
-class Home(APIView):
-    def get(self, request):
-        return render(request, 'birthday/home.html')
-
-
-class gift(APIView):
-    def get(self, request):
-        return render(request, 'birthday/gift.html')
-
-
-class Photo(APIView):
-    def get(self, request):
-        return render(request, 'birthday/photo.html')
-
-
-class HBD(APIView):
-    def get(self, request):
-        return render(request, 'birthday/hbd.html')
-
 
 class Main(APIView):
     def get(self, request):
@@ -623,6 +604,53 @@ class MenuUpdate(APIView):
         return Response(status=200)
 
 
+
+
+class PointChargeDirect(APIView):
+    def get(self, request):
+        return render(request, 'main/point_charge_direct.html')
+
+    def post(self, request):
+        manager = request.data.get('manager')
+        charge_status = request.data.get('charge_status')
+        client_name = request.data.get('name')
+        phone_number = request.data.get('phone_number')
+        push_point = request.data.get('push_point')
+
+        target_client = ClientNumberData.objects.get(name=client_name, phone_number=phone_number)
+        target_client.current_point += int(push_point)
+
+        PointList.objects.create(manager=manager, charge_status=charge_status, client_name=client_name,
+                                 password=phone_number, push_point=push_point)
+
+        # 변경 사항 저장
+        target_client.save()
+        print(target_client.current_point)
+        return render(request, 'main/point_charge_direct.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #######################################################################################################
 # 아래는 db의 값을 엑셀로 출력하는 views  #
 #######################################################################################################
@@ -650,3 +678,6 @@ def download_excel(request):
     workbook.save(response)
 
     return response
+
+
+
