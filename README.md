@@ -50,4 +50,4 @@
 
 
 ## ✒️ URL
-- Jraum : [http://j-raum.duckdns.org/](http://j-raum.duckdns.org/){:target="_blank"}
+- Jraum : <a href="http://j-raum.duckdns.org/" target="_blank">Jraum</a>
