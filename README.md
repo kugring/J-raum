@@ -1,7 +1,7 @@
 
 
 <div style="display: flex; flex-direction:row;">
-    <h2>👨‍🏫 프로젝트 소개<h2>
+    <h2>👨‍🏫 프로젝트 소개</h2>
     <img src="https://img.shields.io/badge/django-092E20?style=flat&logo=django&logoColor=white" alt="Django">
     <img src="https://img.shields.io/badge/python-3776AB?style=flat&logo=python&logoColor=white" alt="Python">
     <img src="https://img.shields.io/badge/javascript-F7DF1E?style=flat&logo=javascript&logoColor=black" alt="JavaScript">
