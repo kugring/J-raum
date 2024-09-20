@@ -2,7 +2,7 @@
 
 <div style="display: flex; flex-direction:row;">
     <h2>👨‍🏫 프로젝트 소개
-            <img style="margin-left: 12px" src="https://img.shields.io/badge/django-092E20?style=flat&logo=django&logoColor=white" alt="Django">
+            <img style="padding: 1em" src="https://img.shields.io/badge/django-092E20?style=flat&logo=django&logoColor=white" alt="Django">
             <img src="https://img.shields.io/badge/python-3776AB?style=flat&logo=python&logoColor=white" alt="Python">
             <img src="https://img.shields.io/badge/javascript-F7DF1E?style=flat&logo=javascript&logoColor=black" alt="JavaScript">
             <img src="https://img.shields.io/badge/jquery-0769AD?style=flat&logo=jquery&logoColor=white" alt="jQuery">
