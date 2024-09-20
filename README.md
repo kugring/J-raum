@@ -1,6 +1,7 @@
 
 
-<p>## 👨‍🏫 프로젝트 소개<img src="https://img.shields.io/badge/django-092E20?style=flat&logo=django&logoColor=white">
+## <p>👨‍🏫 프로젝트 소개
+<img src="https://img.shields.io/badge/django-092E20?style=flat&logo=django&logoColor=white">
 <img src="https://img.shields.io/badge/python-3776AB?style=flat&logo=python&logoColor=white">
 <img src="https://img.shields.io/badge/javascript-F7DF1E?style=flat&logo=javascript&logoColor=black">
 <img src="https://img.shields.io/badge/jquery-0769AD?style=flat&logo=jquery&logoColor=white">
