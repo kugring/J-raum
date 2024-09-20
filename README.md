@@ -1,13 +1,13 @@
 
 
-## 👨‍🏫 프로젝트 소개
-지자체_소규모 행사의 카페를 운영중 불편사항들을 고려하여 만든 키오스크 입니다.
-<p><img src="https://img.shields.io/badge/django-092E20?style=flat&logo=django&logoColor=white">
+<p>## 👨‍🏫 프로젝트 소개<img src="https://img.shields.io/badge/django-092E20?style=flat&logo=django&logoColor=white">
 <img src="https://img.shields.io/badge/python-3776AB?style=flat&logo=python&logoColor=white">
 <img src="https://img.shields.io/badge/javascript-F7DF1E?style=flat&logo=javascript&logoColor=black">
 <img src="https://img.shields.io/badge/jquery-0769AD?style=flat&logo=jquery&logoColor=white">
 <img src="https://img.shields.io/badge/css-1572B6?style=flat&logo=css3&logoColor=white">
 </p>
+
+지자체_소규모 행사의 카페를 운영중 불편사항들을 고려하여 만든 키오스크 입니다.
 
 ## ⏲️ 개발 기간 
 - 2023.12.20(수) ~ 2023.04.06(토)
