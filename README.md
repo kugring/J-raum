@@ -32,7 +32,6 @@
 - **Version** : Python 3.12
 - **IDE** : PyCharm 2023
 - **Framework** : Django 5.0.1
-- **DB** : SQLite3
 
 ## ⚙️ 기술 스택
 - **Server** : AWS EC2
