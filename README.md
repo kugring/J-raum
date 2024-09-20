@@ -8,6 +8,7 @@
 <img src="https://img.shields.io/badge/jquery-0769AD?style=flat&logo=jquery&logoColor=white">
 <img src="https://img.shields.io/badge/css-1572B6?style=flat&logo=css3&logoColor=white">
 </p>
+
 ## ⏲️ 개발 기간 
 - 2023.12.20(수) ~ 2023.04.06(토)
 - 불편사항 수집
