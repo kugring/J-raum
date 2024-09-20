@@ -1,6 +1,6 @@
 
 
-<div style="display: flex; align-items: center;">
+<div style="display: flex; flex-direction:row;">
     <h2>👨‍🏫 프로젝트 소개<h2>
     <img src="https://img.shields.io/badge/django-092E20?style=flat&logo=django&logoColor=white" alt="Django">
     <img src="https://img.shields.io/badge/python-3776AB?style=flat&logo=python&logoColor=white" alt="Python">
