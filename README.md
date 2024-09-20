@@ -4,8 +4,8 @@
     <h2>👨‍🏫 프로젝트 소개
             <img src="https://img.shields.io/badge/django-092E20?style=flat&logo=django&logoColor=white" alt="Django">
             <img src="https://img.shields.io/badge/python-3776AB?style=flat&logo=python&logoColor=white" alt="Python">
-            <img src="https://img.shields.io/badge/javascript-F7DF1E?style=flat&logo=javascript&logoColor=black" alt="JavaScript">
             <img src="https://img.shields.io/badge/jquery-0769AD?style=flat&logo=jquery&logoColor=white" alt="jQuery">
+            <img src="https://img.shields.io/badge/javascript-F7DF1E?style=flat&logo=javascript&logoColor=black" alt="JavaScript">
             <img src="https://img.shields.io/badge/css-1572B6?style=flat&logo=css3&logoColor=white" alt="CSS">
     </h2>
 
